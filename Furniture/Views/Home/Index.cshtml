@@ -1,0 +1,1662 @@
+﻿@model HomeViewModel
+
+<div id="site-main" class="site-main">
+	<div id="main-content" class="main-content">
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+				<section class="section m-b-80">
+					<!-- Block Sliders -->
+					<div class="block block-sliders layout-7 auto-height nav-center">
+						<div class="slick-sliders" data-autoplay="false" data-dots="true" data-nav="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns1440="1" data-columns="1">
+							@foreach (var slider in Model.Sliders.Where(x=>x.MainSlider==false))
+							{
+								<div class="item slick-slide">
+									<div class="item-content">
+										<div class="content-image">
+											<img width="1920" height="1080" src="media/slider/19.jpg" alt="Image Slider">
+										</div>
+										<div class="item-info horizontal-end vertical-middle">
+											<div class="content">
+												<h2 class="title-slider">
+													@slider.Title
+												</h2>
+												<div class="description-slider">@slider.Description</div>
+												<a class="button-slider button-white" href="@slider.BtnUrl">SHOP NOW</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							}
+							
+							
+						</div>
+					</div>
+				</section>
+
+				<section class="section section-padding m-b-70">
+					<div class="section-container">
+						<div class="block block-image slider">
+							<div class="block-widget-wrap">
+								<div class="slick-wrap">
+									<div class="slick-sliders" data-nav="0" data-columns4="2" data-columns3="3" data-columns2="4" data-columns1="4" data-columns1440="5" data-columns="5">
+										@foreach (var brand in Model.Brands)
+										{
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/@brand.Image" alt="Brand 1">
+													</a>
+												</div>
+											</div>
+										}
+
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+
+				<section class="section section-padding top-border p-t-70">
+					<div class="section-container">
+						<!-- Block Products -->
+						<div class="block block-products">
+							<div class="block-widget-wrap">
+								<ul class="nav nav-tabs layout-2" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active" data-toggle="tab" href="#top-rating" role="tab">Top Rating</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#best-selling" role="tab">Best Selling</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#featured" role="tab">Featured</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane fade show active" id="top-rating" role="tabpanel">
+										<div class="products-list grid">
+											<div class="row">
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-23%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/9.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/9-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Bora Armchair</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$100.00</span></del>
+																		<ins><span>$90.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-37%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/10.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/10-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Panton Dining Table</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$79.00</span></del>
+																		<ins><span>$50.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/11.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/11-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Kittchen Table</a></h3>
+																	<span class="price">$120.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-10%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/12.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/12-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mundo Sofa With Cushion</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$200.00</span></del>
+																		<ins><span>$180.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="best-selling" role="tabpanel">
+										<div class="products-list grid">
+											<div class="row">
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-23%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/9.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/9-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Bora Armchair</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$100.00</span></del>
+																		<ins><span>$90.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-37%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/10.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/10-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Panton Dining Table</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$79.00</span></del>
+																		<ins><span>$50.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/11.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/11-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Kittchen Table</a></h3>
+																	<span class="price">$120.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-10%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/12.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/12-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mundo Sofa With Cushion</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$200.00</span></del>
+																		<ins><span>$180.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="featured" role="tabpanel">
+										<div class="products-list grid">
+											<div class="row">
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-37%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/10.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/10-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Panton Dining Table</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$79.00</span></del>
+																		<ins><span>$50.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/11.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/11-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Kittchen Table</a></h3>
+																	<span class="price">$120.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-23%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/9.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/9-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Bora Armchair</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$100.00</span></del>
+																		<ins><span>$90.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-10%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/12.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/12-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mundo Sofa With Cushion</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$200.00</span></del>
+																		<ins><span>$180.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
+																	<span class="price">$150.00</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 product-loadmore hide">
+													<div class="items">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-lable">
+																	<div class="onsale">-33%</div>
+																	<div class="hot">Hot</div>
+																</div>
+																<div class="product-thumb-hover">
+																	<a href="shop-details.html">
+																		<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
+																		<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																		<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+																	<div class="btn-compare" data-title="Compare">
+																		<button class="product-btn">Compare</button>
+																	</div>
+																	<span class="product-quickview" data-title="Quick View">
+																		<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
+																</div>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
+																	<span class="price">
+																		<del aria-hidden="true"><span>$150.00</span></del>
+																		<ins><span>$100.00</span></ins>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="section content-outside background-1">
+					<!-- Block Banners (Slider) -->
+					<div class="block block-banners slider fullwidth">
+						<div class="section-column-wrap">
+							<div class="block-widget-wrap">
+								<div class="slick-wrap">
+									<div class="slick-sliders" data-centermode="true" data-nav="true" data-dots="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1">
+										<div class="item slick-slide">
+											<div class="block-widget-banner">
+												<div class="bg-banner">
+													<div class="banner-wrapper banners">
+														<div class="banner-image">
+															<a href="shop-grid-left.html">
+																<img width="1080" height="584" src="media/banner/banner-18.jpg" alt="Image Slider">
+															</a>
+														</div>
+														<div class="banner-wrapper-infor">
+															<div class="info">
+																<div class="content">
+																	<a class="link-title" href="shop-grid-left.html">
+																		<h3 class="title-banner">From bottle to chair</h3>
+																	</a>
+																	<div class="banner-image-description">
+																		In our design and production processes, we are always looking at where environmental thinking and economic
+																	</div>
+																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item slick-slide">
+											<div class="block-widget-banner">
+												<div class="bg-banner">
+													<div class="banner-wrapper banners">
+														<div class="banner-image">
+															<a href="shop-grid-left.html">
+																<img width="1080" height="584" src="media/banner/banner-19.jpg" alt="Image Slider">
+															</a>
+														</div>
+														<div class="banner-wrapper-infor">
+															<div class="info">
+																<div class="content">
+																	<a class="link-title" href="shop-grid-left.html">
+																		<h3 class="title-banner">Fall collection from hightower</h3>
+																	</a>
+																	<div class="banner-image-description">
+																		In our design and production processes, we are always looking at where environmental thinking and economic
+																	</div>
+																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item slick-slide">
+											<div class="block-widget-banner">
+												<div class="bg-banner">
+													<div class="banner-wrapper banners">
+														<div class="banner-image">
+															<a href="shop-grid-left.html">
+																<img width="1080" height="584" src="media/banner/banner-20.jpg" alt="Image Slider">
+															</a>
+														</div>
+														<div class="banner-wrapper-infor">
+															<div class="info">
+																<div class="content">
+																	<a class="link-title" href="shop-grid-left.html">
+																		<h3 class="title-banner">Armchair with armrests</h3>
+																	</a>
+																	<div class="banner-image-description">
+																		In our design and production processes, we are always looking at where environmental thinking and economic
+																	</div>
+																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="section section-padding top-border p-t-50 p-b-50 m-b-0">
+					<div class="section-container">
+						<div class="row sm-m-0">
+							<div class="col-md-6 sm-m-b-50 sm-p-0">
+								<div class="block block-newsletter layout-2 one-col align-left position-center">
+									<div class="block-widget-wrap">
+										<div class="newsletter-title-wrap">
+											<h2 class="newsletter-title">Join our email list.</h2>
+											<div class="newsletter-text">Sign up for the latest trends, products, and inspiration.</div>
+										</div>
+										<form action="#" method="post" class="newsletter-form">
+											<input type="email" name="your-email" value="" size="40" placeholder="Email address">
+											<span class="btn-submit">
+												<input type="submit" value="SUBSCRIBE">
+											</span>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 sm-p-0">
+								<div class="block block-image text-center position-relative">
+									<img width="671" height="503" src="media/banner/newsletter-2.jpg" alt="">
+									<img class="animation-round position-v-top position-h-center" width="106" height="105" src="media/logo-intro.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="section m-b-0">
+					<!-- Block Instagram -->
+					<div class="block block-instagram slider no-space">
+						<div class="slick-wrap">
+							<div class="slick-sliders fullwidth" data-dots="false" data-item_row="1" data-nav="false" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="4" data-columns="5">
+								@foreach (var instagram in Model.InstagramPhotos)
+								{
+									<div class="item slick-slide">
+										<a class="instagram" href="https://www.instagram.com/">
+											<img width="690" height="690" src="media/banner/@instagram.Image" alt="Image Slider">
+										</a>
+									</div>
+								}
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="section section-padding p-t-70 m-b-70">
+					<div class="section-container">
+						<!-- Block Feature -->
+						<div class="block block-feature layout-2">
+							<div class="block-widget-wrap">
+								<div class="row">
+
+									@foreach(var feature in Model.Features){
+										<div class="col-md-4 sm-m-b-50">
+										<div class="box">
+											<div class="box-icon">
+												<span>
+													@Html.Raw(feature.ImageSvg)
+													
+												</span>
+											</div>
+											<div class="box-title-wrap">
+												<h3 class="box-title">
+													@feature.Title
+												</h3>
+												<p class="box-description">
+													@feature.Description
+												</p>
+											</div>
+										</div>
+									</div>
+									}
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	</div><!-- #main-content -->
+</div>
