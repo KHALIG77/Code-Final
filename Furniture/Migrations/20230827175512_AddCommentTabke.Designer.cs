@@ -4,6 +4,7 @@ using Furniture.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Furniture.Migrations
 {
     [DbContext(typeof(FurnutireContext))]
-    partial class FurnutireContextModelSnapshot : ModelSnapshot
+    [Migration("20230827175512_AddCommentTabke")]
+    partial class AddCommentTabke
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,15 +176,6 @@ namespace Furniture.Migrations
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("money");
 
-                    b.Property<bool>("IsFeatured")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsNew")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsStock")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -199,31 +192,6 @@ namespace Furniture.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Furniture.Models.ProductImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductTag", b =>
@@ -557,17 +525,6 @@ namespace Furniture.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Furniture.Models.ProductImage", b =>
-                {
-                    b.HasOne("Furniture.Models.Product", "Product")
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("Furniture.Models.ProductTag", b =>
                 {
                     b.HasOne("Furniture.Models.Product", "Product")
@@ -641,8 +598,6 @@ namespace Furniture.Migrations
             modelBuilder.Entity("Furniture.Models.Product", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("Images");
 
                     b.Navigation("Tags");
                 });

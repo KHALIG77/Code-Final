@@ -21,7 +21,7 @@ namespace Furniture.Controllers
                 Sliders=_context.Sliders.ToList(),
                 Features=_context.Features.Where(x=>x.IsShow==true).Take(3).ToList(),
                 Brands=_context.Brands.ToList(),
-                InstagramPhotos=_context.InstagramPhotos.ToList(),
+                InstagramPhotos=_context.InstagramPhotos.Take(5).ToList(),
             };
 
             return View(model);
