@@ -174,10 +174,10 @@ namespace Furniture.Migrations
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("money");
 
-                    b.Property<bool>("IsFeatured")
+                    b.Property<bool>("IsBest")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsNew")
+                    b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsStock")

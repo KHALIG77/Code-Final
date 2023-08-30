@@ -8,5 +8,9 @@ namespace Furniture.ViewModels
        public List<Feature> Features { get; set; }
        public List<Brand> Brands { get; set; }
        public List<InstagramPhoto> InstagramPhotos { get; set; }
+       public List<Product>TopProducts { get; set; }
+        public List<Product> FeaturedProducts {get; set; }
+        public List<Product> BestProducts { get; set; }
+       //public HomeProductsViewModel HomeProducts { get; set; }
     }
 }

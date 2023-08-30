@@ -23,7 +23,7 @@ namespace Furniture.Models
 		
 		[Column(TypeName = "money")]
 		public decimal DiscountPercent {get; set; }
-		public bool IsNew {get; set; }
+		public bool IsBest {get; set; }
 		public bool IsFeatured {get; set; }
 		public bool IsStock {get; set; }
 		

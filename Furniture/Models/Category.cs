@@ -8,6 +8,7 @@ namespace Furniture.Models
 		[Required]
 		[MaxLength(60)]
 		public string Name { get; set;}	
+		public List<Product> Products { get; set;}
 
 	}
 }
