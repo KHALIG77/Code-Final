@@ -32,6 +32,8 @@ namespace Furniture.Models
 		public byte Rate {get; set; }
 		public List<Comment> Comments { get; set; } = new List<Comment>();
 		public List<ProductImage> Images { get; set; }=new List<ProductImage>();
+		public List<ProductSize> Sizes { get; set; } = new List<ProductSize>();
+		public List<ProductColor> Colors { get; set; } = new List<ProductColor>();
 
 
 	}

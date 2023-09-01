@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "amSRHx8FAki1L33QxEHCLHbXOd34v5e8SQSjpAZLZOw=",
+  "Hash": "i8uhaJjHYJnNu5TJKbHDpaCQB4xbr24PkLChSuWmK0Q=",
   "Source": "Furniture",
   "BasePath": "_content/Furniture",
   "Mode": "Default",
@@ -134,23 +134,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\app.js"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\Modal.js",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "assets/js/Modal.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\Modal.js"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css",
