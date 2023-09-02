@@ -61,5 +61,34 @@ namespace Furniture.Areas.Manage.Controllers
 			_context.SaveChanges();
 			return Ok();
 		}
+		
+		public IActionResult Edit(int id)
+		{
+			Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+			if(category==null)
+			{
+				return View("Error");
+			}
+			return View(category);
+		}
+		[HttpPost]
+		public IActionResult Edit(Category category)
+		{
+			Category existCategory = _context.Categories.FirstOrDefault(x=>x.Id == category.Id);	
+			if(existCategory==null)
+			{
+				return View("Error");
+			}
+			if (existCategory.Name!=category.Name && _context.Categories.Any(x=>x.Name==category.Name))
+			{
+				ModelState.AddModelError("Name", "This name already taken");
+				return View();
+			}
+			existCategory.Name = category.Name;
+			_context.SaveChanges();
+			return RedirectToAction("index");
+				
+		}
+
 	}
 }

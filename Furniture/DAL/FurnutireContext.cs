@@ -32,6 +32,8 @@ namespace Furniture.DAL
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Category>().HasMany(p => p.Products).WithOne(c => c.Category).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Tag>().HasMany(p=>p.Products).WithOne( t=> t.Tag).HasForeignKey(f => f.TagId).OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(builder);
         }
     }
