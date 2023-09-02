@@ -62,7 +62,7 @@
 										{
 											<span class="price">
 												<del aria-hidden="true"><span>@Model.Product.SalePrice.ToString("#.##") $</span></del>
-												<ins><span>@((Model.Product.SalePrice - ((@Model.Product.SalePrice * @Model.Product.DiscountPercent) / 100)).ToString("#.##"))</span></ins>
+												<ins><span>@((Model.Product.SalePrice - ((@Model.Product.SalePrice * @Model.Product.DiscountPercent) / 100)).ToString("#.##")) $</span></ins>
 											</span>
 										}
 										else
@@ -100,7 +100,7 @@
 																<li><span class="color-1"></span></li>
 																<li><span class="color-2"></span></li>
 																<li><span class="color-3"></span></li>
-																<li><span class="color-4"></span></li>
+																
 
 
 															</ul>
@@ -126,14 +126,29 @@
 											<div class="btn-wishlist" data-title="Wishlist">
 												<button class="product-btn">Add to wishlist</button>
 											</div>
-											<div class="btn-compare" data-title="Compare">
-												<button class="product-btn">Compare</button>
-											</div>
+											
 										</div>
 										<div class="product-meta">
-											<span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span>
-											<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">Furniture</a></span>
-											<span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">Hot</a>, <a href="shop-grid-left.html" rel="tag">Trend</a></span>
+@*											<span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span>
+*@											<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">@Model.Product.Category.Name</a></span>
+											<span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">
+													@for (int i = 0; i < Model.Product.Tags.Count(); i++)
+													{
+														if (i == Model.Product.Tags.Count()-1)
+														{
+															<span>@Model.Product.Tags[i].Tag.Name </span>
+														}
+
+														else
+														{
+															<span>@Model.Product.Tags[i].Tag.Name ,</span>
+
+														}
+
+													}
+												</a> <a href="shop-grid-left.html" rel="tag">
+												
+											</a></span>
 										</div>
 										<div class="social-share">
 											<a href="#" title="Facebook" class="share-facebook" target="_blank"><i class="fa fa-facebook"></i>Facebook</a>

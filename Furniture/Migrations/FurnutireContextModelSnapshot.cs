@@ -631,7 +631,7 @@ namespace Furniture.Migrations
                     b.HasOne("Furniture.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
@@ -646,7 +646,7 @@ namespace Furniture.Migrations
                         .IsRequired();
 
                     b.HasOne("Furniture.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Colors")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -670,7 +670,7 @@ namespace Furniture.Migrations
             modelBuilder.Entity("Furniture.Models.ProductSize", b =>
                 {
                     b.HasOne("Furniture.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Sizes")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -763,9 +763,13 @@ namespace Furniture.Migrations
 
             modelBuilder.Entity("Furniture.Models.Product", b =>
                 {
+                    b.Navigation("Colors");
+
                     b.Navigation("Comments");
 
                     b.Navigation("Images");
+
+                    b.Navigation("Sizes");
 
                     b.Navigation("Tags");
                 });

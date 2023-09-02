@@ -229,6 +229,330 @@
       "PackagePath": "staticwebassets\\libs\\wpbingofont\\fonts\\wpbingo6dbe.woff"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\css\\demo.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\css\\demo.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\avatars\\1.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\avatars\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\avatars\\5.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\avatars\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\avatars\\6.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\avatars\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\avatars\\7.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\avatars\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\backgrounds\\18.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\backgrounds\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\1.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\11.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\12.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\13.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\17.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\18.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\19.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\2.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\20.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\3.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\4.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\5.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\elements\\7.jpg",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\elements\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\asana.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\asana.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\behance.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\behance.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\dribbble.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\dribbble.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\facebook.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\github.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\github.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\google.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\google.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\instagram.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\mailchimp.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\mailchimp.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\slack.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\brands\\twitter.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\brands\\twitter.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\cc-primary.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\cc-primary.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\cc-success.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\cc-success.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\cc-warning.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\cc-warning.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\chart-success.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\chart-success.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\chart.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\chart.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\paypal.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\paypal.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet-info.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\wallet-info.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\icons\\unicons\\wallet.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\illustrations\\girl-doing-yoga-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\illustrations\\girl-doing-yoga-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\illustrations\\man-with-laptop-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\illustrations\\man-with-laptop-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\illustrations\\page-misc-error-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\illustrations\\page-misc-error-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\layouts\\layout-container-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\layouts\\layout-container-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\layouts\\layout-fluid-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\layouts\\layout-fluid-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\layouts\\layout-without-menu-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\layouts\\layout-without-menu-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\layouts\\layout-without-navbar-light.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\img\\layouts\\layout-without-navbar-light.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\SweatAlert.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\SweatAlert.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\buttons.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\buttons.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\config.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\config.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\dashboards-analytics.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\dashboards-analytics.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\extended-ui-perfect-scrollbar.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\extended-ui-perfect-scrollbar.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\form-basic-inputs.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\form-basic-inputs.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\pages-account-settings-account.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\pages-account-settings-account.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\ui-modals.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\ui-modals.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\ui-popover.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\ui-popover.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\ui-toasts.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\ui-toasts.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\css\\core.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\css\\core.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\css\\pages\\page-auth.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\css\\pages\\page-auth.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\css\\pages\\page-icons.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\css\\pages\\page-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\css\\pages\\page-misc.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\css\\pages\\page-misc.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\css\\theme-default.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\css\\theme-default.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-2.html",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons-2.html"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-3.html",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons-3.html"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-4.html",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons-4.html"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons.html",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons.html"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.eot",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.eot"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.woff",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.woff"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.woff2",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons\\boxicons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxiconsd41d.svg",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxicons\\boxiconsd41d.svg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxiconsd41d.html",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\fonts\\boxiconsd41d.html"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\js\\helpers.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\js\\helpers.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\js\\menu.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\js\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\apex-charts\\apex-charts.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\apex-charts\\apex-charts.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\apex-charts\\apexcharts.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\apex-charts\\apexcharts.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\masonry\\masonry.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\masonry\\masonry.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\libs\\popper\\popper.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\vendor\\libs\\popper\\popper.js"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\banner\\about-us-1.jpg",
       "PackagePath": "staticwebassets\\media\\banner\\about-us-1.jpg"
     },

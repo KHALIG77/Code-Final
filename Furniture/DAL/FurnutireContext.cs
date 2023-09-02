@@ -1,6 +1,9 @@
 ﻿using Furniture.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using System.Configuration;
+using System.Reflection.Emit;
 
 namespace Furniture.DAL
 {
@@ -26,6 +29,10 @@ namespace Furniture.DAL
         public DbSet<ProductSize> ProductSizes {get; set; }
 		public DbSet<ProductColor> ProductColors { get; set; }
 
-
-	}
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Category>().HasMany(p => p.Products).WithOne(c => c.Category).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.Restrict);
+            base.OnModelCreating(builder);
+        }
+    }
 }

@@ -28,7 +28,7 @@ namespace Furniture.Controllers
 			ProductDetailViewModel vm = new ProductDetailViewModel
 			{
 				Product=product,
-				RelatedProducts=_context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).Include(x => x.Images).Where(x=>x.CategoryId==product.CategoryId).ToList(),
+				RelatedProducts=_context.Products.Include(x => x.Category).Include(x => x.Tags).ThenInclude(t=>t.Tag).Include(x => x.Comments).Include(x => x.Images).Where(x=>x.CategoryId==product.CategoryId).ToList(),
 			};
 
 			return View(vm);
