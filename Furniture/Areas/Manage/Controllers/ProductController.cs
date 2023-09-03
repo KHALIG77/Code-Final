@@ -19,5 +19,28 @@ namespace Furniture.Areas.Manage.Controllers
             List<Product> products = _context.Products.Include(x=>x.Category).Include(i=>i.Images).ToList();
             return View(products);
         }
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Tags = _context.Tags.ToList();
+            ViewBag.Materials = _context.Materials.ToList();
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Product product)
+        {
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Tags = _context.Tags.ToList();
+            ViewBag.Materials = _context.Materials.ToList();
+            return View();
+        }
+        public async Task<IActionResult> Edit(int id)
+        {
+            return RedirectToAction("index");
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            return RedirectToAction("index");
+        }
     }
 }

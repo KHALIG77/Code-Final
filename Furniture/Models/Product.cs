@@ -34,6 +34,9 @@ namespace Furniture.Models
 		public List<ProductImage> Images { get; set; }=new List<ProductImage>();
 		public List<ProductSize> Sizes { get; set; } = new List<ProductSize>();
 		public List<ProductColor> Colors { get; set; } = new List<ProductColor>();
+		[Required]
+		public int MaterialId { get; set; }
+		public Material Material { get; set; }
 
 
 	}

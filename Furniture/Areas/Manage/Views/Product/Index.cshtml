@@ -16,9 +16,10 @@
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-                <tr>
+              
                     @foreach (var prd in Model)
                     {
+                    <tr>
                         <td>@prd.Id</td>
                         <td><strong>@prd.Name</strong></td>
                         <td>@prd.Category.Name</td>
@@ -36,9 +37,10 @@
                                 </div>
                             </div>
                         </td>
+                    </tr>
                     }
                    
-                </tr>
+                
               
             </tbody>
         </table>

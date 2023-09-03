@@ -4,6 +4,7 @@ using Furniture.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Furniture.Migrations
 {
     [DbContext(typeof(FurnutireContext))]
-    partial class FurnutireContextModelSnapshot : ModelSnapshot
+    [Migration("20230903115112_CreateMaterialtable")]
+    partial class CreateMaterialtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,7 +220,7 @@ namespace Furniture.Migrations
                     b.Property<bool>("IsStock")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MaterialId")
+                    b.Property<int?>("MaterialId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -657,15 +659,11 @@ namespace Furniture.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Furniture.Models.Material", "Material")
+                    b.HasOne("Furniture.Models.Material", null)
                         .WithMany("Products")
-                        .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("MaterialId");
 
                     b.Navigation("Category");
-
-                    b.Navigation("Material");
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductColor", b =>

@@ -28,11 +28,13 @@ namespace Furniture.DAL
         public DbSet<Color> Colors { get; set; }
         public DbSet<ProductSize> ProductSizes {get; set; }
 		public DbSet<ProductColor> ProductColors { get; set; }
+        public DbSet<Material> Materials { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Category>().HasMany(p => p.Products).WithOne(c => c.Category).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Tag>().HasMany(p=>p.Products).WithOne( t=> t.Tag).HasForeignKey(f => f.TagId).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Material>().HasMany(p => p.Products).WithOne(c => c.Material).HasForeignKey(f => f.MaterialId).OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }
