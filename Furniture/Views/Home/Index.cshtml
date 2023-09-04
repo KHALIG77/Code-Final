@@ -88,8 +88,8 @@
 																<div class="products-thumb">
 																	<div class="product-thumb-hover">
 																		<a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
+																			<img    src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
 																		</a>
 																	</div>
 																	<div class="product-button">
@@ -107,7 +107,7 @@
 																</div>
 																<div class="products-content">
 																	<div class="contents text-center">
-																		<h3 class="product-title"><a href="shop-details.html">@product.Name</a></h3>
+																		<h3 class="product-title"><a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Name</a></h3>
 																		@if (product.DiscountPercent>0)
 																		{
 																			<span class="price">
@@ -145,8 +145,8 @@
 																<div class="products-thumb">
 																	<div class="product-thumb-hover">
 																		<a href="shop-details.html">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
+																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
 																		</a>
 																	</div>
 																	<div class="product-button">
@@ -165,7 +165,7 @@
 																</div>
 																<div class="products-content">
 																	<div class="contents text-center">
-																		<h3 class="product-title"><a href="shop-details.html">@product.Name</a></h3>
+																		<h3 class="product-title"><a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Name</a></h3>
 																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">
@@ -202,8 +202,8 @@
 																<div class="products-thumb">
 																	<div class="product-thumb-hover">
 																		<a href="shop-details.html">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
-																			<img width="600" height="600" src="media/product/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
+																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
 																		</a>
 																	</div>
 																	<div class="product-button">
@@ -222,7 +222,7 @@
 																</div>
 																<div class="products-content">
 																	<div class="contents text-center">
-																		<h3 class="product-title"><a href="shop-details.html">@product.Name</a></h3>
+																		<h3 class="product-title"><a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Name</a></h3>
 																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">

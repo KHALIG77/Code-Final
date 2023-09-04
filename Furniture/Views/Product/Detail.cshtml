@@ -32,7 +32,7 @@
 														{
 															<div class="img-item slick-slide">
 																<span class="img-thumbnail-scroll">
-																	<img width="600" height="600" src="~/media/product/@leftimg.ImageUrl" alt="">
+																	<img width="600" height="600" src="~/uploads/products/@leftimg.ImageUrl" alt="">
 																</span>
 															</div>
 														}
@@ -46,7 +46,7 @@
 														@foreach (var mainimg in Model.Product.Images)
 														{
 															<div class="img-item slick-slide">
-																<img width="900" height="900" src="~/media/product/@mainimg.ImageUrl" alt="" title="">
+																<img width="900" height="900" src="~/uploads/products/@mainimg.ImageUrl" alt="" title="">
 															</div>
 														}
 														
@@ -87,20 +87,23 @@
 														<td class="label">Size</td>
 														<td class="attributes">
 															<ul class="text">
-																<li><span>L</span></li>
-																<li><span>M</span></li>
-																<li><span>S</span></li>
+																@foreach (var size in Model.Product.Sizes)
+																{
+																	<li><span>@size.Size.Name</span></li>
+																}
+																
+																
 															</ul>
 														</td>
 													</tr>
 													<tr>
 														<td class="label">Color</td>
 														<td class="attributes">
-															<ul class="colors">
-																<li><span class="color-1"></span></li>
-																<li><span class="color-2"></span></li>
-																<li><span class="color-3"></span></li>
-																
+															<ul class="text">
+																@foreach (var color in Model.Product.Colors)
+																{
+																	<li><span>@color.Color.Name</span></li>
+																}
 
 
 															</ul>
@@ -131,6 +134,7 @@
 										<div class="product-meta">
 @*											<span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span>
 *@											<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">@Model.Product.Category.Name</a></span>
+											<span class="posted-in">Material: <a href="shop-grid-left.html" rel="tag">@Model.Product.Material.Name</a></span>
 											<span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">
 													@for (int i = 0; i < Model.Product.Tags.Count(); i++)
 													{

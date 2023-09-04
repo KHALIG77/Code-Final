@@ -6,54 +6,140 @@
             <h5 class="mb-0">Product Create</h5> 
         </div>
         <div class="card-body">
-            <form asp-action="create" method="post"> 
+            <form asp-action="create" method="post" enctype="multipart/form-data"> 
                 <div class="mb-3">
                     <label class="form-label" asp-for="Name">Product Name</label>
                     <input type="text" class="form-control" id="basic-default-fullname" asp-for="Name" placeholder="Kunc divani">
+                    <span asp-validation-for="Name"></span>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" asp-for="Description">Description</label>
                     <textarea id="basic-default-message" class="form-control" asp-for="Description" placeholder="Please write about product"></textarea>
+                    <span asp-validation-for="Description"></span>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" asp-for="CostPrice">Cost Price</label>
-                    <input type="number" class="form-control" id="basic-default-company" asp-for="CostPrice" placeholder="Cost Price">
+                    <input type="number" min="0" class="form-control" id="basic-default-company" asp-for="CostPrice" placeholder="Cost Price">
+                    <span asp-validation-for="CostPrice"></span>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" asp-for="SalePrice">Sale Price</label>
-                    <input type="number" class="form-control" id="basic-default-company" asp-for="SalePrice" placeholder="Sale Price">
+                    <input type="number" min="0" class="form-control" id="basic-default-company" asp-for="SalePrice" placeholder="Sale Price">
+                    <span asp-validation-for="SalePrice"></span>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" asp-for="DiscountPercent">Discount Percent</label>
-                    <input type="number" class="form-control" id="basic-default-company" asp-for="DiscountPercent" placeholder="Discount Percent">
+                    <label tyle="text-align:center;" class="form-label" asp-for="DiscountPercent">Discount Percent</label>
+                    <input type="number" min="0" max="90" class="form-control" id="basic-default-company" asp-for="DiscountPercent" placeholder="Discount Percent">
+                    <span asp-validation-for="DiscountPercent"></span>
                 </div>
                 <div class="d-flex justify-content-between">
-                <div class="mb-3" style="width:30%;">
-                    <label asp-for="CategoryId" class="form-label">Category Select</label>
-                    <select class="form-select" asp-for="CategoryId" asp-items="new SelectList(ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))" id="exampleFormControlSelect1" aria-label="Default select example">
-                       
-                        
-                    </select>
-                </div>
-         @*       <div class="mb-3" style="width:30%;">
-                    <label asp-for="Category" class="form-label">Material Select</label>
-                    <select class="form-select" asp-for="MaterialId" asp-items="new SelectList(ViewBag.Materials,nameof(Material.Id),nameof(Material.Name))" id="exampleFormControlSelect1" aria-label="Default select example">
-                        <option selected="">Open this select menu</option>
-
-                    </select>
-                </div>*@
-                   @* <div class="mb-3" style="width:30%;">
+                
+                
+                    <div class="mb-3" style="width:40%;">
                         <label asp-for="Category" class="form-label">Category Select</label>
-                        <select class="form-select" asp-for="CategoryId" asp-items="new SelectList(ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))" id="exampleFormControlSelect1" aria-label="Default select example">
+                        <select class="form-select" asp-for="CategoryId"  id="exampleFormControlSelect1" aria-label="Default select example">
                             <option selected="">Open this select menu</option>
+                            @foreach (Category category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
 
                         </select>
-                    </div>*@
+                        <span asp-validation-for="CategoryId"></span>
+                    </div>
+                   
+                    <div class="mb-3" style="width:40%;">
+                        <label asp-for="Material" class="form-label">Material Select</label>
+                        <select class="form-select" asp-for="MaterialId" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected="">Open this select menu</option>
+                            @foreach (Material material in ViewBag.Materials)
+                            {
+                                <option value="@material.Id">@material.Name</option>
+                            }
+
+                        </select>
+                        <span asp-validation-for="MaterialId"></span>
+                    </div>
                 </div>
-                
+                <div class="d-flex justify-content-between">
+                    <div class="mb-3" style="width:30%;">
+                        <label asp-for="TagIds" class="form-label">Select Tags</label>
+                        <select multiple="" asp-for="TagIds" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
+
+                            @foreach (Tag tag in ViewBag.Tags)
+                            {
+                                <option value="@tag.Id">@tag.Name</option>
+                            }
+
+
+                        </select>
+                        <span asp-validation-for="TagIds"></span>
+                    </div>
+                    <div class="mb-3" style="width:30%;">
+                        <label asp-for="ColorIds" class="form-label">Select Tags</label>
+                        <select multiple="" asp-for="ColorIds" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
+
+                            @foreach (Color color in ViewBag.Colors)
+                            {
+                                <option value="@color.Id">@color.Name</option>
+                            }
+
+
+                        </select>
+                        <span asp-validation-for="ColorIds"></span>
+                    </div>
+                    <div class="mb-3" style="width:30%;">
+                        <label asp-for="SizeIds" class="form-label">Select Tags</label>
+                        <select multiple="" asp-for="SizeIds" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
+
+                            @foreach (Size size in ViewBag.Sizes)
+                            {
+                                <option value="@size.Id">@size.Name</option>
+                            }
+
+
+                        </select>
+                        <span asp-validation-for="SizeIds"></span>
+                    </div>
+                </div>
+                <div class="mb-3 d-flex justify-content-around">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" asp-for="IsStock" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" asp-for="IsStock">In Stock</label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" asp-for="IsBest" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" asp-for="IsBest">Best Product</label>
+                    </div>
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" asp-for="IsFeatured" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" asp-for="IsFeatured">Featured Product</label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                <div class="mb-3 " style="width:30%;">
+                    <label asp-for="MainImage" class="form-label">Choose Main Image</label>
+                    <input class="form-control" type="file" asp-for="MainImage" id="formFile">
+                    <span asp-validation-for="MainImage" ></span>
+                </div>
+                    <div class="mb-3 " style="width:30%;">
+                        <label asp-for="HoverImage" class="form-label">Choose Hover Image</label>
+                        <input class="form-control" asp-for="HoverImage" type="file" id="formFile">
+                        <span asp-validation-for="HoverImage"></span>
+                    </div>
+                    <div class="mb-3 " style="width:30%;">
+                        <label asp-for="AllImages" class="form-label">Choose Detail Image</label>
+                        <input asp-for="AllImages" class="form-control" type="file" id="formFile" multiple>
+                        <span asp-validation-for="AllImages"></span>
+                    </div>
+                </div>
+                <div asp-validation-summary="ModelOnly"></div>
                 
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </div>
 </div>
+@section Validation{
+    @Html.Partial("_ValidationScript")
+}

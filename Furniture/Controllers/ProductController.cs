@@ -19,7 +19,7 @@ namespace Furniture.Controllers
 		}
 		public IActionResult Detail(int id)
 		{
-			Product product = _context.Products.Include(x=>x.Category).Include(x=>x.Tags).Include(x=>x.Comments).Include(x=>x.Images).FirstOrDefault(x=>x.Id==id);
+			Product product = _context.Products.Include(x=>x.Category).Include(x=>x.Tags).Include(x=>x.Comments).Include(x=>x.Images).Include(x=>x.Material).Include(x=>x.Sizes).ThenInclude(s=>s.Size).Include(x=>x.Colors).ThenInclude(x=>x.Color).FirstOrDefault(x=>x.Id==id);
 
 			if (product==null)
 			{

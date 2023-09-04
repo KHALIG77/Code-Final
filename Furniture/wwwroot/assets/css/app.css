@@ -397,22 +397,25 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   visibility: visible;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  position: absolute;
+ position: absolute;
   top: 0;
   left: 0;
   right: 0;
   max-width: 100%;
-  height: auto;
+  height:300px;
 }
 .products-list.grid .product-wapper:hover .products-thumb .product-thumb-hover .post-image {
   opacity: 0;
   visibility: hidden;
+ /* After*/
+  height:300px;
 }
 .products-list.grid .product-wapper .products-thumb .product-thumb-hover .hover-image {
   opacity: 0;
   visibility: hidden;
   max-width: 100%;
-  height: auto;
+  /*After*/
+  height: 300px;
 }
 .products-list.grid .product-wapper:hover .products-thumb .product-thumb-hover .hover-image {
   opacity: 1;
@@ -1229,15 +1232,9 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   margin-right: 10px;
 }
 .shop-details .variations .attributes ul.text li span {
-  width: 28px;
-  height: 28px;
+
   line-height: 26px;
   display: inline-block;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   font-size: 13px;
   text-align: center;
   border: 1px solid #d5d5d5;

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Furniture.Attiributes.ValidationAttiribute;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Furniture.Models
@@ -37,6 +38,25 @@ namespace Furniture.Models
 		[Required]
 		public int MaterialId { get; set; }
 		public Material Material { get; set; }
+		[NotMapped]
+		public List<int> TagIds {get; set; } = new List<int>();
+    
+        [NotMapped]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [FileSize(1000000)]
+        public IFormFile MainImage {get; set;}
+        [NotMapped]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [FileSize(1000000)]
+        public IFormFile HoverImage {get; set;}
+        [NotMapped]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [FileSize(1000000)]
+        public List<IFormFile> AllImages { get; set;} = new List<IFormFile>();
+		[NotMapped]
+		public List<int> ColorIds {get; set;} = new List<int>();
+		[NotMapped]
+		public List<int> SizeIds { get; set; } = new List<int>();	
 
 
 	}
