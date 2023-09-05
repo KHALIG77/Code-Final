@@ -1,0 +1,24 @@
+﻿.main-image-style,.hover-image-style{
+    width:280px;
+    height:300px;
+   
+
+}
+    .main-image-style .img-item, .hover-image-style .img-item {
+        width: 100%;
+        height: 100%;
+    }
+    .x-icon{
+        cursor:pointer;
+        position:absolute;
+        top:0;
+        right:130px;
+        width:30px;
+        height:30px;
+    }
+    .image-boxs{
+        margin-bottom:50px;
+    }
+    .hover-image-style,.img-detail{
+        margin-left:50px;
+    }

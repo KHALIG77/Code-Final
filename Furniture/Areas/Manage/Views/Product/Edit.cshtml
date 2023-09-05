@@ -3,10 +3,10 @@
 <div class="col-xl">
     <div class="card mb-4" style="margin:30px;">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Product Create</h5> 
+            <h5 class="mb-0">Product Create</h5>
         </div>
         <div class="card-body">
-            <form asp-action="create" method="post" enctype="multipart/form-data"> 
+            <form asp-action="edit" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" asp-for="Name">Product Name</label>
                     <input type="text" class="form-control" id="basic-default-fullname" asp-for="Name" placeholder="Kunc divani">
@@ -33,11 +33,11 @@
                     <span asp-validation-for="DiscountPercent"></span>
                 </div>
                 <div class="d-flex justify-content-between">
-                
-                
+
+
                     <div class="mb-3" style="width:40%;">
                         <label asp-for="Category" class="form-label">Category Select</label>
-                        <select class="form-select" asp-for="CategoryId"  id="exampleFormControlSelect1" aria-label="Default select example">
+                        <select class="form-select" asp-for="CategoryId" id="exampleFormControlSelect1" aria-label="Default select example">
                             <option selected="">Open this select menu</option>
                             @foreach (Category category in ViewBag.Categories)
                             {
@@ -47,7 +47,7 @@
                         </select>
                         <span asp-validation-for="CategoryId"></span>
                     </div>
-                   
+
                     <div class="mb-3" style="width:40%;">
                         <label asp-for="Material" class="form-label">Material Select</label>
                         <select class="form-select" asp-for="MaterialId" id="exampleFormControlSelect1" aria-label="Default select example">
@@ -76,7 +76,7 @@
                         <span asp-validation-for="TagIds"></span>
                     </div>
                     <div class="mb-3" style="width:30%;">
-                        <label asp-for="ColorIds" class="form-label">Select Colors</label>
+                        <label asp-for="ColorIds" class="form-label">Select Tags</label>
                         <select multiple="" asp-for="ColorIds" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
 
                             @foreach (Color color in ViewBag.Colors)
@@ -89,7 +89,7 @@
                         <span asp-validation-for="ColorIds"></span>
                     </div>
                     <div class="mb-3" style="width:30%;">
-                        <label asp-for="SizeIds" class="form-label">Select Sizes</label>
+                        <label asp-for="SizeIds" class="form-label">Select Tags</label>
                         <select multiple="" asp-for="SizeIds" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
 
                             @foreach (Size size in ViewBag.Sizes)
@@ -117,11 +117,11 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                <div class="mb-3 " style="width:30%;">
-                    <label asp-for="MainImage" class="form-label">Choose Main Image</label>
-                    <input class="form-control" type="file" asp-for="MainImage" id="formFile">
-                    <span asp-validation-for="MainImage" ></span>
-                </div>
+                    <div class="mb-3 " style="width:30%;">
+                        <label asp-for="MainImage" class="form-label">Choose Main Image</label>
+                        <input class="form-control" type="file" asp-for="MainImage" id="formFile">
+                        <span asp-validation-for="MainImage"></span>
+                    </div>
                     <div class="mb-3 " style="width:30%;">
                         <label asp-for="HoverImage" class="form-label">Choose Hover Image</label>
                         <input class="form-control" asp-for="HoverImage" type="file" id="formFile">
@@ -133,9 +133,40 @@
                         <span asp-validation-for="AllImages"></span>
                     </div>
                 </div>
-             
+                <div class="d-flex  image-boxs">
+                    <div class="main-image-style">
+                        <img class="img-item" src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl">
+                    </div>
+                    <div class="hover-image-style" >
+                        <img class="img-item"  src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl">
+                    </div>
+                    <div id="carouselExample-cf" class="carousel carousel-dark slide carousel-fade img-detail" data-bs-ride="carousel">
+                   
+                        <div class="carousel-inner">
+                           @foreach (var slider in Model.Images.Where(x=>x.Status==Furniture.Enums.ImageStatus.Detail))
+                            {
+                                <div style="position:relative" class="carousel-item @(slider==Model.Images.Where(x=>x.Status==Furniture.Enums.ImageStatus.Detail).First()?"active":"") ">
+                                    <img  width="280px" height="300px" class="d-block img-item" src="~/uploads/products/@slider.ImageUrl" alt="First slide">
+                                    <input type="hidden" name="ImageIds" value="@slider.Id"/>
+                                    <img  class="x-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARNJREFUSEvt1DtKBEEURuFvUkFMlFEwEBF0DYMPUFNxG2IquBOZxEhwA+IKVIxUTH1grKGuQC6U0EhPVTnQmEyFTdV/7j11u3o6Xr2O800ARcP/rugYZ3gfUeoqNnA6qpVcB4c4wQs2WyAruMY89nHRBskB4mAERNBrqvSnk2Xcoo9HbOHrr4DY3waZqg2PgJpLXsBV6uQJMwl8jx185kapBhDnF5OupRSW1dIE1gLCdTgP97EesF2qvlZRhN8kRc9JUXy7w24JUuqgWfkbBphujGexkxygLfwjKYrRDWVzJV05wAGGCC0x57//5rXUySz2cDnOf3CE88xTEZD1cZ+K4ktZs6F0yTUZ2T0TQFFh54q+ARi0NBkujYiHAAAAAElFTkSuQmCC" />
+
+                                </div>
+                            }
+                           
+                            
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExample-cf" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExample-cf" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                </div>
                 <div asp-validation-summary="ModelOnly"></div>
-                
+
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
@@ -143,4 +174,7 @@
 </div>
 @section Validation{
     @Html.Partial("_ValidationScript")
+}
+@section RemoveImage{
+    <script src="~/manage/assets/js/remove-img.js"></script>
 }

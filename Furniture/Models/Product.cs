@@ -44,19 +44,21 @@ namespace Furniture.Models
         [NotMapped]
         [AllowFileType("image/png", "image/jpeg", "image/jpg")]
         [FileSize(1000000)]
-        public IFormFile MainImage {get; set;}
+        public IFormFile? MainImage {get; set;}
         [NotMapped]
         [AllowFileType("image/png", "image/jpeg", "image/jpg")]
         [FileSize(1000000)]
-        public IFormFile HoverImage {get; set;}
+        public IFormFile? HoverImage {get; set;}
         [NotMapped]
         [AllowFileType("image/png", "image/jpeg", "image/jpg")]
         [FileSize(1000000)]
-        public List<IFormFile> AllImages { get; set;} = new List<IFormFile>();
+        public List<IFormFile>? AllImages { get; set;} = new List<IFormFile>();
 		[NotMapped]
 		public List<int> ColorIds {get; set;} = new List<int>();
 		[NotMapped]
-		public List<int> SizeIds { get; set; } = new List<int>();	
+		public List<int> SizeIds { get; set; } = new List<int>();
+        [NotMapped]
+        public List<int> ImageIds { get; set; } = new List<int>();
 
 
 	}

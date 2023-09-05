@@ -229,6 +229,10 @@
       "PackagePath": "staticwebassets\\libs\\wpbingofont\\fonts\\wpbingo6dbe.woff"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\css\\custom.css",
+      "PackagePath": "staticwebassets\\manage\\assets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\css\\demo.css",
       "PackagePath": "staticwebassets\\manage\\assets\\css\\demo.css"
     },
@@ -435,6 +439,10 @@
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\pages-account-settings-account.js",
       "PackagePath": "staticwebassets\\manage\\assets\\js\\pages-account-settings-account.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\remove-img.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\remove-img.js"
     },
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\ui-modals.js",
@@ -1315,38 +1323,6 @@
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\user.jpg",
       "PackagePath": "staticwebassets\\media\\user.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\4352872c-59eb-4029-bbcd-2e6f5b3dc434bkg-blu.jpg",
-      "PackagePath": "staticwebassets\\uploads\\products\\4352872c-59eb-4029-bbcd-2e6f5b3dc434bkg-blu.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\6120a56f-fcfd-4ee7-bd8e-d2edbcf451bcmsweb-brand.png",
-      "PackagePath": "staticwebassets\\uploads\\products\\6120a56f-fcfd-4ee7-bd8e-d2edbcf451bcmsweb-brand.png"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\c0c366e9-d372-46c0-baeb-2ce735842366bkg-blu.jpg",
-      "PackagePath": "staticwebassets\\uploads\\products\\c0c366e9-d372-46c0-baeb-2ce735842366bkg-blu.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\cb894f4d-341f-4672-825d-34f45303b005w-brand.png",
-      "PackagePath": "staticwebassets\\uploads\\products\\cb894f4d-341f-4672-825d-34f45303b005w-brand.png"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\cc3ae6a8-27dc-4de1-99ed-63535042e352iis.png",
-      "PackagePath": "staticwebassets\\uploads\\products\\cc3ae6a8-27dc-4de1-99ed-63535042e352iis.png"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\d569b502-6e98-412c-b997-3b3fb27b2d26msweb-brand.png",
-      "PackagePath": "staticwebassets\\uploads\\products\\d569b502-6e98-412c-b997-3b3fb27b2d26msweb-brand.png"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\de073c90-ae7d-42fe-b3e8-e09f595dfc34bkg-blu.jpg",
-      "PackagePath": "staticwebassets\\uploads\\products\\de073c90-ae7d-42fe-b3e8-e09f595dfc34bkg-blu.jpg"
-    },
-    {
-      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\e1d3cb15-5866-4065-85e2-fa96e3cefd8fiis.png",
-      "PackagePath": "staticwebassets\\uploads\\products\\e1d3cb15-5866-4065-85e2-fa96e3cefd8fiis.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Furniture.Microsoft.AspNetCore.StaticWebAssets.props",

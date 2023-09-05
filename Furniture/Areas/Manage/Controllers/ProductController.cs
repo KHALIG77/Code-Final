@@ -3,6 +3,7 @@ using Furniture.Helper;
 using Furniture.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing.Printing;
 
 namespace Furniture.Areas.Manage.Controllers
 {
@@ -38,6 +39,8 @@ namespace Furniture.Areas.Manage.Controllers
             ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Tags = _context.Tags.ToList();
             ViewBag.Materials = _context.Materials.ToList();
+            ViewBag.Sizes = _context.Sizes.ToList();
+            ViewBag.Colors = _context.Colors.ToList();
             if (!_context.Categories.Any(x=>x.Id==product.CategoryId))
             {
                 ModelState.AddModelError("CategoryId", "Please choose correctly");
@@ -124,11 +127,174 @@ namespace Furniture.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Tags = _context.Tags.ToList();
+            ViewBag.Materials = _context.Materials.ToList();
+            ViewBag.Sizes = _context.Sizes.ToList();
+            ViewBag.Colors = _context.Colors.ToList();
+            Product product = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Images).Include(x => x.Material).Include(x=>x.Colors).Include(x=>x.Sizes).FirstOrDefault(x => x.Id == id);
+            if (product == null)
+            {
+                return View("Error");
+            }
+            product.TagIds=product.Tags.Select(x=>x.TagId).ToList();
+            product.SizeIds = product.Sizes.Select(x => x.SizeId).ToList();
+            product.ColorIds = product.Colors.Select(x => x.ColorId).ToList();
+            return View(product);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Product product)
+        {
+            ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Tags = _context.Tags.ToList();
+            ViewBag.Materials = _context.Materials.ToList();
+            ViewBag.Sizes = _context.Sizes.ToList();
+            ViewBag.Colors = _context.Colors.ToList();
+
+            Product existProduct = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Images).Include(x => x.Material).Include(x => x.Colors).Include(x => x.Sizes).FirstOrDefault(x => x.Id == product.Id);
+            if (existProduct == null)
+            {
+                return View("Error");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(existProduct);
+            }
+            if (product.CategoryId!=existProduct.CategoryId && !_context.Categories.Any(x=>x.Id==product.CategoryId))
+            {
+                ModelState.AddModelError("CategoryId", "Category not found");
+                return View();
+            }
+            if (product.MaterialId != existProduct.MaterialId && !_context.Materials.Any(x => x.Id == product.MaterialId))
+            {
+                ModelState.AddModelError("MaterialId", "Material not found");
+                return View();
+            }
+            string oldMainPhoto = null;
+            if(product.MainImage!=null)
+            {
+                ProductImage mainImage = existProduct.Images.FirstOrDefault(x => x.Status == Enums.ImageStatus.Main);
+                oldMainPhoto = mainImage.ImageUrl;
+                if(mainImage != null)
+                {
+                    mainImage.ImageUrl = FileManager.Save(_env.WebRootPath, "uploads/products", product.MainImage);
+                }
+            }
+            string oldHoverPhoto = null;
+            if (product.HoverImage != null)
+            {
+                ProductImage hoverImage = existProduct.Images.FirstOrDefault(x => x.Status == Enums.ImageStatus.Hover);
+                oldHoverPhoto = hoverImage.ImageUrl;
+                if (hoverImage != null)
+                {
+                    hoverImage.ImageUrl = FileManager.Save(_env.WebRootPath, "uploads/products", product.HoverImage);
+                }
+            }
+            existProduct.Tags.RemoveAll(x => !product.TagIds.Contains(x.Id));
+            var newTagIds = product.TagIds.Where(x => !existProduct.Tags.Any(y => y.TagId == x));
+
+            foreach (var tagId in newTagIds)
+            {
+                ProductTag tags = new ProductTag()
+                {
+                    TagId = tagId,
+
+                };
+                existProduct.Tags.Add(tags);
+            }
+            existProduct.Sizes.RemoveAll(x => !product.SizeIds.Contains(x.Id));
+           var newSizeIds = product.SizeIds.Where(x => !existProduct.Sizes.Any(y => y.SizeId == x));
+
+            foreach (var sizeId in newSizeIds)
+            {
+                ProductSize sizes = new ProductSize()
+                {
+                    SizeId = sizeId,
+
+                };
+                existProduct.Sizes.Add(sizes);
+            }
+            existProduct.Colors.RemoveAll(x => !product.ColorIds.Contains(x.Id));
+            var newColorIds = product.ColorIds.Where(x => !existProduct.Colors.Any(y => y.ColorId == x));
+
+            foreach (var colorId in newColorIds)
+            {
+                ProductColor colors = new ProductColor()
+                {
+                    ColorId = colorId,
+
+                };
+                existProduct.Colors.Add(colors);
+            }
+            var removedDetailImages = existProduct.Images.FindAll(x=>x.Status==Enums.ImageStatus.Detail && !product.ImageIds.Contains(x.Id));
+            existProduct.Images.RemoveAll(x => x.Status == Enums.ImageStatus.Detail && !product.ImageIds.Contains(x.Id));
+            foreach (var img in product.AllImages)
+            {
+                ProductImage image = new ProductImage
+                {   ProductId=existProduct.Id,
+                    Status = Enums.ImageStatus.Detail,
+                    ImageUrl = FileManager.Save(_env.WebRootPath, "uploads/products", img)
+                };
+                existProduct.Images.Add(image);
+            }
+            existProduct.Name = product.Name;
+            existProduct.Description = product.Description;
+            existProduct.CostPrice= product.CostPrice;
+            existProduct.SalePrice= product.SalePrice;
+            existProduct.DiscountPercent= product.DiscountPercent;
+            existProduct.CategoryId= product.CategoryId;
+            existProduct.MaterialId= product.MaterialId;
+            existProduct.IsBest= product.IsBest;
+            existProduct.IsFeatured= product.IsFeatured;
+            existProduct.IsStock= product.IsStock;
+
+            _context.SaveChanges();
+            if(oldMainPhoto!=null)
+            {
+                FileManager.Delete(_env.WebRootPath, "uploads/products", oldMainPhoto);
+            }
+            if (oldHoverPhoto != null)
+            {
+                FileManager.Delete(_env.WebRootPath, "uploads/products", oldHoverPhoto);
+            }
+            if (removedDetailImages.Any())
+            {
+                FileManager.DeleteAll(_env.WebRootPath, "uploads/products",removedDetailImages.Select(x=>x.ImageUrl).ToList());
+            }
+
             return RedirectToAction("index");
         }
         public async Task<IActionResult> Delete(int id)
         {
-            return RedirectToAction("index");
+            Product product = _context.Products.Include(x=>x.Images).FirstOrDefault(x=>x.Id==id);
+            if(product == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+
+                if (product.Images.Any(x => x.Status == Enums.ImageStatus.Main))
+                {
+                    FileManager.Delete(_env.WebRootPath,"uploads/products",product.Images.FirstOrDefault(x=>x.Status==Enums.ImageStatus.Main).ImageUrl);
+                }
+                if (product.Images.Any(x => x.Status == Enums.ImageStatus.Hover))
+                {
+                    FileManager.Delete(_env.WebRootPath, "uploads/products", product.Images.FirstOrDefault(x => x.Status == Enums.ImageStatus.Hover).ImageUrl);
+                }
+                if (product.Images.Any(x => x.Status == Enums.ImageStatus.Detail))
+                {
+                    FileManager.DeleteAll(_env.WebRootPath, "uploads/products", product.Images.Where(x => x.Status == Enums.ImageStatus.Detail).Select(x=>x.ImageUrl).ToList());
+                }
+              
+
+                return Ok();
+
+            }
+           
         }
     }
 }
