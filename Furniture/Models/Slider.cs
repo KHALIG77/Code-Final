@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Furniture.Attiributes.ValidationAttiribute;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Furniture.Models
 {
@@ -8,10 +10,10 @@ namespace Furniture.Models
         public int Id { get; set; }
 
         public byte Order {get; set; }
-        [Required]
+      
         [MaxLength(100)]
 
-        public string Image {get; set;}
+        public string? Image {get; set;}
         [Required]
         [MaxLength(50)]
         public string Title {get; set;}
@@ -21,6 +23,10 @@ namespace Furniture.Models
         [Required]
         public string BtnUrl {get; set;}
         public bool MainSlider { get; set; }
+        [NotMapped]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [FileSize(1000000)]
+        public IFormFile ImageSlide { get; set; }
         
     }
 }

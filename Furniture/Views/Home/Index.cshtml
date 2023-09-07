@@ -8,12 +8,12 @@
 					<!-- Block Sliders -->
 					<div class="block block-sliders layout-7 auto-height nav-center">
 						<div class="slick-sliders" data-autoplay="false" data-dots="true" data-nav="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns1440="1" data-columns="1">
-							@foreach (var slider in Model.Sliders.Where(x=>x.MainSlider==false))
+							@foreach (var slider in Model.Sliders.Where(x=>x.MainSlider==true))
 							{
 								<div class="item slick-slide">
 									<div class="item-content">
 										<div class="content-image">
-											<img width="1920" height="1080" src="media/slider/19.jpg" alt="Image Slider">
+											<img width="1920" height="1080" src="~/uploads/sliders/@slider.Image" alt="Image Slider">
 										</div>
 										<div class="item-info horizontal-end vertical-middle">
 											<div class="content">
@@ -79,7 +79,6 @@
 										<div class="products-list grid">
 											<div class="row">
 												
-												
 												@foreach (var product in Model.TopProducts)
 												{
 													<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
@@ -88,7 +87,7 @@
 																<div class="products-thumb">
 																	<div class="product-thumb-hover">
 																		<a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
-																			<img    src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																			<img src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
 																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
 																		</a>
 																	</div>
@@ -99,20 +98,20 @@
 																		<div class="btn-wishlist" data-title="Wishlist">
 																			<button class="product-btn">Add to wishlist</button>
 																		</div>
-								
+
 																		<span class="product-quickview" data-title="Quick View">
-																			<a  asp-controller="product" asp-action="index" asp-route-id="@product.Id" class="modal-btn-quick quickview quickview-button">Quick View <i class="icon-search"></i></a>
+																			<a asp-controller="product" asp-action="index" asp-route-id="@product.Id" class="modal-btn-quick quickview quickview-button">Quick View <i class="icon-search"></i></a>
 																		</span>
 																	</div>
 																</div>
 																<div class="products-content">
 																	<div class="contents text-center">
 																		<h3 class="product-title"><a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Name</a></h3>
-																		@if (product.DiscountPercent>0)
+																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">
 																				<del aria-hidden="true"><span>@product.SalePrice.ToString("#.##") $</span></del>
-																				<ins><span>@((@product.SalePrice-((@product.SalePrice*@product.DiscountPercent)/100)).ToString("#.##"))</span></ins>
+																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))</span></ins>
 																			</span>
 																		}
 																		else
@@ -120,14 +119,15 @@
 																			<span class="price">@product.SalePrice $</span>
 
 																		}
-																		
+
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
-													
+
 												}
+												
 												
 												
 												

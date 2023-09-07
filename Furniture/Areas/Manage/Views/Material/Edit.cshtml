@@ -1,0 +1,22 @@
+﻿@model Material
+
+<div class="col-xl ">
+    <div class="card mb-4 m-auto" style="margin-top:60px !important;width:60%;">
+
+        <div class="card-body ">
+            <form method="post" asp-action="edit">
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Name">Material Name</label>
+                    <input type="text" asp-for="Name" class="form-control" id="basic-default-fullname" placeholder="Iron" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Validation{
+    @Html.Partial("_ValidationScript")
+}
