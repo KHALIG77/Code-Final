@@ -1,5 +1,6 @@
 using Furniture.DAL;
 using Furniture.Models;
+using Furniture.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,9 +17,11 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
     opt.Password.RequireNonAlphanumeric = false;
     opt.Password.RequireUppercase = false;
     opt.Password.RequiredLength = 6;
-    opt.SignIn.RequireConfirmedEmail = true;
+    //opt.SignIn.RequireConfirmedEmail = true;
 
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<FurnutireContext>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

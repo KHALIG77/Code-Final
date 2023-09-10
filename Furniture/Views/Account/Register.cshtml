@@ -1,0 +1,62 @@
+﻿@model UserRegisterViewModel
+
+<div id="site-main" class="site-main">
+	<div id="main-content" class="main-content">
+		<div id="primary" class="content-area">
+			<div id="title" class="page-title">
+				<div class="section-container">
+					<div class="content-title-heading">
+						<h1 class="text-title-heading">
+							Login / Register
+						</h1>
+					</div>
+					<div class="breadcrumbs">
+						<a href="index.html">Home</a><span class="delimiter"></span>Login / Register
+					</div>
+				</div>
+			</div>
+
+			<div id="content" class="site-content" role="main">
+				<div class="section-padding">
+					<div class="section-container p-l-r">
+						<div class="page-login-register" style="margin-bottom:30px;">
+							<div class="d-flex justify-content-center align-center">
+					
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<div class="box-form-login">
+										<h2 class="register">Register</h2>
+										<div class="box-content">
+											<div class="form-register">
+												<form method="post" class="register" asp-action="register">
+													<div class="email">
+														<label asp-for="Email">Email address <span class="required">*</span></label>
+														<input type="email" class="input-text" asp-for="Email" >
+														<span asp-validation-for="Email"></span>
+													</div>
+													<div class="email">
+														<label asp-for="UserName">Username <span class="required">*</span></label>
+														<input type="text" class="input-text" asp-for="UserName">
+														<span asp-validation-for="UserName"></span>
+													</div>
+													<div class="password">
+														<label asp-for="Password">Password <span class="required">*</span></label>
+														<input asp-for="Password" type="password" class="input-text" >
+														<span asp-validation-for="Password"></span>
+													</div>
+													<div class="button-register">
+														<input type="submit" class="button" name="register" value="Register">
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	</div><!-- #main-content -->
+</div>
+@Html.Partial("_ValidationScriptsPartial")
