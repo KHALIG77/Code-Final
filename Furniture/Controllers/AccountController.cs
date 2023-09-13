@@ -123,6 +123,7 @@ namespace Furniture.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel forgetVM)
         {
             if (!ModelState.IsValid) 
@@ -132,14 +133,14 @@ namespace Furniture.Controllers
             AppUser user = _context.AppUsers.FirstOrDefault(x => x.Email == forgetVM.Email);
             if (user == null || user.IsAdmin)
             {
-                ModelState.AddModelError("", "Email not found");
+                ModelState.AddModelError("Email", "Email not found");
                 return View(); 
             };
             string token = await _userManager.GeneratePasswordResetTokenAsync(user);
             string url = Url.Action("resetpassword", "account", new { email = forgetVM.Email, token = token }, Request.Scheme);
             _emailSender.Send(forgetVM.Email, "Reset Password", $" Click <a href=\"{url}\"> Here</a>");
 
-            return RedirectToAction("CheckEmail");
+            return View("CheckEmail");
         }
         public async Task<IActionResult> ResetPassword(string email, string token)
         {

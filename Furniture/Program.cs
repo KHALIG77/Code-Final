@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(opt => opt.IdleTimeout = TimeSpan.FromHours(5));
 builder.Services.AddDbContext<FurnutireContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
@@ -21,6 +22,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<FurnutireContext>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<LayoutService>();
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();

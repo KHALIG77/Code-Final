@@ -6,10 +6,13 @@ namespace Furniture.ViewModels
     {
         [Required]
         [MaxLength(100)]
+        [MinLength(5)]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required]
         [MaxLength(30)]
-        [DataType(DataType.Password)]
+		[MinLength(5)]
+		[DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

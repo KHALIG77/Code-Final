@@ -120,6 +120,7 @@ namespace Furniture.Areas.Manage.Controllers
                     product.Colors.Add(productColor);
                 }
             }
+            product.Rate = 5;
             _context.Products.Add(product);
             _context.SaveChanges();
 

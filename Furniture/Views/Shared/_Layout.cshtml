@@ -62,44 +62,7 @@
 												<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">2</span></div>
 											</a>
 											<div class="dropdown-menu cart-popup">
-												<div class="cart-empty-wrap">
-													<ul class="cart-list">
-														<li class="empty">
-															<span>No products in the cart.</span>
-															<a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
-														</li>
-													</ul>
-												</div>
-												<div class="cart-list-wrap">
-													<ul class="cart-list ">
-														<li class="mini-cart-item">
-															<a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-															<a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/3.jpg" alt=""></a>
-															<a href="shop-details.html" class="product-name">Chair Oak Matt Lacquered</a>
-															<div class="quantity">Qty: 1</div>
-															<div class="price">$150.00</div>
-														</li>
-														<li class="mini-cart-item">
-															<a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>													
-															<a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/1.jpg" alt=""></a>
-															<a href="shop-details.html" class="product-name">Zunkel Schwarz</a>
-															<div class="quantity">Qty: 1</div>
-															<div class="price">$100.00</div>
-														</li>
-													</ul>
-													<div class="total-cart">
-														<div class="title-total">Total: </div>
-														<div class="total-price"><span>$100.00</span></div>
-													</div>
-													<div class="free-ship">
-														<div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
-														<div class="total-percent"><div class="percent" style="width:20%"></div></div>
-													</div>
-													<div class="buttons">
-														<a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
-														<a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a>
-													</div>
-												</div>
+												@Html.Partial("_BasketPartialView")
 											</div>
 										</div>
 									</div>
@@ -117,14 +80,20 @@
 						<!-- Login -->
 						<div class="my-account">
 							<div class="login-header">
+							@if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+							{
+								<a asp-action="profile" asp-controller="account"><i class="wpb-icon-user"></i></a>
+
+							}
+							else
+							{
 								<a asp-action="login" asp-controller="account"><i class="wpb-icon-user"></i></a>
+
+							}
 							</div>
 						</div>
 
-						<!-- Search -->
-						<div class="search-box">
-							<div class="search-toggle"><i class="wpb-icon-magnifying-glass"></i></div>
-						</div>
+						
 
 						<!-- Wishlist -->
 						<div class="wishlist-box">
@@ -175,65 +144,22 @@
 									<div class="col-lg-4 header-right">
 										<div class="header-page-link">
 											<!-- Login -->
-											<div class="login-header">
-												<a class="active-login black" href="#">Login</a>
-												<div class="form-login-register">
-													<div class="box-form-login">
-														<div class="active-login"></div>
-														<div class="box-content">
-															<div class="form-login active">
-																<form id="login_ajax" method="post" class="login">
-																	<h2>Sign in</h2>
-																	<p class="status"></p>
-																	<div class="content">
-																		<div class="username">
-																			<input type="text" required="required" class="input-text" name="username" id="username" placeholder="Your name"/>
-																		</div>
-																		<div class="password">
-																			<input class="input-text" required="required" type="password" name="password" id="password" placeholder="Password"/>
-																		</div>
-																		<div class="rememberme-lost">
-																			<div class="rememberme">
-																				<input name="rememberme" type="checkbox" id="rememberme" value="forever"/>
-																				<label for="rememberme" class="inline">Remember me</label>
-																			</div>
-																			<div class="lost_password">
-																				<a href="forgot-password.html">Lost your password?</a>
-																			</div>
-																		</div>
-																		<div class="button-login">
-																			<input type="submit" class="button" name="login" value="Login"/>
-																		</div>
-																		<div class="button-next-reregister">Create An Account</div>
-																	</div>						
-																</form>
-															</div>
-															<div class="form-register">
-																<form method="post" class="register">
-																	<h2>REGISTER</h2>
-																	<div class="content">
-																		<div class="email">
-																			<input type="email" class="input-text" placeholder="Email" name="email" id="reg_email" value=""/>
-																		</div>
-																		<div class="password">
-																			<input type="password" class="input-text" placeholder="Password" name="password" id="reg_password"/>
-																		</div>															
-																		<div class="button-register">
-																			<input type="submit" class="button" name="register" value="Register"/>
-																		</div>
-																		<div class="button-next-login">Already has an account</div>
-																	</div>
-																</form>
-															</div>
-														</div>
-													</div>
-												</div>
+											<div class="">
+											@if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+											{
+												<a style="letter-spacing:2px;font-size:15px;" asp-action="profile" asp-controller="account">@User.Identity.Name</a>
+
+											}
+											else
+											{
+												<a style="letter-spacing:2px;font-size:15px;" asp-action="login" asp-controller="account">Login</a>
+
+											}
+
 											</div>
 
-											<!-- Search -->
-											<div class="search-box">
-												<div class="search-toggle"><i class="icon-search"></i></div>
-											</div>
+											
+											
 											
 											<!-- Wishlist -->
 											<div class="wishlist-box">
@@ -734,6 +660,8 @@
 	<script src="~/libs/slick/js/slick.min.js"></script>
 	<script src="~/libs/countdown/js/jquery.countdown.min.js"></script>
 	<script src="~/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
+	<script src="~/assets/js/custom.js"></script>
+
 		
 		<!-- Site Scripts -->
 	

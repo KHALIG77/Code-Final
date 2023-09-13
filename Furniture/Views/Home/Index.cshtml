@@ -93,7 +93,8 @@
 																	</div>
 																	<div class="product-button">
 																		<div class="btn-add-to-cart" data-title="Add to cart">
-																			<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+@*																			<a rel="nofollow" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id" class="product-btn button">Add to cart</a>
+*@																			<a class="product-btn add-basket" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id"> </a>
 																		</div>
 																		<div class="btn-wishlist" data-title="Wishlist">
 																			<button class="product-btn">Add to wishlist</button>
@@ -111,7 +112,7 @@
 																		{
 																			<span class="price">
 																				<del aria-hidden="true"><span>@product.SalePrice.ToString("#.##") $</span></del>
-																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))</span></ins>
+																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))$</span></ins>
 																			</span>
 																		}
 																		else
