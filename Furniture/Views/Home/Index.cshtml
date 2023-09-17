@@ -111,13 +111,13 @@
 																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">
-																				<del aria-hidden="true"><span>@product.SalePrice.ToString("#.##") $</span></del>
-																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))$</span></ins>
+																				<del aria-hidden="true"><span>@product.SalePrice.ToString("0.00") $</span></del>
+																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("0.00"))$</span></ins>
 																			</span>
 																		}
 																		else
 																		{
-																			<span class="price">@product.SalePrice $</span>
+																			<span class="price">@product.SalePrice.ToString("0.00") $</span>
 
 																		}
 
@@ -176,7 +176,7 @@
 																		}
 																		else
 																		{
-																			<span class="price">@product.SalePrice $</span>
+																			<span class="price">@product.SalePrice.ToString("0.00") $</span>
 
 																		}
 
@@ -233,7 +233,7 @@
 																		}
 																		else
 																		{
-																			<span class="price">@product.SalePrice $</span>
+																			<span class="price">@product.SalePrice.ToString("0.00") $</span>
 
 																		}
 

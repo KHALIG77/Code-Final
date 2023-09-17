@@ -1,39 +1,56 @@
 ﻿@model BasketViewModel
 
+@if (Model.Items.Count()>0)
+{
+	<div class="cart-list-wrap">
+		<ul class="cart-list ">
+			@foreach (var item in Model.Items)
+			{
+				<li class="mini-cart-item">
+					<a href="shop-details.html" class="product-image"><img width="600" height="600" src="~/uploads/products/@item.Product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt=""></a>
+					<div class="d-flex justify-content-between">
+						<a href="shop-details.html" class="product-name">@item.Product.Name</a>
 
-<div class="cart-empty-wrap">
-	<ul class="cart-list">
-		<li class="empty">
-			<span>No products in the cart.</span>
-			<a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
-		</li>
-	</ul>
-</div>
-<div class="cart-list-wrap">
-	<ul class="cart-list ">
-		@foreach (var item in Model.Items)
-		{
-			<li class="mini-cart-item">
-				<a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-				<a href="shop-details.html" class="product-image"><img width="600" height="600" src="~/uploads/products/@item.Product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt=""></a>
-				<a href="shop-details.html" class="product-name">@item.Product.Name</a>
-				<div class="quantity">Qty: @item.Count</div>
-				<div class="price">$@item.Product.SalePrice</div>
+						<a asp-action="removebasket" asp-controller="product" asp-route-id="@item.Product.Id" class="remove-basket"><i class="icon_close"></i></a>
+
+					</div>
+					
+					<div class="quantity">Qty: @item.Count</div>
+					<input class="total-count" type="hidden" value="@Model.TotalCount">
+					<div class="price">$@(item.Product.DiscountPercent > 0 ? (((item.Product.SalePrice * (100 - item.Product.DiscountPercent) / 100) * item.Count).ToString("0.00")) : (item.Product.SalePrice * item.Count).ToString("0.00"))</div>
+				</li>
+			}
+			
+
+
+
+		</ul>
+		<div class="total-cart">
+			<div class="title-total">Total: </div>
+			<div class="total-price"><span>$@Model.TotalPrice.ToString("0.00")</span></div>
+		</div>
+		@*<div class="free-ship">
+			<div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
+			<div class="total-percent"><div class="percent" style="width:20%"></div></div>
+		</div>*@
+		<div class="buttons">
+			<a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
+			<a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a>
+		</div>
+	</div>
+}
+else
+{
+	<div class="cart-emp-wrap" >
+		<ul class="cart-list">
+			<li class="empty">
+				<span>No products in the cart.</span>
+				<a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
+				<input class="total-count" type="hidden" value="0">
+
 			</li>
-		}
-		
-		
-	</ul>
-	<div class="total-cart">
-		<div class="title-total">Total: </div>
-		<div class="total-price"><span>$100.00</span></div>
+		</ul>
 	</div>
-	<div class="free-ship">
-		<div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
-		<div class="total-percent"><div class="percent" style="width:20%"></div></div>
-	</div>
-	<div class="buttons">
-		<a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
-		<a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a>
-	</div>
-</div>
+
+}
+

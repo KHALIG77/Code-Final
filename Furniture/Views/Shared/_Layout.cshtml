@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Furniture.Services
+@inject LayoutService _layoutService;
+@{
+	var basket = _layoutService.GetBasket();
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 	
 <head>
@@ -59,10 +66,10 @@
 										<div class="dropdown mini-cart top-cart">
 											<div class="remove-cart-shadow"></div>
 											<a class="dropdown-toggle cart-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">2</span></div>
+												<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">@basket.TotalCount</span></div>
 											</a>
-											<div class="dropdown-menu cart-popup">
-												@Html.Partial("_BasketPartialView")
+											<div class="dropdown-menu cart-popup basket-view" >
+												@Html.Partial("_BasketPartialView",basket)
 											</div>
 										</div>
 									</div>
@@ -172,47 +179,10 @@
 												<div class="dropdown mini-cart top-cart">
 													<div class="remove-cart-shadow"></div>
 													<a class="dropdown-toggle cart-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-														<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">2</span></div>
+														<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">@basket.TotalCount</span></div>
 													</a>
-													<div class="dropdown-menu cart-popup">
-														<div class="cart-empty-wrap">
-															<ul class="cart-list">
-																<li class="empty">
-																	<span>No products in the cart.</span>
-																	<a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
-																</li>
-															</ul>
-														</div>
-														<div class="cart-list-wrap">
-															<ul class="cart-list ">
-																<li class="mini-cart-item">
-																	<a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-																	<a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/3.jpg" alt=""></a>
-																	<a href="shop-details.html" class="product-name">Chair Oak Matt Lacquered</a>		
-																	<div class="quantity">Qty: 1</div>
-																	<div class="price">$150.00</div>
-																</li>
-																<li class="mini-cart-item">
-																	<a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>													
-																	<a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/1.jpg" alt=""></a>
-																	<a href="shop-details.html" class="product-name">Zunkel Schwarz</a>
-																	<div class="quantity">Qty: 1</div>
-																	<div class="price">$100.00</div>						
-																</li>
-															</ul>
-															<div class="total-cart">
-																<div class="title-total">Total: </div>
-																<div class="total-price"><span>$100.00</span></div>
-															</div>
-															<div class="free-ship">
-																<div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
-																<div class="total-percent"><div class="percent" style="width:20%"></div></div>
-															</div>
-															<div class="buttons">
-																<a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
-																<a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a>
-															</div>
-														</div>
+													<div class="dropdown-menu cart-popup basket-view" >
+													@Html.Partial("_BasketPartialView",basket)
 													</div>
 												</div>
 											</div>
@@ -653,20 +623,28 @@
 	    </div>
 		@RenderBody()
 		<!-- Dependency Scripts -->
-	
-	<script src="~/libs/popper/js/popper.min.js"></script>
-	<script src="~/libs/jquery/js/jquery.min.js"></script>
-	<script src="~/libs/bootstrap/js/bootstrap.min.js"></script>
+
+@*	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+*@	<script src="~/libs/popper/js/popper.min.js"></script>
+@*	<script src="~/libs/jquery/js/jquery.min.js"></script>	
+*@	
+    <script src="~/assets/js/jquery-3-6-0.js"></script>
 	<script src="~/libs/slick/js/slick.min.js"></script>
 	<script src="~/libs/countdown/js/jquery.countdown.min.js"></script>
 	<script src="~/libs/mmenu/js/jquery.mmenu.all.min.js"></script>
-	<script src="~/assets/js/custom.js"></script>
+	<script src="~/libs/bootstrap/js/bootstrap.min.js"></script>
+	
 
 		
 		<!-- Site Scripts -->
-	
 
-		<script src="~/assets/js/app.js"></script>
+	<script src="~/assets/js/custom.js"></script>
+
+
+     <script src="~/assets/js/app.js"></script>
+
+
+	
 		@RenderSection("Detail",required:false)
 	 
 
