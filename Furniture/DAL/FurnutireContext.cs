@@ -30,6 +30,8 @@ namespace Furniture.DAL
 		public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Order> Orders {get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }    
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
