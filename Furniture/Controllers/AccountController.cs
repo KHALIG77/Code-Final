@@ -2,9 +2,11 @@
 using Furniture.Models;
 using Furniture.Services;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Furniture.Controllers
 {
@@ -22,7 +24,137 @@ namespace Furniture.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
         }
-        public IActionResult Register()
+        [Authorize(Roles ="Member")]
+		public async Task<IActionResult> Profile()
+		{
+			ViewBag.Email = User.FindFirstValue(ClaimTypes.Email);
+
+
+			AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+			if (user == null)
+			{
+				await _signInManager.SignOutAsync();
+				return RedirectToAction("login");
+			}
+			ProfileViewModel profile = new ProfileViewModel()
+			{
+				Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+				Edit = new ProfileEditViewModel()
+				{
+					FullName = user.FullName,
+					UserName = user.UserName,
+					Address = user.Address,
+					Phone = user.PhoneNumber
+				}
+			};
+			return View(profile);
+		}
+		[Authorize(Roles = "Member")]
+		[ValidateAntiForgeryToken]
+		[HttpPost]
+
+		public async Task<IActionResult> Profile(ProfileEditViewModel formVM)
+		{
+            ViewBag.Email = User.FindFirstValue(ClaimTypes.Email);
+			AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+			if (user == null)
+			{
+				await _signInManager.SignOutAsync();
+				return RedirectToAction("login");
+			}
+			if (!ModelState.IsValid)
+			{
+				ProfileViewModel vm = new ProfileViewModel()
+				{
+					Edit = formVM,
+					Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+
+				};
+				return View(vm);
+			}
+			if (formVM.CurrentPassword != null && (formVM.NewPassword == null || formVM.CurrentPassword == null))
+			{
+				ModelState.AddModelError("", "Fill all password cell");
+				ProfileViewModel vm = new ProfileViewModel()
+				{
+					Edit = formVM,
+					Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+
+
+				};
+				return View(vm);
+
+			}
+			
+			if (formVM.UserName != User.FindFirstValue(ClaimTypes.Name) && await _userManager.Users.AnyAsync(x => x.UserName == formVM.UserName))
+			{
+				ModelState.AddModelError("UserName", "UserName already used");
+				ProfileViewModel vm = new ProfileViewModel()
+				{
+					Edit = formVM,
+					Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+
+
+				};
+				return View(vm);
+			}
+
+
+
+
+			user.FullName = formVM.FullName;
+			user.UserName = formVM.UserName;
+			user.Address = formVM.Address;
+			user.PhoneNumber = formVM.Phone;
+
+
+			if (formVM.CurrentPassword != null && formVM.ConfirmPassword == formVM.NewPassword)
+			{
+
+				var passResult = await _userManager.ChangePasswordAsync(user, formVM.CurrentPassword, formVM.NewPassword);
+				if (passResult.Succeeded)
+				{
+					 await _signInManager.SignInAsync(user, false);
+
+				}
+				else
+				{
+					ModelState.AddModelError("CurrentPassword", "CurrentPassword is not correct");
+					ProfileViewModel vm = new ProfileViewModel()
+					{
+						Edit = formVM,
+						Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+
+
+					};
+					return View(vm);
+				}
+
+			}
+
+			var result = await _userManager.UpdateAsync(user);
+			if (!result.Succeeded)
+			{
+				foreach (var item in result.Errors)
+				{
+					ModelState.AddModelError("", item.Description);
+				}
+				ProfileViewModel vm = new ProfileViewModel()
+				{
+					Edit = formVM,
+					Orders = _context.Orders.Include(x => x.OrderItems).Where(x => x.AppUserId == user.Id).ToList(),
+
+
+				};
+
+				return View(vm);
+			}
+
+			await _signInManager.SignInAsync(user, false);
+			return RedirectToAction("index", "home");
+		}
+
+		public IActionResult Register()
         {
             return View();
         }

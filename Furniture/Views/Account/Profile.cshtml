@@ -1,0 +1,102 @@
+﻿@model ProfileViewModel
+
+
+		<div id="site-main" class="site-main">
+			<div id="main-content" class="main-content">
+				<div id="primary" class="content-area">
+					<div id="title" class="page-title">
+						<div class="section-container">
+							<div class="content-title-heading">
+								<h1 class="text-title-heading">
+									My Account
+								</h1>
+							</div>
+							<div class="breadcrumbs">
+								<a href="index.html">Home</a><span class="delimiter"></span>My Account
+							</div>
+						</div>
+					</div>
+
+					<div id="content" class="site-content" role="main">
+						<div class="section-padding">
+							<div class="section-container p-l-r">
+								<div class="page-my-account">
+									<div class="my-account-wrap clearfix">
+										<nav class="my-account-navigation">
+											<ul class="nav nav-tabs">
+												<li class="nav-item">
+													<a class="nav-link active" data-toggle="tab" href="#dashboard" role="tab">Dashboard</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#orders" role="tab">Orders</a>
+												</li>
+											
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#account-details" role="tab">Account details</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" asp-action="logout">Logout</a>
+												</li>
+											</ul>
+										</nav>
+										<div class="my-account-content tab-content">
+											<div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+												<div class="my-account-dashboard">
+													<p>
+														Hello <strong>@User.Identity.Name</strong> (not <strong>@User.Identity.Name</strong>? <a asp-action="logout">Log out</a>)
+													</p>
+													<p>
+														From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.
+													</p>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="orders" role="tabpanel">
+												<div class="my-account-orders">
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>Order</th>
+																	<th>Date</th>
+																	<th>Status</th>
+																	<th>Total</th>
+																	
+																</tr>
+															</thead>
+															<tbody>
+														@foreach (var order in Model.Orders)
+														{
+															<tr>
+																<td>@order.Id</td>
+																<td>@order.CreateAt</td>
+																<td>@order.OrderStatus</td>
+																<td>@order.OrderItems.Sum(x=>x.DiscountPercent>0?(((100-x.DiscountPercent)*x.UnitPrice)/100)*x.Count:x.DiscountPercent*x.Count).ToString("0.00")</td>
+
+															</tr>
+														}
+																
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										
+											<div class="tab-pane fade" id="account-details" role="tabpanel">
+												<div class="my-account-account-details">
+													@Html.Partial("_AccountEditPartialView",Model.Edit)
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- #content -->
+				</div><!-- #primary -->
+			</div><!-- #main-content -->
+		</div>
+
+@section Validation{
+	@Html.Partial("_ValidationScriptsPartial")
+}
+		

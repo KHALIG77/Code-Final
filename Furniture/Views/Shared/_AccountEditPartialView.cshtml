@@ -1,0 +1,60 @@
+﻿@model ProfileEditViewModel
+
+<form class="edit-account" asp-action="profile" method="post">
+	<p class="form-row">
+		<label asp-for="FullName">Full name <span class="required">*</span></label>
+		<input class="input-text" asp-for="FullName">
+		<span asp-validation-for="FullName"></span>
+	</p>
+	
+	<div class="clear"></div>
+	<p class="form-row">
+		<label asp-for="UserName">User name <span class="required">*</span></label>
+		<input class="input-text" asp-for="UserName">
+		<span asp-validation-for="UserName"></span>
+	</p>
+	<div class="clear"></div>
+	<p class="form-row">
+		<label asp-for="Email">Email <span class="required">*</span></label>
+		<input class="input-text" value="@ViewBag.Email" disabled>
+		<span asp-validation-for="Email"></span>
+		
+	</p>
+	<p class="form-row">
+		<label asp-for="Phone">Phone <span class="required">*</span></label>
+		<input type="number" class="input-text" asp-for="Phone" >
+		<span asp-validation-for="Phone"></span>
+
+	</p>
+	<p class="form-row">
+		<label asp-for="Address">Address <span class="required">*</span></label>
+		<input class="input-text" asp-for="Address" >
+		<span asp-validation-for="Address"></span>
+
+
+	</p>
+	
+	<fieldset>
+		<legend>Password change</legend>
+		<p class="form-row">
+			<label asp-for="CurrentPassword">Current password (leave blank to leave unchanged)</label>
+			<input type="password" class="input-text"  asp-for="CurrentPassword" autocomplete="off">
+			<span asp-validation-for="CurrentPassword"></span>
+		</p>
+		<p class="form-row">
+			<label asp-for="NewPassword">New password (leave blank to leave unchanged)</label>
+			<input asp-for="NewPassword" type="password" class="input-text"  >
+			<span asp-validation-for="NewPassword"></span>
+		</p>
+		<p class="form-row" style="margin-top:10px;">
+			<label asp-for="ConfirmPassword">Confirm new password</label>
+			<input asp-for="ConfirmPassword" type="password" class="input-text" >
+			<span asp-validation-for="ConfirmPassword"></span>
+		</p>
+		<div asp-validation-summary="ModelOnly"></div>
+	</fieldset>
+	<div class="clear"></div>
+	<p class="form-row">
+		<button type="submit" class="button"  value="Save changes">Save changes</button>
+	</p>
+</form>

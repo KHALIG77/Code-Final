@@ -59,7 +59,7 @@
 									<div class="product-info col-lg-5 col-md-12 col-12 ">
 										<h1 class="title">@Model.Product.Name</h1>
 										@if (Model.Product.DiscountPercent > 0)
-										{
+										{	
 											<span class="price">
 												<del aria-hidden="true"><span>@Model.Product.SalePrice.ToString("#.##") $</span></del>
 												<ins><span>@((Model.Product.SalePrice - ((@Model.Product.SalePrice * @Model.Product.DiscountPercent) / 100)).ToString("#.##")) $</span></ins>

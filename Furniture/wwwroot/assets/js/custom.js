@@ -1,7 +1,7 @@
 
 
 $(document).ready(function () {
-    $(".add-basket").on("click", function (e) {
+    $(document).on("click",".add-basket", function (e) {
         e.preventDefault();
         let url = $(this).attr("href");
         $.get(url, function (data) {
@@ -9,6 +9,13 @@ $(document).ready(function () {
             var totalCount = $(".total-count").val()
             $(".cart-count").html(totalCount)
         });
+    });
+    $(document).on("click", ".quickview-close", function (e) {
+     
+        $(".quickview-popup").removeClass("active");
+          
+       
+       
     });
 
      
@@ -22,6 +29,17 @@ $(".basket-view").on("click", ".remove-basket", function (e) {
         $(".cart-count").html(totalCount)
     });
 });
+
+$(".quickview-button").on("click", function (e) {
+    e.preventDefault();
+    let url = $(this).attr("href");
+    $.get(url, function (data) {
+        $("#quick-quick").html(data);
+      
+    });
+});
+
+
 
 
 

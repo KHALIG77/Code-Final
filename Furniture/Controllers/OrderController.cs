@@ -84,7 +84,7 @@ namespace Furniture.Controllers
 			if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
 			{
 				AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
-				order.FullName = user.FullName;
+				order.FullName = user.FullName ?? orderVM.FullName;
 				order.Email = user.Email;
 				order.AppUserId = user.Id;
 

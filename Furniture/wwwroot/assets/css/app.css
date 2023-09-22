@@ -2262,7 +2262,53 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   border: 1px solid #e5e5e5;
 }
 
-/*AddBasket*/
+/*----------------------------------------*/
+/*  20. Modal
+/*----------------------------------------*/
+.quick-view-modal .modal-dialog {
+    max-width: 100%;
+    width: 1125px;
+}
+
+@media (max-width: 1199px) {
+    .quick-view-modal .modal-dialog {
+        width: calc(100% - 30px);
+        margin: 30px auto;
+    }
+}
+
+.quick-view-modal .modal-content {
+    border: 0;
+}
+
+.quick-view-modal .modal-header {
+    padding: 1rem 2rem;
+}
+
+.quick-view-modal .modal-body {
+    padding: 2rem;
+}
+
+.modal-img {
+    height: 100%;
+}
+
+.modal-slider {
+    border: 1px solid #dee2e6;
+    height: 100%;
+}
+
+.modal-thumbs .swiper-slide {
+    border: 1px solid #dee2e6;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+    .modal-thumbs .swiper-slide:hover {
+        opacity: 1;
+    }
+
 
 
 

@@ -15,9 +15,14 @@ namespace Furniture.Controllers
 		{
 			_context = context;
 		}
-		public IActionResult Index()
+		public IActionResult ModalDetail(int id)
 		{
-			return View();
+			Product product = _context.Products.Include(x=>x.Comments).Include(x => x.Images).FirstOrDefault(x => x.Id == id);
+			if (product==null)
+			{
+				return View("Error");
+			}
+			return PartialView("_QuickViewPartialView", product);
 		}
 		public IActionResult Detail(int id)
 		{

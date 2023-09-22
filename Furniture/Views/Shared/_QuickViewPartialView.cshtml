@@ -1,0 +1,95 @@
+﻿@model Product
+
+<div class="quickview-popup">
+	<div id="quickview-container">
+		<div class="quickview-container">
+			<a  class="quickview-close"></a>
+			<div class="quickview-notices-wrapper"></div>
+			<div class="product single-product product-type-simple">
+				<div class="product-detail">
+					<div class="row">
+						<div class="img-quickview">
+							<div class="product-images-slider">
+								<div id="quickview-slick-carousel">
+									<div class="images">
+										<div class="scroll-image">
+											<div class="slick-wrap">
+
+											<div class="slick-sliders image-additional slick-initialized slick-slider slick-dotted" data-dots="true" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1" data-nav="true">
+
+
+													<div class="slick-list draggable">
+														<div class="slick-track" style="opacity: 1; width: 2900px; transform: translate3d(-580px, 0px, 0px);">
+															<div class="img-thumbnail slick-slide slick-cloned" style="width: 580px;" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1">
+																	<img width="900" height="900" src="@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main)" alt="">
+																
+															</div>
+															<div class="img-thumbnail slick-slide slick-current slick-active" style="width: 580px;" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide40" aria-describedby="slick-slide-control40">
+																<a  class="image-scroll" title="" tabindex="0">
+																	<img width="900" height="900" src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt="">
+																</a>
+															</div>
+															<div class="img-thumbnail slick-slide" style="width: 580px;" data-slick-index="1" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide41" aria-describedby="slick-slide-control41">
+																<a  class="image-scroll" title="" tabindex="-1">
+																	<img width="900" height="900" src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt="">
+																</a>
+															</div>
+															<div class="img-thumbnail slick-slide slick-cloned" style="width: 580px;" data-slick-index="2" id="" aria-hidden="true" tabindex="-1">
+																<a  class="image-scroll" title="" tabindex="-1">
+																	<img width="900" height="900" src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt="">
+																</a>
+															</div>
+															<div class="img-thumbnail slick-slide slick-cloned" style="width: 580px;" data-slick-index="3" id="" aria-hidden="true" tabindex="-1">
+																<a  class="image-scroll" title="" tabindex="-1">
+																	<img width="900" height="900" src="~/uploads/products/@Model.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt="">
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="quickview-single-info">
+							<div class="product-content-detail entry-summary">
+								<h1 class="product-title entry-title">Chair Oak Matt Lacquered</h1>
+								<div class="price-single">
+									@if (Model.DiscountPercent > 0)
+									{
+										<span class="price">
+											<del aria-hidden="true"><span>@Model.SalePrice.ToString("0.00") $</span></del>
+											<ins><span>@((Model.SalePrice - ((@Model.SalePrice * @Model.DiscountPercent) / 100)).ToString("0.00")) $</span></ins>
+										</span>
+									}
+									else
+									{
+										<span class="price">@Model.SalePrice.ToString("0.00") $</span>
+
+									}
+								</div>
+								<div class="rating">
+									<div class="star star-@Model.Rate"></div>
+									<div class="review-count">
+										(@Model.Comments.Count()<span> reviews</span>)
+									</div>
+								</div>
+								<div class="description">
+									<p>@Model.Description</p>
+								</div>
+
+
+								<a asp-action="addtobasket" asp-controller="product" asp-route-id="@Model.Id" class="add-basket single-add-to-cart-button button alt">Add to cart</a>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
