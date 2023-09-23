@@ -1,0 +1,35 @@
+﻿@model Feature
+
+
+<div class="col-xl ">
+    <div class="card mb-4 m-auto" style="margin-top:60px !important;width:60%;">
+
+        <div class="card-body ">
+            <form method="post" asp-action="create">
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Title">Title</label>
+                    <input type="text" asp-for="Title" class="form-control" id="basic-default-fullname" placeholder="Shipping" />
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Description">Description</label>
+                    <input type="text" asp-for="Description" class="form-control" id="basic-default-fullname" placeholder="Free Shipping" />
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="ImageSvg">Image</label>
+                    <input type="text" asp-for="ImageSvg" class="form-control" id="basic-default-fullname" placeholder="Only Svg" />
+                    <span asp-validation-for="ImageSvg"></span>
+                </div>
+                <div  asp-validation-summary="ModelOnly"></div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+                <a asp-action="index" asp-controller="feature" style="margin-left:15px; color:black;" class="btn btn-gray">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Validation{
+    @Html.Partial("_ValidationScript")
+}

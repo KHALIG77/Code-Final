@@ -417,6 +417,10 @@
       "PackagePath": "staticwebassets\\manage\\assets\\img\\layouts\\layout-without-navbar-light.png"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\Feature.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\Feature.js"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\SweatAlert.js",
       "PackagePath": "staticwebassets\\manage\\assets\\js\\SweatAlert.js"
     },
@@ -1331,6 +1335,10 @@
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\user.jpg",
       "PackagePath": "staticwebassets\\media\\user.jpg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\brands\\7455ddb2-1f87-4747-98aa-2f3f97a3db761.jpg",
+      "PackagePath": "staticwebassets\\uploads\\brands\\7455ddb2-1f87-4747-98aa-2f3f97a3db761.jpg"
     },
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\290f91b1-748a-459d-a44f-f0df8c8c1f8f1-2.jpg",

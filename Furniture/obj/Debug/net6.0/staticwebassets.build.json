@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/qFc4Xh3J7AXvcqWxAN4CfjLm7cUTRDKSQzgFqzAUVI=",
+  "Hash": "zg51FNvn5LPFqafvm2mjvDiH4ddEdINpjznDQhdnAUU=",
   "Source": "Furniture",
   "BasePath": "_content/Furniture",
   "Mode": "Default",
@@ -1868,6 +1868,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\assets\\js\\extended-ui-perfect-scrollbar.js"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\Feature.js",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/js/Feature.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\js\\Feature.js"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\js\\form-basic-inputs.js",
@@ -5693,6 +5710,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\user.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\brands\\7455ddb2-1f87-4747-98aa-2f3f97a3db761.jpg",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "uploads/brands/7455ddb2-1f87-4747-98aa-2f3f97a3db761.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\brands\\7455ddb2-1f87-4747-98aa-2f3f97a3db761.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\products\\290f91b1-748a-459d-a44f-f0df8c8c1f8f1-2.jpg",

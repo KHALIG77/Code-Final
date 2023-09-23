@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Furniture.Models
 {
@@ -8,5 +9,9 @@ namespace Furniture.Models
 		[Required]
 		[MaxLength(100)]
 		public string Image {get; set; }
+		[NotMapped]
+		public IFormFile ImageUrl { get; set; }
+		[Required]
+		public string Name {get; set; }
 	}
 }

@@ -23,6 +23,26 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<FurnutireContext>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<LayoutService>();
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.Events.OnRedirectToLogin = opt.Events.OnRedirectToAccessDenied = context =>
+    {
+        if (context.HttpContext.Request.Path.Value.StartsWith("/manage"))
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/manage/account/login" + redirectUri.Query);
+
+        }
+        else
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/account/login" + redirectUri.Query);
+        }
+
+        return Task.CompletedTask;
+    };
+
+});
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();

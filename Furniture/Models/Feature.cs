@@ -14,8 +14,7 @@ namespace Furniture.Models
 		public string Description { get; set; }
 		[Required]
 		public string ImageSvg {get; set; }
-		[Required]
-		public bool IsShow { get; set; }
+	
 
 	}
 }

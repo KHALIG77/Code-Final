@@ -44,7 +44,7 @@
 											<div class="item slick-slide">
 												<div class="item-image">
 													<a href="#">
-														<img width="450" height="450" src="media/brand/@brand.Image" alt="Brand 1">
+														<img width="450" height="450" src="~/uploads/brands/@brand.Image" alt="Brand 1">
 													</a>
 												</div>
 											</div>
@@ -261,84 +261,36 @@
 							<div class="block-widget-wrap">
 								<div class="slick-wrap">
 									<div class="slick-sliders" data-centermode="true" data-nav="true" data-dots="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1">
-										<div class="item slick-slide">
-											<div class="block-widget-banner">
-												<div class="bg-banner">
-													<div class="banner-wrapper banners">
-														<div class="banner-image">
-															<a href="shop-grid-left.html">
-																<img width="1080" height="584" src="media/banner/banner-18.jpg" alt="Image Slider">
-															</a>
-														</div>
-														<div class="banner-wrapper-infor">
-															<div class="info">
-																<div class="content">
-																	<a class="link-title" href="shop-grid-left.html">
-																		<h3 class="title-banner">From bottle to chair</h3>
-																	</a>
-																	<div class="banner-image-description">
-																		In our design and production processes, we are always looking at where environmental thinking and economic
+										@foreach(var slide in Model.Sliders.Where(x=>x.MainSlider==false)){
+											<div class="item slick-slide">
+												<div class="block-widget-banner">
+													<div class="bg-banner">
+														<div class="banner-wrapper banners">
+															<div class="banner-image">
+																<a href="shop-grid-left.html">
+																	<img width="1080" height="584" src="~/uploads/sliders/@slide.Image" alt="Image Slider">
+																</a>
+															</div>
+															<div class="banner-wrapper-infor">
+																<div class="info">
+																	<div class="content">
+																		<a class="link-title" href="shop-grid-left.html">
+																			<h3 class="title-banner">@slide.Title</h3>
+																		</a>
+																		<div class="banner-image-description">
+																			@slide.Description
+																		</div>
+																		<a class="button button-outline" href="@slide.BtnUrl">Shop Now</a>
 																	</div>
-																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="item slick-slide">
-											<div class="block-widget-banner">
-												<div class="bg-banner">
-													<div class="banner-wrapper banners">
-														<div class="banner-image">
-															<a href="shop-grid-left.html">
-																<img width="1080" height="584" src="media/banner/banner-19.jpg" alt="Image Slider">
-															</a>
-														</div>
-														<div class="banner-wrapper-infor">
-															<div class="info">
-																<div class="content">
-																	<a class="link-title" href="shop-grid-left.html">
-																		<h3 class="title-banner">Fall collection from hightower</h3>
-																	</a>
-																	<div class="banner-image-description">
-																		In our design and production processes, we are always looking at where environmental thinking and economic
-																	</div>
-																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="item slick-slide">
-											<div class="block-widget-banner">
-												<div class="bg-banner">
-													<div class="banner-wrapper banners">
-														<div class="banner-image">
-															<a href="shop-grid-left.html">
-																<img width="1080" height="584" src="media/banner/banner-20.jpg" alt="Image Slider">
-															</a>
-														</div>
-														<div class="banner-wrapper-infor">
-															<div class="info">
-																<div class="content">
-																	<a class="link-title" href="shop-grid-left.html">
-																		<h3 class="title-banner">Armchair with armrests</h3>
-																	</a>
-																	<div class="banner-image-description">
-																		In our design and production processes, we are always looking at where environmental thinking and economic
-																	</div>
-																	<a class="button button-outline" href="shop-grid-left.html">Shop Now</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+										}
+										
+										
 									</div>
 								</div>
 							</div>
