@@ -2,8 +2,8 @@
 {
 	public enum OrderStatus
 	{
-		Rejected=0,
+		Shipping=0,
 		Pending=1,
-		Accepted=2
+		Completed=2
 	}
 }

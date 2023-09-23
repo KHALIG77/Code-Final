@@ -1,0 +1,91 @@
+﻿@model Order
+
+<div class="d-flex justify-content-center align-center" style="margin-top:100px;">
+    <div class="col-lg-6  card mb-4">
+        <div class="card-body">
+           
+            <div class="table-responsive text-nowrap" style="min-height:300px;">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Count</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @foreach (var order in Model.OrderItems)
+                        {
+                            <tr>
+                              
+                                <td>@order.Product.Name</td>
+                                <td>@(order.DiscountPercent>0?(((100-order.DiscountPercent)*order.UnitPrice)/100).ToString("0.00"):order.UnitPrice.ToString("0.00"))</td>
+                                <td>@order.Count</td>
+
+
+                              
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+                <div style="margin:20px;" class="d-flex justify-content-between">
+                    <h6>Total Count</h6>
+                    <h6 class="card-title">@Model.OrderItems.Sum(x=>x.DiscountPercent>0?(((100-x.DiscountPercent)*x.UnitPrice)/100)*x.Count:x.UnitPrice*x.Count).ToString("0.00")</h6>
+
+                </div>
+                <div style="margin:20px;">
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>Full name</h6>
+                    <h6 class="card-title">@(Model.AppUserId == null ? Model.FullName : Model.AppUser.FullName)</h6>
+                   
+                </div>
+                    <div style="margin-top:30px;" class="d-flex justify-content-between">
+                        <h6>Email</h6>
+                        <h6 class="card-title">@Model.Email</h6>
+                    </div> 
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>Date</h6>
+                    <h6 class="card-title">@Model.CreateAt</h6>
+
+                </div>
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>Address</h6>
+                    <h6 class="card-title">@Model.Address</h6>
+                </div>
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>City</h6>
+                    <h6 class="card-title">@Model.City</h6>
+                </div>
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>Apartment</h6>
+                    <h6 class="card-title">@Model.Apartment</h6>
+                </div>
+                
+                <div style="margin-top:30px;" class="d-flex justify-content-between">
+                    <h6>Status</h6>
+                    <h6 class="card-title">@Model.OrderStatus</h6>
+                </div>
+                    <div style="margin-top:30px;" class="d-flex justify-content-between">
+                        <h6>Note</h6>
+                        <h6 class="card-title">@Model.Note</h6>
+                    </div>
+                </div>
+                
+                
+            </div>
+           <div class="d-flex justify-content-between">
+            <a asp-action="pending" asp-route-id="@Model.Id" class="btn btn-warning">Pending</a>
+            <a asp-action="shipping" asp-route-id="@Model.Id" class="btn btn-danger">Shipping</a>
+            <a asp-action="completed" asp-route-id="@Model.Id" class="btn btn-primary">Completed</a>
+            <a asp-action="index" style="color:black"  class="btn btn-gray">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

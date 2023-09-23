@@ -1,0 +1,58 @@
+﻿@model PaginatedList<Order>
+
+
+<div class="card" style="margin:30px">
+    <div class="d-flex justify-content-center" style="margin:20px 0px;color:white;">
+      
+    </div>
+    <div class="table-responsive text-nowrap" style="min-height:300px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Status</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var order in Model.Items)
+                {
+                    <tr>
+                        <td><strong>@order.Id</strong></td>
+                        <td>@order.OrderStatus</td>
+                        <td>@order.Phone</td>
+                        <td>@order.CreateAt</td>
+
+
+                        <td>
+                            <a asp-action="detail" asp-controller="order" asp-route-id="@order.Id" style="color:white;" class="btn rounded-pill btn-primary">Detail</a>
+                          
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<nav aria-label="Page navigation" class="d-flex justify-content-center">
+    <ul class="pagination">
+        <li class="page-item @(Model.HasPrevious?"":"disabled")  prev">
+            <a asp-action="index" asp-route-page="@(Model.PageIndex-1)" class="page-link"><i class="tf-icon bx bx-chevrons-left"></i></a>
+        </li>
+        @for (int i = 1; i <= Model.TotalPage; i++)
+        {
+            <li class="page-item  @(i==Model.PageIndex?"active":"")">
+                <a asp-action="index" asp-route-page="@i"  class="page-link">@i</a>
+            </li>
+        }
+      
+      
+        <li class="page-item @(Model.HasNext?"":"disabled") next">
+            <a asp-action="index" asp-route-page="@(Model.PageIndex+1)" class="page-link "><i class="tf-icon bx bx-chevrons-right"></i></a>
+        </li>
+    </ul>
+</nav>
