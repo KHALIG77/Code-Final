@@ -20,11 +20,23 @@ namespace Furniture.Areas.Manage.Controllers
 			_context = context;
             _email = email;
         }
-		public IActionResult Index(int page = 1)
+		public IActionResult Index(int page = 1,int orderstatus=0,string search=null)
 		{
-			var query=_context.Orders.AsQueryable();
+            var query = _context.Orders.Include(x=>x.AppUser).AsQueryable();
+            if (orderstatus != 0)
+            {
+                query = query.Where(x => (int)x.OrderStatus == orderstatus);
 
-			return View(PaginatedList<Order>.Create(query,page,2));
+            }
+            if (search != null)
+            {
+                query = query.Where(x =>x.FullName.Contains(search));
+            }
+            ViewBag.Search = search;
+            ViewBag.OrderStatus = orderstatus;
+
+
+            return View(PaginatedList<Order>.Create(query,page,2));
 		}
 		public IActionResult Detail(int id)
 		{

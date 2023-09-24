@@ -2,8 +2,8 @@
 {
 	public enum OrderStatus
 	{
-		Shipping=0,
-		Pending=1,
-		Completed=2
+        Pending = 1,
+        Shipping =2,
+		Completed=3
 	}
 }
