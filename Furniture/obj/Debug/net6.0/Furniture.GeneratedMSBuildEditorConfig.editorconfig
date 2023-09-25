@@ -52,6 +52,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZlYXR1cmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Areas/Manage/Views/Instagram/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEluc3RhZ3JhbVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Areas/Manage/Views/Instagram/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEluc3RhZ3JhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Areas/Manage/Views/Material/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE1hdGVyaWFsXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -178,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Views/Shared/_BasketPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Views/Shared/_CommentFormPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21tZW50Rm9ybVBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/khlgr/OneDrive/Desktop/Furniture/Furniture/Views/Shared/_OrderFormPartialView.cshtml]

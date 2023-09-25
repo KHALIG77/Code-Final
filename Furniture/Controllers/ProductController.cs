@@ -40,7 +40,7 @@ namespace Furniture.Controllers
 
 			return View(vm);
 		}
-		public IActionResult AddToBasket(int id)
+		public IActionResult AddToBasket(int id,int count=1,bool detail = false)
 		{
 			if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
 			{
@@ -48,20 +48,32 @@ namespace Furniture.Controllers
 				var basketItem =_context.BasketItems.FirstOrDefault(x=>x.ProductId==id && x.AppUserId==userId);
 				if (basketItem != null)
 				{
-					basketItem.Count++;
+					if (count>1)
+					{
+						basketItem.Count = basketItem.Count + count;
+					}
+					else
+					{
+                        basketItem.Count++;
+                    }
+					
 				}
 				else
 				{
 					basketItem = new BasketItem
 					{
 						AppUserId=userId,
-						Count=1,
+						Count=(count>1?count:1),
 						ProductId=id,
 					};
 					_context.BasketItems.Add(basketItem);
 				}
 				_context.SaveChanges();
 				var basketItemss = _context.BasketItems.Include(x => x.Product).ThenInclude(x => x.Images.Where(x => x.Status == Enums.ImageStatus.Main)).Where(x=>x.AppUserId==userId).ToList();
+				if (detail == true)
+				{
+					return RedirectToAction("detail", new { id = id });
+				}
 				return PartialView("_BasketPartialView", GenerateBasketVM(basketItemss));
 			}
 			else
@@ -75,14 +87,22 @@ namespace Furniture.Controllers
 					item = basketItems.FirstOrDefault(x => x.ProductId == id);
 					if (item != null)
 					{
-						item.Count++;
+						if (count>1)
+						{
+							item.Count = item.Count + count;
+						}
+						else
+						{
+                            item.Count++;
+                        }
+						
 					}
 					else
 					{
 						item = new BasketCkItemViewModel()
 						{
 							ProductId = id,
-							Count = 1,
+							Count = (count > 1 ? count : 1),
 						};
 						basketItems.Add(item);
 					}
@@ -92,11 +112,15 @@ namespace Furniture.Controllers
 					item = new BasketCkItemViewModel
 					{
 						ProductId = id,
-						Count = 1,
+						Count = (count > 1 ? count : 1),
 					};
 					basketItems.Add(item);
 				}
 				HttpContext.Response.Cookies.Append("Basket", JsonConvert.SerializeObject(basketItems));
+				if (detail == true)
+				{
+					return RedirectToAction("detail", new { id = id });
+				}
 				return PartialView("_BasketPartialView", GenerateBasketVM(basketItems));
 			}
 

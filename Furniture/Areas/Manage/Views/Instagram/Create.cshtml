@@ -1,0 +1,37 @@
+﻿@model InstagramCreate
+
+<div class="col-xl">
+    <div class="card mb-4" style="margin:30px;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Instagram Photo Create</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="create" method="post" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Url">Instagram Image Url</label>
+                    <input type="text" class="form-control" id="basic-default-fullname" asp-for="Url" placeholder="Instagram Url">
+                    <span asp-validation-for="Url"></span>
+                </div>
+
+
+
+                <div class="mb-3 " style="width:30%;">
+                    <label asp-for="ImageUrl" class="form-label">Choose Instagram Image</label>
+                    <input class="form-control" type="file" asp-for="ImageUrl" id="formFile">
+                    <span asp-validation-for="ImageUrl"></span>
+                </div>
+
+
+
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+@section Validation{
+    @Html.Partial("_ValidationScript")
+}

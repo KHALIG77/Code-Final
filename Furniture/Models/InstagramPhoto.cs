@@ -8,5 +8,7 @@ namespace Furniture.Models
 		[Required]
 		[MaxLength(100)]
 		public string Image { get; set; }
+		[Required]
+		public string Url {get; set; }
 	}
 }

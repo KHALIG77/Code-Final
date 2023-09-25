@@ -335,8 +335,8 @@
 								@foreach (var instagram in Model.InstagramPhotos)
 								{
 									<div class="item slick-slide">
-										<a class="instagram" href="https://www.instagram.com/">
-											<img width="690" height="690" src="media/banner/@instagram.Image" alt="Image Slider">
+										<a class="instagram" href="@instagram.Url">
+											<img width="690" height="690" src="~/uploads/instagram/@instagram.Image" alt="Image Slider">
 										</a>
 									</div>
 								}

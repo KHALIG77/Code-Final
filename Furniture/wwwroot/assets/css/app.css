@@ -605,12 +605,15 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   outline: unset;
   box-shadow: 0 5px 15px rgba(0,0,0,.05);
 }
+.add-basket-div{
+    
+}
 .products-list.grid .product-wapper .products-thumb .product-button .product-quickview > a > i {
-  font-size: 16px;
-  color: #000;
-  line-height: 40px;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+    font-size: 16px;
+    color: #000;
+    line-height: 40px;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
 }
 .products-list.grid .product-wapper .products-thumb .product-button .product-quickview .loading:before {
   position: relative;
@@ -700,7 +703,7 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   margin-top: 15px;
   text-align: center;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a {
+.products-list.grid .product-wapper .btn-add-to-cart button {
   display: inline-block;
   border: 1px solid #e8e8e8;
   color: #a9a8a8;
@@ -718,12 +721,12 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a:hover {
+.products-list.grid .product-wapper .btn-add-to-cart button:hover {
   background: #000;
   border-color: #000;
   color: #fff;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a:before {
+.products-list.grid .product-wapper .btn-add-to-cart button:before {
   content: "\e901";
   font-family: icomoon;
   font-size: 20px;
@@ -740,7 +743,7 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   transition: all .2s ease;
   margin-right: 10px;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a.loading:before {
+.products-list.grid .product-wapper .btn-add-to-cart button.loading:before {
   position: relative;
   display: inline-block;
   content: "";
@@ -759,10 +762,10 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   text-indent: 0;
   top: 4px;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a:hover:before {
+.products-list.grid .product-wapper .btn-add-to-cart button:hover:before {
   color: #fff;
 }
-.products-list.grid .product-wapper .btn-add-to-cart a.added {
+.products-list.grid .product-wapper .btn-add-to-cart button.added {
   display: none;
 }
 .products-list.grid .product-wapper .btn-add-to-cart a.added-to-cart:before {
@@ -2269,6 +2272,14 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
     max-width: 100%;
     width: 1125px;
 }
+@media(max-width:762px){
+    .btn-add-to-cart{
+        margin-top:10px!important;
+    }
+       
+  
+}
+
 
 @media (max-width: 1199px) {
     .quick-view-modal .modal-dialog {
@@ -2276,6 +2287,7 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
         margin: 30px auto;
     }
 }
+
 
 .quick-view-modal .modal-content {
     border: 0;
@@ -2304,6 +2316,47 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
 
     .modal-thumbs .swiper-slide:hover {
         opacity: 1;
