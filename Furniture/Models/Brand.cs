@@ -13,5 +13,6 @@ namespace Furniture.Models
 		public IFormFile ImageUrl { get; set; }
 		[Required]
 		public string Name {get; set; }
+		List<Product> Products { get; set; }
 	}
 }

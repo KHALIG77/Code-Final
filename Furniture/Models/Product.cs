@@ -26,7 +26,9 @@ namespace Furniture.Models
 		public decimal DiscountPercent {get; set; }
 		public bool IsBest {get; set; }
 		public bool IsFeatured {get; set; }
-		public bool IsStock {get; set; }
+		public bool IsStock { get; set; }
+		public int? BrandId { get; set; }	
+		public Brand Brand { get; set; }	
 		
 		public Category Category { get; set; }
 		public List<ProductTag> Tags { get; set; } = new List<ProductTag>();

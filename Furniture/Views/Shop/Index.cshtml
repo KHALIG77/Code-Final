@@ -32,11 +32,11 @@
 											@for (int i = 0; i < Model.Categories.Count; i++)
 												{
 													<li>
-														<input form="shop-form" name="category" type="radio" class="custom-radio" id="myCheckbox@(i)" style="visibility:hidden;">
+															<input form="shop-form" value="@Model.Categories[i].Id" @(ViewBag.CategoryId == Model.Categories[i].Id ? "checked" : "") name="categoryid" type="radio" class="custom-radio " id="myCheckbox@(i)" style="visibility:hidden;">
 														
 														<div class="d-flex justify-content-between">
 															
-															<label class="label-for" for="myCheckbox@(i)" style="cursor:pointer">@Model.Categories[i].Name</label>
+																<label class="label-for @(ViewBag.CategoryId == Model.Categories[i].Id ? "checked" : "")" for="myCheckbox@(i)" style="cursor:pointer">@Model.Categories[i].Name</label>
 															<span class="count">@Model.Categories[i].Products.Count()</span>
 														</div>
 													</li>
@@ -56,11 +56,11 @@
 													@for (int i = 0; i < Model.Materials.Count; i++)
 													{
 														<li>
-															<input form="shop-form" name="materialid" type="radio" class="custom-radio" id="myMaterial@(i)" style="visibility:hidden;">
+															<input form="shop-form" name="materialid" @(ViewBag.MaterialId == Model.Materials[i].Id ? "checked" : "") value="@Model.Materials[i].Id" type="radio" class="custom-radio " id="myMaterial@(i)" style="visibility:hidden;">
 
 															<div class="d-flex justify-content-between">
 
-																<label class="label-material" for="myMaaterial@(i)" style="cursor:pointer">@Model.Materials[i].Name</label>
+																<label class="label-material @(ViewBag.MaterialId == Model.Materials[i].Id ? "checked" : "")" for="myMaterial@(i)" style="cursor:pointer">@Model.Materials[i].Name</label>
 																<span class="count">@Model.Materials[i].Products.Count()</span>
 															</div>
 														</li>
@@ -80,11 +80,11 @@
 													@for (int i = 0; i < Model.Tags.Count; i++)
 													{
 														<li>
-															<input form="shop-form" name="tags" type="checkbox" class="custom-radio" id="myTags@(i)" style="visibility:hidden;">
+															<input form="shop-form" name="tags" value="@Model.Tags[i].Id" type="checkbox" @(ViewBag.Tags.Contains(Model.Tags[i].Id) ? "checked" : "") id="myTags@(i)" style="visibility:hidden;">
 
 															<div class="d-flex justify-content-between">
 
-																<label class="label-tags" for="myMaaterial@(i)" style="cursor:pointer">@Model.Tags[i].Name</label>
+																<label class="label-tags @(ViewBag.Tags.Contains(Model.Tags[i].Id) ? "checked" : "")" for="myTags@(i)" style="cursor:pointer">@Model.Tags[i].Name</label>
 																
 															</div>
 														</li>
@@ -102,16 +102,17 @@
 									<div class="block-content">
 									
 										<input 
+											value=""
 
-											data-min="0"
-											data-max="100"
-											data-from="10"
-											data-to="60"
+											data-min="@ViewBag.MinLimit"
+											data-max="@ViewBag.MaxLimit"
+											data-from="@ViewBag.MinPrice"
+											data-to="@ViewBag.MaxPrice"
 											data-skin="square"
 											type="text"
 											id="myRange" />
-											<input value="" name="minprice"  type="hidden" id="minPrice">
-											<input value="" name="maxprice"  type="hidden" id="maxPrice">
+											<input value="@ViewBag.MinPrice" name="minprice"  type="hidden" id="minPrice">
+											<input value="@ViewBag.MaxPrice" name="maxprice"  type="hidden" id="maxPrice">
 
 										
 									</div>
@@ -130,13 +131,13 @@
 											<li>
 												<span>L</span>
 											</li>
-											<li style="margin-top:10px;width:30px;">
+										@*	<li style="margin-top:10px;width:30px;">
 												<input  name="sizes" type="checkbox" style="visibility:hidden" id="size-xl">
 												<label for="size-xl" style="cursor:pointer" class="label-size">
 													<span class="d-block">XL</span>
 												</label>
 												
-											</li>
+											</li>*@
 											
 											
 										</ul>
@@ -152,7 +153,7 @@
 											{
 
 												<li >
-													<input form="shop-form" name="brandid" type="radio" class="" id="myBrand@(i)" style="visibility:hidden;">
+													<input form="shop-form" value="@Model.Brands[i].Id" name="brandid" type="radio" class="" id="myBrand@(i)" style="visibility:hidden;">
 													<label class="label-brand" for="myBrand@(i)"><span><img src="~/uploads/brands/@Model.Brands[i].Image" style="cursor:pointer"  alt="Brand"></span></label>
 												</li>
 
@@ -164,6 +165,15 @@
 										</ul>
 									</div>
 								</div>
+								<div class="block block-product-filter clearfix">
+									
+									<div class="block-content d-flex justify-content-center">
+									
+									<button type="submit" form="shop-form" class="filter-btn">Filter</button>
+										<a asp-action="index"  class="reset-btn">Filter</a>
+									</div>
+								</div>
+
 
 								<!-- Block Products -->
 								@*<div class="block block-products">
@@ -263,761 +273,132 @@
 									<div class="tab-pane fade" id="layout-grid" role="tabpanel">
 										<div class="products-list grid">
 											<div class="row">
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
+												@foreach (var product in Model.PaginatedList.Items)
+												{
+													<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+														<div class="products-entry clearfix product-wapper">
+															<div class="products-thumb">
+																<div class="product-thumb-hover">
+																	<a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
+																		<img src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																		<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
+																	</a>
 																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+																									
+																<a class="product-btn add-basket" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id"> </a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+
+																	<span class="product-quickview" data-title="Quick View">
+																		<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class="@*modal-btn-quick*@ @*quickview*@ quickview-button">Quick View <i class="icon-search"></i></a>
+																	</span>
 																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
+															</div>
+															<div class="products-content">
+																<div class="contents text-center">
+																	<h3 class="product-title"><a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Name</a></h3>
+																	@if (product.DiscountPercent > 0)
+																	{
+																		<span class="price">
+																			<del aria-hidden="true"><span>@product.SalePrice.ToString("0.00") $</span></del>
+																			<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("0.00"))$</span></ins>
+																		</span>
+																	}
+																	else
+																	{
+																		<span class="price">@product.SalePrice.ToString("0.00") $</span>
+
+																	}
+
 																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
-																<span class="price">$150.00</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="onsale">-33%</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
-																<span class="price">
-																	<del aria-hidden="true"><span>$150.00</span></del>
-																	<ins><span>$100.00</span></ins>
-																</span>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
-																<span class="price">$150.00</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="onsale">-33%</div>
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
-																<span class="price">
-																	<del aria-hidden="true"><span>$150.00</span></del>
-																	<ins><span>$100.00</span></ins>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="onsale">-23%</div>
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/9.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/9-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Bora Armchair</a></h3>
-																<span class="price">
-																	<del aria-hidden="true"><span>$100.00</span></del>
-																	<ins><span>$90.00</span></ins>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="onsale">-37%</div>
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/10.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/10-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Panton Dining Table</a></h3>
-																<span class="price">
-																	<del aria-hidden="true"><span>$79.00</span></del>
-																	<ins><span>$50.00</span></ins>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/11.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/11-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Kittchen Table</a></h3>
-																<span class="price">$120.00</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="onsale">-10%</div>
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/12.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/12-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Mundo Sofa With Cushion</a></h3>
-																<span class="price">
-																	<del aria-hidden="true"><span>$200.00</span></del>
-																	<ins><span>$180.00</span></ins>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-													<div class="products-entry clearfix product-wapper">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/5.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/5-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-																<span class="product-quickview" data-title="Quick View">
-																	<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-																</span>
-															</div>
-														</div>
-														<div class="products-content">
-															<div class="contents text-center">
-																<h3 class="product-title"><a href="shop-details.html">Amp Pendant Light Large</a></h3>
-																<span class="price">$140.00</span>
-															</div>
-														</div>
-													</div>
-												</div>
+												}
+												
+											
+											
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade show active" id="layout-list" role="tabpanel">
 										<div class="products-list list">
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
+										
+											@foreach (var product in Model.PaginatedList.Items)
+											{
+												<div class="products-entry clearfix product-wapper">
+													<div class="row">
+														<div class="col-md-4">
+															<div class="products-thumb">
+
+																<div class="product-thumb-hover">
+																	<a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
+																		<img src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" class="post-image" alt="">
+																		<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
+																	</a>
+																</div>
+																<span class="product-quickview" data-title="Quick View">
+																	<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class="@*modal-btn-quick*@ @*quickview*@ quickview-button">Quick View <i class="icon-search"></i></a>
+																</span>
 															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/6.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/6-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
 														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Dining Table</a></h3>
-															<span class="price">$150.00</span>
-															<div class="rating">
-																<div class="star star-5"></div>
-																<div class="review-count">
-																	(1<span> review</span>)
+														<div class="col-md-8">
+															<div class="products-content">
+																<h3 class="product-title"><a asp-action="detail" asp-controller="product" asp-route-id="@product.Id">@product.Name</a></h3>
+																@if (product.DiscountPercent > 0)
+																{
+																	<span class="price">
+																		<del aria-hidden="true"><span>@product.SalePrice.ToString("0.00") $</span></del>
+																		<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("0.00"))$</span></ins>
+																	</span>
+																}
+																else
+																{
+																	<span class="price">@product.SalePrice.ToString("0.00") $</span>
+
+																}
+																<div class="rating">
+																	<div class="star star-@product.Rate"></div>
+																	<div class="review-count">
+																		(@product.Comments.Count()<span> review</span>)
+																	</div>
 																</div>
+																<div class="product-button">
+																	<div class="btn-add-to-cart" data-title="Add to cart">
+
+																		<a class="product-btn add-basket" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id">Add to basket </a>
+																	</div>
+																	<div class="btn-wishlist" data-title="Wishlist">
+																		<button class="product-btn">Add to wishlist</button>
+																	</div>
+
+																	
+																</div>
+																<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
 															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Pillar Dining Table Round</a></h3>
-															<span class="price">
-																<del aria-hidden="true"><span>$150.00</span></del>
-																<ins><span>$100.00</span></ins>
-															</span>
-															<div class="rating">
-																<div class="star star-0"></div>
-																<div class="review-count">
-																	(0<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/7.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/7-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Mags Sofa 2.5 Seater</a></h3>
-															<span class="price">$150.00</span>
-															<div class="rating">
-																<div class="star star-4"></div>
-																<div class="review-count">
-																	(1<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/8.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/8-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Spinning pendant lamp</a></h3>
-															<span class="price">
-																<del aria-hidden="true"><span>$120.00</span></del>
-																<ins><span>$100.00</span></ins>
-															</span>
-															<div class="rating">
-																<div class="star star-0"></div>
-																<div class="review-count">
-																	(0<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/9.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/9-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Bora Armchair</a></h3>
-															<span class="price">
-																<del aria-hidden="true"><span>$100.00</span></del>
-																<ins><span>$90.00</span></ins>
-															</span>
-															<div class="rating">
-																<div class="star star-5"></div>
-																<div class="review-count">
-																	(3<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/10.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/10-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Panton Dining Table</a></h3>
-															<span class="price">
-																<del aria-hidden="true"><span>$79.00</span></del>
-																<ins><span>$50.00</span></ins>
-															</span>
-															<div class="rating">
-																<div class="star star-5"></div>
-																<div class="review-count">
-																	(2<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/11.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/11-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Kittchen Table</a></h3>
-															<span class="price">$120.00</span>
-															<div class="rating">
-																<div class="star star-4"></div>
-																<div class="review-count">
-																	(1<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/12.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/12-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Mundo Sofa With Cushion</a></h3>
-															<span class="price">
-																<del aria-hidden="true"><span>$200.00</span></del>
-																<ins><span>$180.00</span></ins>
-															</span>
-															<div class="rating">
-																<div class="star star-5"></div>
-																<div class="review-count">
-																	(4<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="products-entry clearfix product-wapper">
-												<div class="row">
-													<div class="col-md-4">
-														<div class="products-thumb">
-															<div class="product-lable">
-																<div class="hot">Hot</div>
-															</div>
-															<div class="product-thumb-hover">
-																<a href="shop-details.html">
-																	<img width="600" height="600" src="media/product/5.jpg" class="post-image" alt="">
-																	<img width="600" height="600" src="media/product/5-2.jpg" class="hover-image back" alt="">
-																</a>
-															</div>
-															<span class="product-quickview" data-title="Quick View">
-																<a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-															</span>
-														</div>
-													</div>
-													<div class="col-md-8">
-														<div class="products-content">
-															<h3 class="product-title"><a href="shop-details.html">Amp Pendant Light Large</a></h3>
-															<span class="price">$140.00</span>
-															<div class="rating">
-																<div class="star star-5"></div>
-																<div class="review-count">
-																	(1<span> review</span>)
-																</div>
-															</div>
-															<div class="product-button">
-																<div class="btn-add-to-cart" data-title="Add to cart">
-																	<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																</div>
-																<div class="btn-wishlist" data-title="Wishlist">
-																	<button class="product-btn">Add to wishlist</button>
-																</div>
-																<div class="btn-compare" data-title="Compare">
-																	<button class="product-btn">Compare</button>
-																</div>
-															</div>
-															<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
-														</div>
-													</div>
-												</div>
-											</div>
+											}
 										</div>
 									</div>
+									
+									
 								</div>
 
 								<nav class="pagination">
 									<ul class="page-numbers">
-										<li><a class="prev page-numbers" href="#">Previous</a></li>
-										<li><span aria-current="page" class="page-numbers current">1</span></li>
-										<li><a class="page-numbers" href="#">2</a></li>
-										<li><a class="page-numbers" href="#">3</a></li>
-										<li><a class="next page-numbers" href="#">Next</a></li>
+										<li><a class="prev @(Model.PaginatedList.HasPrevious==false?"disabled":"") page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex-1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Previous</a></li>
+										@for (int i = 1; i <= Model.PaginatedList.TotalPage; i++)
+										{
+											<li><a class="page-numbers @(Model.PaginatedList.PageIndex==i?"current":"")" asp-action="index" asp-route-page="@i" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">@i</a></li>
+										}
+										<li><a class="next @(Model.PaginatedList.HasNext==true?"disabled":"") page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex+1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Next</a></li>
+
 									</ul>
 								</nav>
 							</div>
