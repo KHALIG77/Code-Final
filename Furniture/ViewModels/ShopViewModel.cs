@@ -6,7 +6,7 @@ namespace Furniture.ViewModels
 	{
 		public List<Category> Categories { get; set; }
 		public List<Brand> Brands { get; set; }
-		
+		public List<Material> Materials { get; set; }	
 		public List<Tag> Tags { get; set; }	
 		public PaginatedList<Product> PaginatedList { get; set;}
 		public int AllPlantCount {get; set;}

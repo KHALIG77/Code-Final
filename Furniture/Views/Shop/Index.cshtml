@@ -47,6 +47,54 @@
 										</div>
 									</div>
 								</div>
+								@*Material Filter*@
+									<div class="block block-product-cats">
+										<div class="block-title"><h2>Materials</h2></div>
+										<div class="block-content">
+											<div class="product-cats-list">
+												<ul>
+													@for (int i = 0; i < Model.Materials.Count; i++)
+													{
+														<li>
+															<input form="shop-form" name="materialid" type="radio" class="custom-radio" id="myMaterial@(i)" style="visibility:hidden;">
+
+															<div class="d-flex justify-content-between">
+
+																<label class="label-material" for="myMaaterial@(i)" style="cursor:pointer">@Model.Materials[i].Name</label>
+																<span class="count">@Model.Materials[i].Products.Count()</span>
+															</div>
+														</li>
+													}
+
+
+												</ul>
+											</div>
+										</div>
+									</div>
+									@*Tag Filter*@
+									<div class="block block-product-cats">
+										<div class="block-title"><h2>Tags</h2></div>
+										<div class="block-content">
+											<div class="product-cats-list">
+												<ul>
+													@for (int i = 0; i < Model.Tags.Count; i++)
+													{
+														<li>
+															<input form="shop-form" name="tags" type="checkbox" class="custom-radio" id="myTags@(i)" style="visibility:hidden;">
+
+															<div class="d-flex justify-content-between">
+
+																<label class="label-tags" for="myMaaterial@(i)" style="cursor:pointer">@Model.Tags[i].Name</label>
+																
+															</div>
+														</li>
+													}
+
+
+												</ul>
+											</div>
+										</div>
+									</div>
 
 								<!-- Block Product Filter -->
 							<div class="block block-product-filter">
@@ -76,9 +124,21 @@
 									<div class="block-title"><h2>Size</h2></div>
 									<div class="block-content">
 										<ul class="filter-items text">
-											<li><span>L</span></li>
-											<li><span>M</span></li>
+											<li><span>XS</span></li>
 											<li><span>S</span></li>
+											<li><span>M</span></li>
+											<li>
+												<span>L</span>
+											</li>
+											<li style="margin-top:10px;width:30px;">
+												<input  name="sizes" type="checkbox" style="visibility:hidden" id="size-xl">
+												<label for="size-xl" style="cursor:pointer" class="label-size">
+													<span class="d-block">XL</span>
+												</label>
+												
+											</li>
+											
+											
 										</ul>
 									</div>
 								</div>
@@ -106,7 +166,7 @@
 								</div>
 
 								<!-- Block Products -->
-								<div class="block block-products">
+								@*<div class="block block-products">
 									<div class="block-title"><h2>Feature Product</h2></div>
 									<div class="block-content">
 										<ul class="products-list">
@@ -166,7 +226,7 @@
 											</li>
 										</ul>
 									</div>
-								</div>
+								</div>*@
 							</div>
 
 							<div class="col-xl-9 col-lg-9 col-md-12 col-12">

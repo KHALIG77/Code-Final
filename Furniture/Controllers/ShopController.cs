@@ -18,9 +18,10 @@ namespace Furniture.Controllers
 		{
 			ShopViewModel vm = new ShopViewModel
 			{
-				Categories=_context.Categories.Include(x=>x.Products).ToList(),
-				Tags=_context.Tags.ToList(),
-				Brands=_context.Brands.ToList(),
+				Categories = _context.Categories.Include(x => x.Products).ToList(),
+				Tags = _context.Tags.ToList(),
+				Brands = _context.Brands.ToList(),
+				Materials = _context.Materials.Include(x=>x.Products).ToList()
 			};
 			return View(vm);
 		}

@@ -20,7 +20,7 @@ labelForBrand.forEach((label) => {
 
     label.addEventListener("click", () => {
         if (!label.classList.contains("brand-color")) {
-            labelFor.forEach((e) => {
+            labelForBrand.forEach((e) => {
                 e.classList.remove("brand-color")
             })
             label.classList.add("brand-color")
@@ -48,3 +48,54 @@ $(document).ready(function () {
         },
     });
 });
+
+let labelMaterial = document.querySelectorAll(".label-material")
+
+
+labelMaterial.forEach((label) => {
+
+    label.addEventListener("click", () => {
+        if (!label.classList.contains("checked")) {
+            labelMaterial.forEach((e) => {
+                e.classList.remove("checked")
+            })
+            label.classList.add("checked")
+        }
+
+    })
+})
+
+let labelTags = document.querySelectorAll(".label-tags")
+
+
+labelTags.forEach((label) => {
+
+    label.addEventListener("click", () => {
+        if (!label.classList.contains("checked")) {
+
+            label.classList.add("checked")
+        }
+        else {
+            label.classList.remove("checked")
+        }
+
+    })
+})
+
+
+let labelSizes = document.querySelectorAll(".label-size")
+
+
+labelSizes.forEach((label) => {
+
+    label.addEventListener("click", () => {
+        if (!label.classList.contains("size-color")) {
+
+            label.classList.add("size-color")
+        }
+        else {
+            label.classList.remove("size-color")
+        }
+
+    })
+})
