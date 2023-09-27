@@ -153,7 +153,7 @@
 
     settings: {
       from: 1,
-      to: 10,
+      to: 1000,
       step: 1,
       smooth: true,
       limits: true,

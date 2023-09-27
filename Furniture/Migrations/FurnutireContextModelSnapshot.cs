@@ -45,7 +45,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Brand", b =>
@@ -67,7 +67,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Category", b =>
@@ -85,7 +85,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Color", b =>
@@ -102,7 +102,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Comment", b =>
@@ -146,7 +146,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Feature", b =>
@@ -173,7 +173,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Features");
+                    b.ToTable("Features", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.InstagramPhoto", b =>
@@ -195,7 +195,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InstagramPhotos");
+                    b.ToTable("InstagramPhotos", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Material", b =>
@@ -213,7 +213,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Order", b =>
@@ -270,7 +270,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.OrderItem", b =>
@@ -305,7 +305,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Product", b =>
@@ -359,7 +359,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductColor", b =>
@@ -382,7 +382,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductColors");
+                    b.ToTable("ProductColors", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductImage", b =>
@@ -406,7 +406,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductSize", b =>
@@ -429,7 +429,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("SizeId");
 
-                    b.ToTable("ProductSizes");
+                    b.ToTable("ProductSizes", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.ProductTag", b =>
@@ -452,7 +452,7 @@ namespace Furniture.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("ProductTags");
+                    b.ToTable("ProductTags", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Size", b =>
@@ -469,7 +469,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sizes");
+                    b.ToTable("Sizes", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Slider", b =>
@@ -506,7 +506,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("Furniture.Models.Tag", b =>
@@ -524,7 +524,7 @@ namespace Furniture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

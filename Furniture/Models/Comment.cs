@@ -5,10 +5,11 @@ namespace Furniture.Models
 	public class Comment
 	{
 		public int Id { get; set; }
-		[Required]
+		
 		public string AppUserId {get; set;}
 		[Required]
 		public int ProductId {get; set;}
+		[Required]
 		[Range(0,5)]
 		public byte Rate { get; set;}
 		[Required]

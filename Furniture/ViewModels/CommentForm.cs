@@ -4,8 +4,9 @@ namespace Furniture.ViewModels
 {
 	public class CommentForm
 	{
+		public int ProductId {get; set;}
+		
 		[Required]
-
 	    public int Rate {get; set;}
 		[Required]
 		[MaxLength(400)]

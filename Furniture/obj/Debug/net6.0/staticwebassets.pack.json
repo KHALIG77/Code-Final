@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\app.css"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\css\\custom.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\css\\responsive.css",
       "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\img\\remove-dark.svg",
       "PackagePath": "staticwebassets\\assets\\img\\remove-dark.svg"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\Shop.js",
+      "PackagePath": "staticwebassets\\assets\\js\\Shop.js"
     },
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\app.js",

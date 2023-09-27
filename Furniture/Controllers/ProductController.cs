@@ -26,16 +26,22 @@ namespace Furniture.Controllers
 		}
 		public IActionResult Detail(int id)
 		{
-			Product product = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).Include(x => x.Images).Include(x => x.Material).Include(x => x.Sizes).ThenInclude(s => s.Size).Include(x => x.Colors).ThenInclude(x => x.Color).FirstOrDefault(x => x.Id == id);
+			Product product = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).ThenInclude(x=>x.AppUser).Include(x => x.Images).Include(x => x.Material).Include(x => x.Sizes).ThenInclude(s => s.Size).Include(x => x.Colors).ThenInclude(x => x.Color).FirstOrDefault(x => x.Id == id);
 
 			if (product == null)
 			{
 				return View("Error");
 			}
-			ProductDetailViewModel vm = new ProductDetailViewModel
+			bool accessComment = true;
+			if (product.Comments.Any(comment => comment.AppUserId == User.FindFirstValue(ClaimTypes.NameIdentifier)))
 			{
+				accessComment = false;
+			}
+			ProductDetailViewModel vm = new ProductDetailViewModel
+			{   CommentForm =new Comment { ProductId=product.Id},
 				Product = product,
 				RelatedProducts = _context.Products.Include(x => x.Category).Include(x => x.Tags).ThenInclude(t => t.Tag).Include(x => x.Comments).Include(x => x.Images).Where(x => x.CategoryId == product.CategoryId).ToList(),
+				AccessComment = accessComment,
 			};
 
 			return View(vm);
@@ -221,7 +227,58 @@ namespace Furniture.Controllers
 			
 
 		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public IActionResult CommentForm(Comment comment)
+		{
+			if (!User.Identity.IsAuthenticated && !User.IsInRole("Member"))
+			{
+				return RedirectToAction("login", "account", new { returUrl = Url.Action("detail", "product", new { id = comment.ProductId }) });
+			}
+			if (!ModelState.IsValid)
+			{
+				Product product = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).Include(x => x.Images).Include(x => x.Material).Include(x => x.Sizes).ThenInclude(s => s.Size).Include(x => x.Colors).ThenInclude(x => x.Color).FirstOrDefault(x => x.Id == comment.ProductId);
 
+				if (product == null)
+				{
+					return View("Error");
+				}
+				ProductDetailViewModel vm = new ProductDetailViewModel
+				{
+					Product =product,
+					CommentForm = new Comment { ProductId = product.Id },
+					RelatedProducts = _context.Products.Include(x => x.Category).Include(x => x.Tags).ThenInclude(t => t.Tag).Include(x => x.Comments).Include(x => x.Images).Where(x => x.CategoryId == product.CategoryId).ToList(),
+
+
+				};
+				vm.CommentForm = comment;
+				return View("Detail", vm);
+
+			}
+			string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			Comment comme = new Comment
+			{
+				AppUserId = userId,
+				CreatedAt = DateTime.UtcNow.AddHours(4),
+				ProductId = comment.ProductId,
+				Rate = (byte)comment.Rate,
+				CommentText = comment.CommentText,
+
+
+			};
+			
+
+
+			_context.Comments.Add(comme);
+			
+			Product product1 = _context.Products.Include(x => x.Comments).FirstOrDefault(x => x.Id == comment.ProductId);
+			product1.Rate = (byte)Math.Ceiling((decimal)(product1.Comments.Average(x => x.Rate))) ;
+
+			_context.SaveChanges();
+
+			return RedirectToAction("detail", new { id = comment.ProductId });
+
+		}
 
 
 	}

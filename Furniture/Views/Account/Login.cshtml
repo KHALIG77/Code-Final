@@ -29,6 +29,7 @@
 													<div class="username">
 														<label asp-for="Email">Email address <span class="required">*</span></label>
 														<input asp-for="Email" type="text" class="input-text"  id="username">
+														<input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl">
 														
 													</div>
 													<div class="password">

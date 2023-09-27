@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a8JV/KYO3e/JmOCP92wgpgi5tUbSZTX8PvotyDzB0qY=",
+  "Hash": "nOWUaTdScHmdeP2AIgM6kZMxWSxjQOqLQtRRFmvXT7Y=",
   "Source": "Furniture",
   "BasePath": "_content/Furniture",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\css\\custom.css",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "assets/css/custom.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\custom.css"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\css\\responsive.css",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery-3-6-0.js"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\Shop.js",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "assets/js/Shop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\Shop.js"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css",

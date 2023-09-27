@@ -138,8 +138,7 @@
 										</div>
 										</form>
 										<div class="product-meta">
-@*											<span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span>
-*@											<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">@Model.Product.Category.Name</a></span>
+										<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">@Model.Product.Category.Name</a></span>
 											<span class="posted-in">Material: <a href="shop-grid-left.html" rel="tag">@Model.Product.Material.Name</a></span>
 											<span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">
 													@for (int i = 0; i < Model.Product.Tags.Count(); i++)
@@ -176,7 +175,7 @@
 										</li>
 										
 										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
+											<a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (@Model.Product.Comments.Count())</a>
 										</li>
 									</ul>
 									<div class="tab-content">
@@ -187,7 +186,7 @@
 										<div class="tab-pane fade" id="reviews" role="tabpanel">
 											<div id="reviews" class="product-reviews">
 												<div id="comments">
-													<h2 class="reviews-title">1 review for <span>@Model.Product.Name</span></h2>
+													<h2 class="reviews-title">@Model.Product.Comments.Count() review for <span>@Model.Product.Name</span></h2>
 													<ol class="comment-list">
 														@foreach (var comment in Model.Product.Comments.Where(x => x.ProductId == Model.Product.Id))
 														{
@@ -213,37 +212,12 @@
 
 													</ol>
 												</div>
-												<div id="review-form">
-													<div id="respond" class="comment-respond">
-														<span id="reply-title" class="comment-reply-title">Add a review</span>
-														<form method="post" id="comment-form" class="comment-form" style="display:block!important">
+												@if (User.Identity.IsAuthenticated && User.IsInRole("Member") && Model.AccessComment)
+												{
+													@Html.Partial("_CommentFormPartialView",Model.CommentForm)
+												}
 
-															<div class="rate" style="margin-bottom:20px;">
-																<input type="radio" id="star5" name="rate" value="5" />
-																<label for="star5" title="text">5 stars</label>
-																<input type="radio" id="star4" name="rate" value="4" />
-																<label for="star4" title="text">4 stars</label>
-																<input type="radio" id="star3" name="rate" value="3" />
-																<label for="star3" title="text">3 stars</label>
-																<input type="radio" id="star2" name="rate" value="2" />
-																<label for="star2" title="text">2 stars</label>
-																<input type="radio" id="star1" name="rate" value="1" />
-																<label for="star1" title="text">1 star</label>
-															</div>
-
-															<p class="comment-form-comment">
-																<textarea id="comment" placeholder="Your Reviews *" cols="25" rows="4" aria-required="true" required=""></textarea>
-															</p>
-															<div class="content-info-reviews">
-
-
-																<p class="form-submit">
-																	<input name="submit" type="submit" id="submit" class="submit" value="Submit">
-																</p>
-															</div>
-														</form><!-- #respond -->
-													</div>
-												</div>
+												
 												<div class="clear"></div>
 											</div>
 										</div>

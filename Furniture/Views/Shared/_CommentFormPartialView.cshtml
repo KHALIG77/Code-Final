@@ -1,1 +1,42 @@
-﻿
+﻿@model Comment
+
+
+
+<div id="review-form">
+	<div id="respond" class="comment-respond">
+		<span id="reply-title" class="comment-reply-title">Add a review</span>
+		<form asp-action="commentform" method="post" id="comment-form" class="comment-form" style="display:block!important">
+
+			<div class="rate" style="margin-bottom:20px;">
+				<input form="comment-form" type="radio" id="star5" name="Rate" value="5" />
+				<label for="star5" title="text">5 stars</label>
+				<input form="comment-form" type="radio" id="star4" name="Rate" value="4" />
+				<label for="star4" title="text">4 stars</label>
+				<input form="comment-form" type="radio" id="star3" name="Rate" value="3" />
+				<label for="star3" title="text">3 stars</label>
+				<input form="comment-form" type="radio" id="star2" name="Rate" value="2" />
+				<label for="star2" title="text">2 stars</label>
+				<input form="comment-form" type="radio" id="star1" name="Rate" value="1" />
+				<label for="star1" title="text">1 star</label>
+				
+				
+			</div>
+		
+			<input type="hidden" value="@Model.ProductId" name="ProductId">
+			
+			<p class="comment-form-comment">
+				<textarea name="CommentText" id="comment" placeholder="Your Reviews *" cols="25" rows="4" aria-required="true" required=""></textarea>
+			</p>
+			<div class="content-info-reviews">
+
+
+				<p class="form-submit">
+					<input  type="submit" id="submit" class="submit" value="Submit">
+				</p>
+			</div>
+		</form><!-- #respond -->
+	</div>
+</div>
+@section Validation{
+	@Html.Partial("_ValidationScriptsPartial")
+}
