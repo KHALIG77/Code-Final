@@ -62,8 +62,9 @@
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center">
 									<div class="site-logo">
-										<a href="index7.html">
-											<img width="400" height="79" src="~/media/logo.png" alt="Ruper – Furniture HTML Theme" />
+										<a asp-action="index" asp-controller="home">
+											@*<img width="400" height="79" src="~/media/logo.png" alt="Ruper – Furniture HTML Theme" />*@
+											<h5>HOME</h5>
 										</a>
 									</div>
 								</div>
@@ -71,7 +72,7 @@
 									<div class="ruper-topcart dropdown">
 										<div class="dropdown mini-cart top-cart">
 											<div class="remove-cart-shadow"></div>
-											<a class="dropdown-toggle cart-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<a class="dropdown-toggle cart-icon" @*href="#"*@ role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												<div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">@basket.TotalCount</span></div>
 											</a>
 											<div class="dropdown-menu cart-popup basket-view" >
@@ -87,7 +88,7 @@
 					<div class="header-mobile-fixed">
 						<!-- Shop -->
 						<div class="shop-page">
-							<a href="shop-grid-left.html"><i class="wpb-icon-shop"></i></a>
+							<a asp-action="index" asp-controller="shop"><i class="wpb-icon-shop"></i></a>
 						</div>
 
 						<!-- Login -->
@@ -110,7 +111,7 @@
 
 						<!-- Wishlist -->
 						<div class="wishlist-box">
-							<a href="shop-wishlist.html"><i class="wpb-icon-heart"></i></a>
+							<a><i class="wpb-icon-heart"></i></a>
 						</div>
 					</div>
 				</div>
@@ -123,31 +124,32 @@
 									<div class="col-lg-8 header-left">
 										<div class="site-logo">
 											<a href="index7.html">
-												<img width="400" height="79" src="~/media/logo.png" alt="Ruper – Furniture HTML Theme" />
-											</a>
+
+                                                  <h5>MY-HOME</h5>
+                                               </a>
 										</div>
 										
 										<div class="site-navigation">
 											<nav id="main-navigation">
 												<ul id="menu-main-menu" class="menu">
 													<li class="level-0 menu-item menu-item-has-children mega-menu current-menu-item">
-														<a href="index.html"><span class="menu-item-text">Home</span></a>
+														<a asp-action="index" asp-controller="home"><span class="menu-item-text">Home</span></a>
 														
 													</li>
 													<li class="level-0 menu-item menu-item-has-children">
-														<a href="shop-grid-left.html"><span class="menu-item-text">Shop</span></a>
+														<a asp-action="index" asp-controller="shop"><span class="menu-item-text">Shop</span></a>
 														
 													</li>
-													<li class="level-0 menu-item menu-item-has-children mega-menu mega-menu-fullwidth align-center">
+													@*<li class="level-0 menu-item menu-item-has-children mega-menu mega-menu-fullwidth align-center">
 														<a href="blog-grid-left.html"><span class="menu-item-text">Blog</span></a>
 														
-													</li>
-													<li class="level-0 menu-item menu-item-has-children">
+													</li>*@
+													@*<li class="level-0 menu-item menu-item-has-children">
 														<a href="#"><span class="menu-item-text">Pages</span></a>
 														
-													</li>
+													</li>*@
 													<li class="level-0 menu-item">
-														<a href="page-contact.html"><span class="menu-item-text">Contact</span></a>
+														<a asp-action="index" asp-controller="contact"><span class="menu-item-text">Contact</span></a>
 													</li>
 												</ul>
 											</nav>

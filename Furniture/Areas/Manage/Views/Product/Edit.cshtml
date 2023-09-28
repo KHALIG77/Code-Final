@@ -35,7 +35,7 @@
                 <div class="d-flex justify-content-between">
 
 
-                    <div class="mb-3" style="width:40%;">
+                    <div class="mb-3" style="width:30%;">
                         <label asp-for="Category" class="form-label">Category Select</label>
                         <select class="form-select" asp-for="CategoryId" id="exampleFormControlSelect1" aria-label="Default select example">
                             <option selected="">Open this select menu</option>
@@ -47,8 +47,20 @@
                         </select>
                         <span asp-validation-for="CategoryId"></span>
                     </div>
+                    <div class="mb-3" style="width:30%;">
+                        <label asp-for="Brand" class="form-label">Brand Select</label>
+                        <select class="form-select" asp-for="BrandId" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected="">Open this select menu</option>
+                            @foreach (Brand brand in ViewBag.Brands)
+                            {
+                                <option value="@brand.Id">@brand.Name</option>
+                            }
 
-                    <div class="mb-3" style="width:40%;">
+                        </select>
+                        <span asp-validation-for="BrandId"></span>
+                    </div>
+
+                    <div class="mb-3" style="width:30%;">
                         <label asp-for="Material" class="form-label">Material Select</label>
                         <select class="form-select" asp-for="MaterialId" id="exampleFormControlSelect1" aria-label="Default select example">
                             <option selected="">Open this select menu</option>

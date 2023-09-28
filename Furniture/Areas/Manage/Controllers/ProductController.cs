@@ -25,7 +25,8 @@ namespace Furniture.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Create()
         {
-            ViewBag.Categories = _context.Categories.ToList();
+			ViewBag.Brands = _context.Brands.ToList();
+			ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Tags = _context.Tags.ToList();
             ViewBag.Materials = _context.Materials.ToList();
             ViewBag.Sizes = _context.Sizes.ToList();
@@ -36,6 +37,7 @@ namespace Furniture.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Product product)
         {
+            ViewBag.Brands = _context.Brands.ToList();
             ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Tags = _context.Tags.ToList();
             ViewBag.Materials = _context.Materials.ToList();
@@ -120,6 +122,7 @@ namespace Furniture.Areas.Manage.Controllers
                     product.Colors.Add(productColor);
                 }
             }
+            
             product.Rate = 5;
             _context.Products.Add(product);
             _context.SaveChanges();
@@ -128,7 +131,8 @@ namespace Furniture.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
-            ViewBag.Categories = _context.Categories.ToList();
+			ViewBag.Brands = _context.Brands.ToList();
+			ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Tags = _context.Tags.ToList();
             ViewBag.Materials = _context.Materials.ToList();
             ViewBag.Sizes = _context.Sizes.ToList();
@@ -147,7 +151,8 @@ namespace Furniture.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Product product)
         {
-            ViewBag.Categories = _context.Categories.ToList();
+			ViewBag.Brands = _context.Brands.ToList();
+			ViewBag.Categories = _context.Categories.ToList();
             ViewBag.Tags = _context.Tags.ToList();
             ViewBag.Materials = _context.Materials.ToList();
             ViewBag.Sizes = _context.Sizes.ToList();
@@ -239,6 +244,7 @@ namespace Furniture.Areas.Manage.Controllers
                 };
                 existProduct.Images.Add(image);
             }
+            existProduct.BrandId = product.BrandId;
             existProduct.Name = product.Name;
             existProduct.Description = product.Description;
             existProduct.CostPrice= product.CostPrice;

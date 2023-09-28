@@ -47,7 +47,7 @@ namespace Furniture.Services
                     {
 						BasketItemViewModel basketItem = new BasketItemViewModel
 						{
-							Product = _context.Products.FirstOrDefault(x => x.Id == item.ProductId),
+							Product = _context.Products.Include(x=>x.Images).FirstOrDefault(x => x.Id == item.ProductId),
 							Count =(int)item.Count,
 						};
 					   

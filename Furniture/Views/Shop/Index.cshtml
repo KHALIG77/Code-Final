@@ -31,7 +31,7 @@
 											<ul>
 											@for (int i = 0; i < Model.Categories.Count; i++)
 												{
-													<li>
+													<li style="height:35px;">
 															<input form="shop-form" value="@Model.Categories[i].Id" @(ViewBag.CategoryId == Model.Categories[i].Id ? "checked" : "") name="categoryid" type="radio" class="custom-radio " id="myCheckbox@(i)" style="visibility:hidden;">
 														
 														<div class="d-flex justify-content-between">
@@ -55,7 +55,7 @@
 												<ul>
 													@for (int i = 0; i < Model.Materials.Count; i++)
 													{
-														<li>
+														<li style="height:35px;">
 															<input form="shop-form" name="materialid" @(ViewBag.MaterialId == Model.Materials[i].Id ? "checked" : "") value="@Model.Materials[i].Id" type="radio" class="custom-radio " id="myMaterial@(i)" style="visibility:hidden;">
 
 															<div class="d-flex justify-content-between">
@@ -79,7 +79,7 @@
 												<ul>
 													@for (int i = 0; i < Model.Tags.Count; i++)
 													{
-														<li>
+														<li style="height:35px;">
 															<input form="shop-form" name="tags" value="@Model.Tags[i].Id" type="checkbox" @(ViewBag.Tags.Contains(Model.Tags[i].Id) ? "checked" : "") id="myTags@(i)" style="visibility:hidden;">
 
 															<div class="d-flex justify-content-between">
@@ -121,7 +121,7 @@
 						
 
 								<!-- Block Product Filter -->
-								<div class="block block-product-filter clearfix">
+								@*<div class="block block-product-filter clearfix" style="margin-top:30px;">
 									<div class="block-title"><h2>Size</h2></div>
 									<div class="block-content">
 										<ul class="filter-items text">
@@ -131,18 +131,18 @@
 											<li>
 												<span>L</span>
 											</li>
-										@*	<li style="margin-top:10px;width:30px;">
+											<li style="margin-top:10px;width:30px;">
 												<input  name="sizes" type="checkbox" style="visibility:hidden" id="size-xl">
 												<label for="size-xl" style="cursor:pointer" class="label-size">
 													<span class="d-block">XL</span>
 												</label>
 												
-											</li>*@
+											</li>
 											
 											
 										</ul>
 									</div>
-								</div>
+								</div>*@
 
 								<!-- Block Product Filter -->
 								<div class="block block-product-filter clearfix">
@@ -165,90 +165,30 @@
 										</ul>
 									</div>
 								</div>
-								<div class="block block-product-filter clearfix">
+								<div class="block block-product-filter clearfix"  style="margin-bottom:30px;">
 									
 									<div class="block-content d-flex justify-content-center">
 									
 									<button type="submit" form="shop-form" class="filter-btn">Filter</button>
-										<a asp-action="index"  class="reset-btn">Filter</a>
+										<a asp-action="index"  class="reset-btn">Reset</a>
 									</div>
 								</div>
 
 
-								<!-- Block Products -->
-								@*<div class="block block-products">
-									<div class="block-title"><h2>Feature Product</h2></div>
-									<div class="block-content">
-										<ul class="products-list">
-											<li class="product-item">
-												<a href="shop-details.html" class="product-image">
-													<img src="media/product/6.jpg">
-												</a>
-												<div class="product-content">
-													<h2 class="product-title">
-														<a href="shop-details.html">
-															Dining Table
-														</a>
-													</h2>
-													<div class="rating small">
-														<div class="star star-5"></div>
-													</div>
-													<span class="price">
-														<del aria-hidden="true"><span>$150.00</span></del>
-														<ins><span>$100.00</span></ins>
-													</span>
-												</div>
-											</li>
-											<li class="product-item">
-												<a href="shop-details.html" class="product-image">
-													<img src="media/product/8.jpg">
-												</a>
-												<div class="product-content">
-													<h2 class="product-title">
-														<a href="shop-details.html">
-															Spinning Pendant Lamp
-														</a>
-													</h2>
-													<div class="rating small">
-														<div class="star star-0"></div>
-													</div>
-													<span class="price">$120.00</span>
-												</div>
-											</li>
-											<li class="product-item">
-												<a href="shop-details.html" class="product-image">
-													<img src="media/product/9.jpg">
-												</a>
-												<div class="product-content">
-													<h2 class="product-title">
-														<a href="shop-details.html">
-															Bora Armchair
-														</a>
-													</h2>
-													<div class="rating small">
-														<div class="star star-5"></div>
-													</div>
-													<span class="price">
-														<del aria-hidden="true"><span>$200.00</span></del>
-														<ins><span>$180.00</span></ins>
-													</span>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>*@
 							</div>
 
 							<div class="col-xl-9 col-lg-9 col-md-12 col-12">
 								<div class="products-topbar clearfix">
 									<div class="products-topbar-left">
 										<div class="products-count">
-											Showing all 21 results
+											Showing all @Model.PaginatedList.Items.Count() results
 										</div>
 									</div>
 									<div class="products-topbar-right">
 										<div class="products-sort dropdown">
-											<span class="sort-toggle dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Default sorting</span>
+											<select style="padding:0;padding-left:7px;" onchange="this.form.submit()" asp-items="@ViewBag.SortList" form="shop-form" name="sort" class=" nice-select">
+											</select>
+											@*<span class="sort-toggle dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Default sorting</span>
 											<ul class="sort-list dropdown-menu" x-placement="bottom-start">
 												<li class="active"><a href="#">Default sorting</a></li>
 												<li><a href="#">Sort by popularity</a></li>
@@ -256,7 +196,7 @@
 												<li><a href="#">Sort by latest</a></li>
 												<li><a href="#">Sort by price: low to high</a></li>
 												<li><a href="#">Sort by price: high to low</a></li>
-											</ul>
+											</ul>*@
 										</div>
 										<ul class="layout-toggle nav nav-tabs">
 											<li class="nav-item">
@@ -392,12 +332,12 @@
 
 								<nav class="pagination">
 									<ul class="page-numbers">
-										<li><a class="prev @(Model.PaginatedList.HasPrevious==false?"disabled":"") page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex-1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Previous</a></li>
+										<li class="@(Model.PaginatedList.HasPrevious == false ? "d-none" : "")"><a class="prev page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex-1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Previous</a></li>
 										@for (int i = 1; i <= Model.PaginatedList.TotalPage; i++)
 										{
-											<li><a class="page-numbers @(Model.PaginatedList.PageIndex==i?"current":"")" asp-action="index" asp-route-page="@i" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">@i</a></li>
+											<li style="@(Model.PaginatedList.PageIndex==i?"background-color:black":"")" ><a class=" page-numbers" asp-action="index" asp-route-page="@i" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">@i</a></li>
 										}
-										<li><a class="next @(Model.PaginatedList.HasNext==true?"disabled":"") page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex+1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Next</a></li>
+										<li class="@(Model.PaginatedList.HasNext==true?"":"d-none")"><a class="next  page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex+1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Next</a></li>
 
 									</ul>
 								</nav>
