@@ -1,0 +1,63 @@
+﻿@model List<WishlistItem>
+
+<div class="shop-wishlist">
+	<table class="wishlist-items">
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr class="wishlist-item">
+					<td class="wishlist-item-remove"><span></span></td>
+					<td class="wishlist-item-image">
+						<a asp-action="detail" asp-controller="product" asp-route-id="@item.ProductId">
+							<img width="600" height="600" src="~/uploads/products/@item.Product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl">
+						</a>
+					</td>
+					<td class="wishlist-item-info">
+						<div class="wishlist-item-name">
+							<a asp-action="detail" asp-controller="product" asp-route-id="@item.ProductId">@item.Product.Name</a>
+						</div>
+						<div class="wishlist-item-price">
+							@*<span>$150.00</span>*@
+							@if (item.Product.DiscountPercent > 0)
+							{
+								<span class="price">
+									<del aria-hidden="true"><span>@item.Product.SalePrice.ToString("0.00") $</span></del>
+									<ins><span>@((item.Product.SalePrice - ((@item.Product.SalePrice * @item.Product.DiscountPercent) / 100)).ToString("0.00"))</span></ins>
+								</span>
+							}
+							else
+							{
+								<span class="price">@item.Product.SalePrice.ToString("0.00") $</span>
+
+							}
+						</div>
+						<div class="wishlist-item-time">@item.CreateAt.ToLongDateString()</div>
+					</td>
+					<td class="wishlist-item-actions">
+						@if (item.Product.IsStock)
+						{
+							<div class="wishlist-item-stock">
+								In Stock
+							</div>
+						}
+						else
+						{
+							<div class="wishlist-item-stock">
+								Out Stock
+							</div>
+
+						}
+
+						<div class="wishlist-item-add">
+							<div class="btn-add-to-cart" data-title="Add to cart">
+								<a asp-action="addtobasket" asp-controller="product" asp-route-id="@item.Product.Id" class="add-basket single-add-to-cart-button button alt">Add to cart</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			}
+
+
+		</tbody>
+	</table>
+</div>

@@ -111,7 +111,7 @@
 
 						<!-- Wishlist -->
 						<div class="wishlist-box">
-							<a><i class="wpb-icon-heart"></i></a>
+							<a asp-action="index" asp-controller="wishlist"><i class="wpb-icon-heart"></i></a>
 						</div>
 					</div>
 				</div>
@@ -177,10 +177,14 @@
 											
 											
 											<!-- Wishlist -->
+										@if (User.IsInRole("Member") && User.Identity.IsAuthenticated)
+										{
 											<div class="wishlist-box">
-												<a href="shop-wishlist.html"><i class="icon-heart"></i></a>
-												<span class="count-wishlist">1</span>
+												<a asp-action="index" asp-controller="wishlist"><i class="icon-heart"></i></a>
+												<span class="count-wishlist">@basket.WishlistCount</span>
 											</div>
+										}
+										
 											
 											<!-- Cart -->
 											<div class="ruper-topcart dropdown light">

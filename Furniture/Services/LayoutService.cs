@@ -1,5 +1,7 @@
 ﻿using Furniture.DAL;
+using Furniture.Models;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Security.Claims;
@@ -10,6 +12,7 @@ namespace Furniture.Services
 	{
 		private readonly FurnutireContext _context;
 		private readonly IHttpContextAccessor _accessor;
+		private readonly UserManager<AppUser> _userManager;
 
 		public LayoutService(FurnutireContext context,IHttpContextAccessor accessor)
         {
@@ -33,7 +36,9 @@ namespace Furniture.Services
 					VM.Items.Add(bi);
 					VM.TotalPrice += (bi.Product.DiscountPercent > 0 ? ((bi.Product.SalePrice * (100 - bi.Product.DiscountPercent)) / 100) : bi.Product.SalePrice * bi.Count);
 					VM.TotalCount =(byte)basketItems.Count();
+					
 				}
+				VM.WishlistCount = _context.WishlistItems.Where(x => x.AppUserId == _accessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)).Count();
 				return VM;
 
 			}
