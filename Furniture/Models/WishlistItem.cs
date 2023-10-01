@@ -9,8 +9,7 @@ namespace Furniture.Models
 		public string AppUserId {get; set;}
 		[Required]
 		public int ProductId {get; set; }
-		[Required]
-		public int Count {get; set;}
+	
 		[Required]
 		public DateTime CreateAt {get; set;}
 		public AppUser AppUser { get; set;}

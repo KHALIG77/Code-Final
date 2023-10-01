@@ -29,6 +29,8 @@
 		<link rel="stylesheet" href="~/libs/slick/css/slick-theme.css" type="text/css">
 		<link rel="stylesheet" href="~/libs/mmenu/css/mmenu.min.css" type="text/css">
 	    <link rel="stylesheet" href="~/assets/css/custom.css" type="text/css">
+	    <link rel="stylesheet" href="~/custom/css/toast.css" type="text/css">
+
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 
 
@@ -353,7 +355,7 @@
 		</div>
 
 		<!-- Wishlist -->
-		<div class="wishlist-popup">
+	@*	<div class="wishlist-popup">
 			<div class="wishlist-popup-inner">
                 <div class="wishlist-popup-content">
                     <div class="wishlist-popup-content-top">
@@ -435,7 +437,7 @@
                     </div>
                 </div>
             </div>
-		</div>
+		</div>*@
 
 		<!-- Compare -->
 		<div class="compare-popup">
@@ -599,11 +601,13 @@
 
 
      <script src="~/assets/js/app.js"></script>
+	<script src="~/custom/js/toast.js"></script>
 
 
 	
 		@RenderSection("Detail",required:false)
 		@RenderSection("Validation",required:false)
+        @RenderSection("Wish",required:false)
 		
 	 
 

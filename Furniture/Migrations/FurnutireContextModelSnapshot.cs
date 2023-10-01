@@ -544,9 +544,6 @@ namespace Furniture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 

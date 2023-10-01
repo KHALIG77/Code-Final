@@ -41,6 +41,18 @@
       "PackagePath": "staticwebassets\\assets\\js\\jquery-3-6-0.js"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\custom\\css\\toast.css",
+      "PackagePath": "staticwebassets\\custom\\css\\toast.css"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\custom\\js\\toast.js",
+      "PackagePath": "staticwebassets\\custom\\js\\toast.js"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\custom\\js\\wishlist.js",
+      "PackagePath": "staticwebassets\\custom\\js\\wishlist.js"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\libs\\bootstrap\\css\\bootstrap.min.css"
     },

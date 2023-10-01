@@ -1,6 +1,7 @@
 ﻿using Furniture.DAL;
 using Furniture.Models;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -46,7 +47,7 @@ namespace Furniture.Controllers
 
 			return View(vm);
 		}
-		public IActionResult AddToBasket(int id,int count=1,bool detail = false)
+		public IActionResult AddToBasket(int id,int count=1,bool detail = false,bool wishlist=false)
 		{
 			if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
 			{
@@ -278,6 +279,34 @@ namespace Furniture.Controllers
 
 			return RedirectToAction("detail", new { id = comment.ProductId });
 
+		}
+		
+		public IActionResult AddToWishlist(int id)
+		{
+			if (_context.Products.Any(x=>x.Id==id) && User.Identity.IsAuthenticated)
+			{
+				List<WishlistItem> item = _context.WishlistItems.Where(x => x.AppUserId == User.FindFirstValue(ClaimTypes.NameIdentifier)).ToList();
+				if (item.Any(x=>x.ProductId==id))
+				{
+					return Json(new {status=0,total=item.Count()});
+				}
+				else
+				{
+					WishlistItem wish = new WishlistItem
+					{
+						ProductId = id,
+						AppUserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+						CreateAt=DateTime.Now.AddHours(4),
+					};
+					_context.WishlistItems.Add(wish);
+					_context.SaveChanges();
+					return Json(new {status=1,total=_context.WishlistItems.Count()});
+
+				}
+			
+			}
+			return Json(new {status = 2});
+			
 		}
 
 
