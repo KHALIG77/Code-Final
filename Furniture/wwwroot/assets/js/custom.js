@@ -1,6 +1,102 @@
-
+﻿
 
 $(document).ready(function () {
+
+    let btnIndex = document.querySelector(".subscribe-btn-index")
+    btnIndex.addEventListener("click", () => {
+
+        var formDataIndex = $(".newsletter-form-index").serialize(); 
+
+        $.ajax({
+            type: "POST", 
+            url: "/home/subscribe",
+            data: formDataIndex, 
+            dataType:"json",
+            success: function (response) {
+                if (response.status == 0) {
+                    new Toast({
+                        message: 'Please write your email',
+                        type: 'danger',
+                       
+                    });
+                    console.log(response.status)
+                }
+                else if (response.status == 1) {
+                    new Toast({
+                        message: 'Please write your email correctly',
+                        type: 'warning',
+                    });
+
+                }
+                else if (response.status == 3) {
+                    new Toast({
+                        message: 'Congratulations, you have subscribed',
+                        type: 'success',
+                    });
+
+                }
+                else if (response.status == 2) {
+                    new Toast({
+                        message: 'This email is already in use',
+                        type: 'danger',
+                    });
+
+                }
+               
+            
+            },
+         
+        });
+
+    })
+    let btnFooter = document.querySelector(".subscribe-btn-footer")
+    btnFooter.addEventListener("click", () => {
+
+        var formDataFooter = $(".newsletter-form-footer").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/home/subscribe",
+            data: formDataFooter,
+            dataType: "json",
+            success: function (response) {
+                if (response.status == 0) {
+                    new Toast({
+                        message: 'Please write your email',
+                        type: 'danger',
+
+                    });
+                    console.log(response.status)
+                }
+                else if (response.status == 1) {
+                    new Toast({
+                        message: 'Please write your email correctly',
+                        type: 'warning',
+                    });
+
+                }
+                else if (response.status == 3) {
+                    new Toast({
+                        message: 'Congratulations, you have subscribed',
+                        type: 'success',
+                    });
+
+                }
+                else if (response.status == 2) {
+                    new Toast({
+                        message: 'This email is already in use',
+                        type: 'danger',
+                    });
+
+                }
+
+
+            },
+
+        });
+
+    })
+
     $(document).on("click",".add-basket", function (e) {
         e.preventDefault();
         
@@ -68,26 +164,7 @@ wishBtns.forEach((btn) => {
             })
     })
 })
-//let wishRemoveBtns = document.querySelectorAll(".wish-remove")
 
-//wishRemoveBtns.forEach((btn) => {
-    
-//    btn.addEventListener("click", (e) => {
-       
-//        e.preventDefault();
-//        let url = btn.getAttribute("data-fetch")
-//        console.log(url)
-        
-
-//        fetch(url)
-//            .then(data => data.text())
-//            .then(response => {
-//                /*ToastWish(response.status)*/
-//                let totalCount = document.querySelector(".count-wishlist")
-//                totalCount.innerHTML = document.querySelector(".wish-total").value;
-//            })
-//    })
-//})
 
 
 

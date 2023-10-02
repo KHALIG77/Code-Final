@@ -4,6 +4,8 @@ using Furniture.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Furniture.Controllers
 {
@@ -33,7 +35,44 @@ namespace Furniture.Controllers
 
 			return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Subscribe(string email)
+        {
+			string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+			
+			if (email == null)
+            {
+				return Json(new { status = 0 });
+				
+			}
+            else if(!Regex.IsMatch(email, emailPattern))
+            {
+				return Json(new { status = 1 });
 
+			}
+            else if(_context.Subscribes.Any(x=>x.Email==email)) 
+            {
+				return Json(new { status = 2 });
+			}
+            else
+            {
+                Subscribe sub = new Subscribe
+                {
+                    Email = email,
+                };
+                _context.Subscribes.Add(sub);
+                _context.SaveChanges();
+                return Json(new { status = 3 });
+
+			}
+			
+
+		
+           
+           
+            
+        }
        
     }
 }

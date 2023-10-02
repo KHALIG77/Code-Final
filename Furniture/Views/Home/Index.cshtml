@@ -309,10 +309,10 @@
 											<h2 class="newsletter-title">Join our email list.</h2>
 											<div class="newsletter-text">Sign up for the latest trends, products, and inspiration.</div>
 										</div>
-										<form action="#" method="post" class="newsletter-form">
-											<input type="email" name="your-email" value="" size="40" placeholder="Email address">
+										<form asp-action="subscribe" method="post" class="newsletter-form newsletter-form-index">
+											<input  type="email" name="email" value="" size="120" placeholder="Email address">
 											<span class="btn-submit">
-												<input type="submit" value="SUBSCRIBE">
+												<input type="button" class="subscribe-btn subscribe-btn-index subscribe-btn-css " value="SUBSCRIBE">
 											</span>
 										</form>
 									</div>
@@ -321,7 +321,6 @@
 							<div class="col-md-6 sm-p-0">
 								<div class="block block-image text-center position-relative">
 									<img width="671" height="503" src="media/banner/newsletter-2.jpg" alt="">
-									<img class="animation-round position-v-top position-h-center" width="106" height="105" src="media/logo-intro.png" alt="">
 								</div>
 							</div>
 						</div>

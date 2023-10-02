@@ -59,7 +59,7 @@ namespace Furniture.Areas.Manage.Controllers
             if (order == null) return View("Error");
             order.OrderStatus = OrderStatus.Completed;
             _context.SaveChanges();
-            _email.Send(order.Email, "Complated", "Sifarisiniz teslim edildi");
+            _email.Send(order.Email, "Complated", "Your order has been delivered");
 
 
             return RedirectToAction("index");
@@ -71,7 +71,7 @@ namespace Furniture.Areas.Manage.Controllers
             if (order == null) return View("Error");
             order.OrderStatus = OrderStatus.Shipping;
             _context.SaveChanges();
-            _email.Send(order.Email, "Shipping", "Sifarisiniz depodan cixdi");
+            _email.Send(order.Email, "Shipping", "Your order has left the warehouse and is being sent to you");
 
 
             return RedirectToAction("index");
@@ -83,7 +83,7 @@ namespace Furniture.Areas.Manage.Controllers
             if (order == null) return View("Error");
             order.OrderStatus = OrderStatus.Pending;
             _context.SaveChanges();
-            _email.Send(order.Email, "Pending", "Sifarisiniz gozlemededir sizinle elaqe saxlanilacaq");
+            _email.Send(order.Email, "Pending", "Your order has been received. You will be contacted");
 
 
             return RedirectToAction("index");

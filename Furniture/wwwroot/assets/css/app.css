@@ -1313,11 +1313,17 @@ a:hover,[class~=h1],[class~=h3],[class~=h2]{color:#000;}.position-h-center.anima
   color: #868686;
   font-size: 0;
 }
+.subscribe-btn-css{
+    padding:10px 15px;
+    background-color:black;
+    color:white;
+    cursor:pointer
+}
 .shop-details .buttons .add-to-cart-wrap .quantity button:before {
-  font-family: eleganticons;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 900;
+    font-family: eleganticons;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
 }
 .shop-details .buttons .add-to-cart-wrap .quantity button:hover {
   border: none;

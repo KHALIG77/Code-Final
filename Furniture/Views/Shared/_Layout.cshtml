@@ -13,7 +13,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home Stylish | Ruper</title>
+		<title>Home Stylish | MY-HOME</title>
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="media/favicon.png">
@@ -66,7 +66,7 @@
 									<div class="site-logo">
 										<a asp-action="index" asp-controller="home">
 											@*<img width="400" height="79" src="~/media/logo.png" alt="Ruper – Furniture HTML Theme" />*@
-											<h5>HOME</h5>
+											<h5>MY-HOME</h5>
 										</a>
 									</div>
 								</div>
@@ -125,7 +125,7 @@
 								<div class="row">
 									<div class="col-lg-8 header-left">
 										<div class="site-logo">
-											<a href="index7.html">
+											<a asp-action="index" asp-controller="home">
 
                                                   <h5>MY-HOME</h5>
                                                </a>
@@ -226,16 +226,16 @@
 														<div class="block-content">
 															<ul>
 																<li>
-																	<a href="page-contact.html">616.774.0561</a>
+																	<a asp-action="index" asp-controller="contact">616.774.0561</a>
 																</li>
 																<li>
-																	<a href="page-contact.html">866.453.4748</a>
+																<a asp-action="index" asp-controller="contact">866.453.4748</a>
 																</li>
 																<li>
-																	<a href="page-contact.html">HR Fax: 810.222.5439</a>
+																<a asp-action="index" asp-controller="contact">HR Fax: 810.222.5439</a>
 																</li>
 																<li>
-																	<a href="page-contact.html">sales@ruperfurniture.com</a>
+																<a asp-action="index" asp-controller="contact">sales@MY-HOMEfurniture.com</a>
 																</li>
 															</ul>
 														</div>
@@ -247,23 +247,21 @@
 														<div class="block-content">
 															<ul>
 																<li>
-																	<a href="page-about.html">Sale</a>
+																	<a >Sale</a>
 																</li>
 																<li>
-																	<a href="page-about.html">Quick Ship</a>
+																	<a >Quick Ship</a>
 																</li>
 																<li>
-																	<a href="page-about.html">New Designs</a>
+																	<a >New Designs</a>
 																</li>
 																<li>
-																	<a href="page-about.html">Accidental Fabric Protection</a>
+																	<a >Accidental Fabric Protection</a>
 																</li>
 																<li>
-																	<a href="page-about.html">Furniture Care</a>
+																	<a >Furniture Care</a>
 																</li>
-																<li>
-																	<a href="page-about.html">Gift Cards</a>
-																</li>
+																
 															</ul>
 														</div>
 													</div>
@@ -274,14 +272,12 @@
 									<div class="col-lg-4 column-center">
 										<div class="column-wrap">
 											<div class="block block-image m-b-20">
-												<img width="100" src="~/media/logo.png" alt="">
+												@*<img width="100" src="~/media/logo.png" alt="">*@
+												<h4>MY-HOME</h4>
 											</div>
 											<div class="block block-social">
 												<ul class="social-link">
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-													<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-													<li><a href="#"><i class="fa fa-behance"></i></a></li>
+													
 												</ul>
 											</div>
 										</div>
@@ -292,17 +288,15 @@
 												<h2 class="block-title">Newsletter</h2>
 												<div class="block-content">
 													<div class="newsletter-text">Enter your email below to be the first to know about new collections and product launches.</div>
-													<form action="#" method="post" class="newsletter-form">
-														<input type="email" name="your-email" value="" size="40" placeholder="Email address">
-														<span class="btn-submit">
-															<input type="submit" value="Subscribe">
+												<form asp-action="subscribe" method="post" class="newsletter-form newsletter-form-footer">
+														<input type="email" name="email" value="" size="120" placeholder="Email address">
+														<span class="btnn-submit">
+														<input type="button" class="subscribe-btn subscribe-btn-footer subscribe-btn-css" value="Subscribe">
 														</span>
 													</form>
 												</div>
 											</div>
-											<div class="block block-image">
-												<img width="309" height="32" src="~/media/payments.png" alt="">
-											</div>
+											
 										</div>
 									</div>
 								</div>
@@ -310,15 +304,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer-bottom">
-					<div class="section-padding">
-						<div class="section-container">
-							<div class="block-widget-wrap">
-								<p class="copyright text-center">Copyright © 2022. All Right Reserved</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</footer>
 		</div>
 
@@ -328,7 +314,7 @@
 		</div>
 
 		<!-- Search -->
-		<div class="search-overlay">
+	@*	<div class="search-overlay">
 			<div class="close-search"></div>
 			<div class="wrapper-search">
 				<form role="search" method="get" class="search-from ajax-search" action="#">
@@ -352,7 +338,7 @@
 					</div>
 				</form>	
 			</div>	
-		</div>
+		</div>*@
 
 		<!-- Wishlist -->
 	@*	<div class="wishlist-popup">
@@ -440,7 +426,7 @@
 		</div>*@
 
 		<!-- Compare -->
-		<div class="compare-popup">
+		@*<div class="compare-popup">
 		    <div class="compare-popup-inner">
 		        <div class="compare-table">
 		            <div class="compare-table-inner">
@@ -552,7 +538,7 @@
 		            </div>
 		        </div>
 		    </div>
-		</div>
+		</div>*@
 
 		<!-- Quickview -->
 
@@ -563,7 +549,7 @@
 	
 
 		<!-- Page Loader -->
-		<div class="page-preloader">
+	<div class="page-preloader">
 	    	<div class="loader">
 	    		<div></div>
 	    		<div></div>

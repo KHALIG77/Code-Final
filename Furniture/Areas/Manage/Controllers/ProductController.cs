@@ -1,6 +1,8 @@
 ﻿using Furniture.DAL;
 using Furniture.Helper;
 using Furniture.Models;
+using Furniture.Services;
+using Furniture.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing.Printing;
@@ -12,16 +14,24 @@ namespace Furniture.Areas.Manage.Controllers
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;
+		private readonly IEmailSender _email;
 
-        public ProductController(FurnutireContext context,IWebHostEnvironment env)
+		public ProductController(FurnutireContext context,IWebHostEnvironment env,IEmailSender emailService)
         {
             _context = context;
             _env = env;
-        }
-        public IActionResult Index()
+			_email = emailService;
+		}
+        public IActionResult Index(int page = 1,string search=null)
         {
-            List<Product> products = _context.Products.Include(x=>x.Category).Include(x=>x.Material).Include(i=>i.Images).ToList();
-            return View(products);
+            var query = _context.Products.Include(x => x.Category).Include(x => x.Material).Include(i => i.Images).AsQueryable();
+            if (search!=null)
+            {
+                query=query.Where(x=>x.Name.Contains(search));
+            }
+            ViewBag.Search = search;
+            ViewBag.Page = page;
+            return View(PaginatedList<Product>.Create(query,page,2));
         }
         public async Task<IActionResult> Create()
         {
@@ -126,6 +136,10 @@ namespace Furniture.Areas.Manage.Controllers
             product.Rate = 5;
             _context.Products.Add(product);
             _context.SaveChanges();
+            foreach (var item in _context.Subscribes)
+            {
+                _email.Send(item.Email,"New Product", "Our new product has arrived. Visit the site to view the new product");
+            }
 
             return RedirectToAction("Index");
         }

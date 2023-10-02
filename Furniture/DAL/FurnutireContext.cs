@@ -33,6 +33,7 @@ namespace Furniture.DAL
         public DbSet<Order> Orders {get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }    
         public DbSet<WishlistItem> WishlistItems { get; set; }  
+        public DbSet<Subscribe> Subscribes {get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
