@@ -460,6 +460,20 @@ namespace Furniture.Migrations
                     b.ToTable("ProductTags");
                 });
 
+            modelBuilder.Entity("Furniture.Models.Setting", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("Furniture.Models.Size", b =>
                 {
                     b.Property<int>("Id")
@@ -493,6 +507,9 @@ namespace Furniture.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("ForAbout")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Image")
                         .HasMaxLength(100)
@@ -789,7 +806,9 @@ namespace Furniture.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");

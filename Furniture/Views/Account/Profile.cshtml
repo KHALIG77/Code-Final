@@ -70,7 +70,7 @@
 																<td>@order.Id</td>
 																<td>@order.CreateAt</td>
 																<td>@order.OrderStatus</td>
-																<td>@order.OrderItems.Sum(x=>x.DiscountPercent>0?(((100-x.DiscountPercent)*x.UnitPrice)/100)*x.Count:x.DiscountPercent*x.Count).ToString("0.00")</td>
+																<td>@order.OrderItems.Sum(x=>x.DiscountPercent>0?(((100-x.DiscountPercent)*x.UnitPrice)/100)*x.Count:x.UnitPrice*x.Count).ToString("0.00")</td>
 
 															</tr>
 														}

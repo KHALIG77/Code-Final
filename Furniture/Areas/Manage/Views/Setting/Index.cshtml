@@ -1,0 +1,34 @@
+﻿@model SettingViewModel
+
+<div class="col-xl ">
+    <div class="card mb-4 m-auto" style="margin-top:60px !important;width:60%;">
+
+        <div class="card-body ">
+            <form method="post" asp-action="index">
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Number1">Number</label>
+                    <input type="text" asp-for="Number1" class="form-control" id="basic-default-fullname" placeholder="Number" />
+                    <span asp-validation-for="Number1"></span>
+                </div>
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Number2">Number</label>
+                    <input type="text" asp-for="Number2" class="form-control" id="basic-default-fullname" placeholder="Number" />
+                    <span asp-validation-for="Number2"></span>
+                </div>
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Address">Address</label>
+                    <input type="text" asp-for="Address" class="form-control" id="basic-default-fullname" placeholder="Address" />
+                    <span asp-validation-for="Address"></span>
+                </div>
+                
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Email">Email</label>
+                    <input type="text" asp-for="Email" class="form-control" id="basic-default-fullname" placeholder="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

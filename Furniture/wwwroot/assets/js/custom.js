@@ -2,22 +2,21 @@
 
 $(document).ready(function () {
 
-    let btnIndex = document.querySelector(".subscribe-btn-index")
-    btnIndex.addEventListener("click", () => {
-
-        var formDataIndex = $(".newsletter-form-index").serialize(); 
+ 
+    $(".subscribe-btn-index").click(function () {
+        var formDataIndex = $(".newsletter-form-index").serialize();
 
         $.ajax({
-            type: "POST", 
+            type: "POST",
             url: "/home/subscribe",
-            data: formDataIndex, 
-            dataType:"json",
+            data: formDataIndex,
+            dataType: "json",
             success: function (response) {
                 if (response.status == 0) {
                     new Toast({
                         message: 'Please write your email',
                         type: 'danger',
-                       
+
                     });
                     console.log(response.status)
                 }
@@ -42,16 +41,17 @@ $(document).ready(function () {
                     });
 
                 }
-               
-            
+
+
             },
-         
+
         });
+    });
 
-    })
-    let btnFooter = document.querySelector(".subscribe-btn-footer")
-    btnFooter.addEventListener("click", () => {
+      
 
+
+    $(".subscribe-btn-footer").click(function () {
         var formDataFooter = $(".newsletter-form-footer").serialize();
 
         $.ajax({
@@ -94,12 +94,25 @@ $(document).ready(function () {
             },
 
         });
-
     })
 
+     
+
+
+
     $(document).on("click",".add-basket", function (e) {
-        e.preventDefault();
+       
         
+        let url = $(this).attr("data-fetch");
+        $.get(url, function (data) {
+            $(".basket-view").html(data);
+            var totalCount = $(".total-count").val()
+            $(".cart-count").html(totalCount)
+        });
+    });
+    $(document).on("click", ".add-basket-wishlist", function (e) {
+        e.preventDefault();
+
         let url = $(this).attr("href");
         $.get(url, function (data) {
             $(".basket-view").html(data);
@@ -159,8 +172,11 @@ wishBtns.forEach((btn) => {
             .then(data => data.json())
             .then(response => {
                 ToastWish(response.status)
-                let totalCount = document.querySelector(".count-wishlist")
-                totalCount.innerHTML = response.total;
+                if (response.status !== 2) {
+                    let totalCount = document.querySelector(".count-wishlist")
+                    totalCount.innerHTML = response.total;
+                }
+                
             })
     })
 })

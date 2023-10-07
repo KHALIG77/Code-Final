@@ -138,7 +138,7 @@ namespace Furniture.Areas.Manage.Controllers
             _context.SaveChanges();
             foreach (var item in _context.Subscribes)
             {
-                _email.Send(item.Email,"New Product", "Our new product has arrived. Visit the site to view the new product");
+                _email.Send(item.Email,"New Product", "Our new product has arrived. Visit the site to view the new product",false);
             }
 
             return RedirectToAction("Index");

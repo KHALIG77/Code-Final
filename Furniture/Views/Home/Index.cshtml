@@ -43,7 +43,7 @@
 										{
 											<div class="item slick-slide">
 												<div class="item-image">
-													<a href="#">
+													<a asp-action="index" asp-controller="shop" asp-route-brandid="@brand.Id">
 														<img width="450" height="450" src="~/uploads/brands/@brand.Image" alt="Brand 1">
 													</a>
 												</div>
@@ -91,18 +91,16 @@
 																			<img width="600px" height="600px" src="~/uploads/products/@product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Hover).ImageUrl" class="hover-image back" alt="">
 																		</a>
 																	</div>
+																
 																	<div class="product-button">
-																		<div class="btn-add-to-cart" data-title="Add to cart">
-@*																			<a rel="nofollow" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id" class="product-btn button">Add to cart</a>
-*@																			<a class="product-btn add-basket" asp-action="addtobasket" asp-controller="product" asp-route-id="@product.Id"> </a>
+																		<div class="btn-wishlist" data-title="Wishlist">
+																			<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@product.Id" tabindex="0">Add to wishlist</button>
 																		</div>
-																		<div class="btn-wishlist" >
-																			<button data-fetch="/product/addtowishlist/@product.Id" class="product-btn wish-btn">Add to wishlist</button>
-@*																		<a class="product-btn wish-btn" asp-action="addtowishlist" asp-controller="product" asp-route-id="@product.Id">Add to wishlist</a>
-*@																		</div>
-
+																		<div class="btn-add-to-cart" data-title="Add to cart">
+																			<button class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0"></button>
+																		</div>
 																		<span class="product-quickview" data-title="Quick View">
-																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class="@*modal-btn-quick*@ @*quickview*@ quickview-button">Quick View <i class="icon-search"></i></a>
+																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class=" quickview-button" tabindex="0">Quick View <i class="icon-search"></i></a>
 																		</span>
 																	</div>
 																</div>
@@ -152,16 +150,14 @@
 																		</a>
 																	</div>
 																	<div class="product-button">
-																		<div class="btn-add-to-cart" data-title="Add to cart">
-																			<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																		</div>
 																		<div class="btn-wishlist" data-title="Wishlist">
-																			<button class="product-btn">Add to wishlist</button>
+																			<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@product.Id" tabindex="0">Add to wishlist</button>
 																		</div>
-
+																		<div class="btn-add-to-cart" data-title="Add to cart">
+																			<button class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0"></button>
+																		</div>
 																		<span class="product-quickview" data-title="Quick View">
-																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class="modal-btn-quick quickview quickview-button">Quick View <i class="icon-search"></i></a>
-
+																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class=" quickview-button" tabindex="0">Quick View <i class="icon-search"></i></a>
 																		</span>
 																	</div>
 																</div>
@@ -209,16 +205,14 @@
 																		</a>
 																	</div>
 																	<div class="product-button">
-																		<div class="btn-add-to-cart" data-title="Add to cart">
-																			<a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-																		</div>
 																		<div class="btn-wishlist" data-title="Wishlist">
-																			<button class="product-btn">Add to wishlist</button>
+																			<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@product.Id" tabindex="0">Add to wishlist</button>
 																		</div>
-
+																		<div class="btn-add-to-cart" data-title="Add to cart">
+																			<button class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0"></button>
+																		</div>
 																		<span class="product-quickview" data-title="Quick View">
-																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class="modal-btn-quick quickview quickview-button">Quick View <i class="icon-search"></i></a>
-
+																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class=" quickview-button" tabindex="0">Quick View <i class="icon-search"></i></a>
 																		</span>
 																	</div>
 																</div>

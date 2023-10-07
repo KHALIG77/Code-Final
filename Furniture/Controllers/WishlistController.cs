@@ -18,6 +18,7 @@ namespace Furniture.Controllers
 		{
 			_context = context;
 		}
+		
 		public IActionResult Index()
 		{
 			List<WishlistItem> items =_context.WishlistItems.Include(x=>x.Product).ThenInclude(x=>x.Images).ToList();

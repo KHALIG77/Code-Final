@@ -5,7 +5,7 @@ namespace Furniture.Services
 {
     public interface IEmailSender
     {
-        void Send(string to, string subject, string text);
+        void Send(string to, string subject, string text, bool contact);
     }
     public class EmailSender : IEmailSender
     {
@@ -15,14 +15,22 @@ namespace Furniture.Services
         {
             _configuration = configuration;
         }
-        public void Send(string to, string subject, string text)
+        public void Send(string to, string subject, string text,bool contact)
         {
             using (var smtp = new SmtpClient())
             {
                 var email = new MimeMessage();
                 email.From.Add(MailboxAddress.Parse(_configuration["Email:Email"]));
                 email.To.Add(MailboxAddress.Parse(to));
-                email.Subject = subject;
+                if(contact)
+                {
+                    email.Subject=subject;
+                }
+                else
+                {
+					email.Subject = subject;
+				}
+               
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = text };
 
                 smtp.Connect(_configuration["Email:Server"], Convert.ToInt32(_configuration["Email:Port"]), true);

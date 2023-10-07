@@ -182,6 +182,7 @@ namespace Furniture.Controllers
                 IsAdmin=false,
                 Email=userVM.Email,
                 UserName=userVM.UserName,
+                FullName=userVM.FullName
 
             };
             var result  = await _userManager.CreateAsync(user,userVM.Password);
@@ -196,7 +197,7 @@ namespace Furniture.Controllers
             await _userManager.AddToRoleAsync(user, "Member");
             var token =await _userManager.GenerateEmailConfirmationTokenAsync(user);
             var confirmationLink = Url.Action("confirmemail", "account", new {token,email=userVM.Email},Request.Scheme);
-            _emailSender.Send(userVM.Email, "Email confirmation Link", confirmationLink);
+            _emailSender.Send(userVM.Email, "Email confirmation Link", confirmationLink, false);
             return View("CheckEmail");
         }
         [HttpGet]
@@ -270,7 +271,7 @@ namespace Furniture.Controllers
             };
             string token = await _userManager.GeneratePasswordResetTokenAsync(user);
             string url = Url.Action("resetpassword", "account", new { email = forgetVM.Email, token = token }, Request.Scheme);
-            _emailSender.Send(forgetVM.Email, "Reset Password", $" Click <a href=\"{url}\"> Here</a>");
+            _emailSender.Send(forgetVM.Email, "Reset Password", $" Click <a href=\"{url}\"> Here</a>", false);
 
             return View("CheckEmail");
         }

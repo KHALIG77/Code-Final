@@ -1,6 +1,6 @@
 
 
-$(".wish-remove").on("click", function (e) {
+$(document).on("click", ".wish-remove",function (e) {
     e.preventDefault();
     let url = $(this).attr("href");
 

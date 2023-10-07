@@ -1,0 +1,42 @@
+﻿@model CustomerQuestion
+
+<div class="block-content">
+	<form asp-action="index"  method="post" class="contact-form" novalidate="novalidate">
+		<div class="contact-us-form">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<label class="required">Name</label><br>
+					<span class="form-control-wrap">
+						<input type="text" asp-for="Name" value="" size="40" class="form-control" aria-required="true">
+						<span asp-validation-for="Name"></span>
+					</span>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<label class="required">Email</label><br>
+					<span class="form-control-wrap">
+						<input type="email" asp-for="Email" value="" size="40" class="form-control" aria-required="true">
+						<span asp-validation-for="Email"></span>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label class="required">Message</label><br>
+					<span class="form-control-wrap">
+						<textarea value="" asp-for="Text" cols="40" rows="10" class="form-control" aria-required="true"></textarea>
+						<span asp-validation-for="Text"></span>
+					</span>
+				</div>
+			</div>
+			<div asp-validation-summary="ModelOnly"></div>
+			<div class="form-button">
+				<input type="submit" value="Submit" class="button">
+			</div>
+			
+		</div>
+	</form>
+</div>
+
+	@section Contact{
+	@Html.Partial("_ValidationScriptsPartial")
+	}

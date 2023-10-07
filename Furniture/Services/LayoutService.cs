@@ -19,6 +19,10 @@ namespace Furniture.Services
 			_accessor = accessor;
 			_context = context;
 		}
+		public Dictionary<string, string> GetSettings()
+		{
+			return _context.Settings.ToDictionary(x=>x.Key,x=>x.Value);	
+		}
 		public BasketViewModel GetBasket()
 		{
 			if (_accessor.HttpContext.User.IsInRole("Member") && _accessor.HttpContext.User.Identity.IsAuthenticated)

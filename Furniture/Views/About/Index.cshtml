@@ -1,0 +1,308 @@
+﻿@model AboutViewModel 
+
+<div id="site-main" class="site-main">
+	<div id="main-content" class="main-content">
+		<div id="primary" class="content-area">
+			<div id="title" class="page-title">
+				<div class="section-container">
+					<div class="content-title-heading">
+						<h1 class="text-title-heading">
+							About Us
+						</h1>
+					</div>
+					<div class="breadcrumbs">
+						<a href="index.html">Home</a><span class="delimiter"></span>About Us
+					</div>
+				</div>
+			</div>
+
+			<div id="content" class="site-content" role="main">
+				<div class="page-about-us">
+					<section class="section section-padding m-b-70">
+						<div class="section-container">
+							<!-- Block Banners -->
+							<div class="block block-banners banners-effect">
+								<div class="block-widget-wrap">
+									<div class="block-widget-banner">
+										<div class="bg-banner">
+											<div class="banner-wrapper banners">
+												<div class="banner-image">
+													<a >
+														<img src="media/banner/about-us-1.jpg" alt="Banner Image">
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="section section-padding m-b-70">
+						<div class="section-container">
+							<!-- Block Banners -->
+							<div class="block block-banners banners-effect">
+								<div class="block-widget-wrap">
+									<div class="block-title">
+										<h2>Great Design For All</h2>
+										<div class="sub-title">At MY-HOME, we create affordable designs for the modern home</div>
+									</div>
+									<div class="block-content">
+										<div class="block-widget-banner layout-16 no-space">
+											@for (int i = 0; i < Model.Sliders.Count; i++)
+											{
+												@if (i==0)
+												{
+													<div class="banners">
+														<div class="row">
+															<div class="col-md-6">
+																<div class="banner-image">
+																	<a>
+																		<img src="~/uploads/sliders/@Model.Sliders[i].Image" alt="Banner Image">
+																	</a>
+																</div>
+															</div>
+															<div class="col-md-6 banner-infor background-1">
+																<div class="banner-wrapper-infor">
+																	<div class="info">
+																		<div class="content">
+																			
+																			<a class="link-title" href="blog-grid-right.html">
+																				<h3 class="title-banner">@Model.Sliders[i].Title</h3>
+																			</a>
+																			<div class="banner-image-description">
+																				@Model.Sliders[i].Description
+																			</div>
+																			<a class="button button-outline" href="@Model.Sliders[i].BtnUrl">SHOP</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												}
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="section section-padding m-b-70">
+						<div class="section-container">
+							<!-- Block Feature -->
+							<div class="block block-feature no-border">
+								<div class="block-widget-wrap">
+									<div class="row lg-m-lr">
+										@foreach (var feature in Model.Features)
+										{
+																					<div class="col-lg-3 col-md-6 col-sm-6 md-b-30 lg-p-lr">
+											<div class="box">
+												<div class="box-icon">
+													<span>
+															@Html.Raw(@feature.ImageSvg)
+														
+													</span>
+												</div>
+												<div class="box-title-wrap">
+													<h3 class="box-title">
+														@feature.Title
+													</h3>
+													<p class="box-description">
+														@feature.Description
+													</p>
+												</div>
+											</div>
+										</div>
+
+										}
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="section section-padding m-b-70">
+						<div class="section-container">
+							<!-- Block Banners -->
+							<div class="block block-banners banners-effect">
+								<div class="block-widget-wrap">
+									<div class="block-content">
+										<div class="block-widget-banner layout-16 no-space">
+											<div class="banners">
+												<div class="row">
+													
+														
+															@for (int i = 1; i <= Model.Sliders.Count; i++)
+															{
+																@if(i==1){
+																	<div class="col-md-6 banner-infor background-2">
+																<div class="banner-wrapper-infor">
+																	<div class="info">
+																		<div class="content">
+
+																			<a class="link-title" href="blog-grid-right.html">
+																				<h3 class="title-banner">@Model.Sliders[i].Title</h3>
+																			</a>
+																			<div class="banner-image-description">
+																				@Model.Sliders[i].Description
+																			</div>
+																			<a class="button button-outline" @Model.Sliders[i].BtnUrl>SHOP</a>
+																		</div>
+																	</div>
+															     </div>
+															</div>
+															<div class="col-md-6">
+																<div class="banner-image">
+																	<a href="shop-grid-left.html">
+																		<img src="~/uploads/sliders/@Model.Sliders[i].Image" alt="Banner Image">
+																	</a>
+																</div>
+															</div>
+																}
+																
+															}
+															
+														
+													
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="section section-padding m-b-70">
+						<div class="section-container large">
+							<!-- Block Testimonial -->
+							<div class="block block-testimonial layout-1">
+								<div class="block-widget-wrap">
+									<div class="testimonial-wrap slick-wrap">
+										<div class="slick-sliders" data-slidestoscroll="true" data-nav="1" data-dots="0" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1">
+											<div class="testimonial-content">
+												<div class="item">
+													<div class="testimonial-item">
+														<div class="rating">
+															<div class="star star-5"></div>
+														</div>
+														<div class="testimonial-excerpt">
+															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
+														</div>
+													</div>
+													<div class="testimonial-image image-position-top">
+														<div class="thumbnail">
+															<img width="62" height="62" src="media/testimonial/1.jpg" alt="">
+														</div>
+														<div class="testimonial-info">
+															<h2 class="testimonial-customer-name">Robet Smith</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="testimonial-content">
+												<div class="item">
+													<div class="testimonial-item">
+														<div class="rating">
+															<div class="star star-4"></div>
+														</div>
+														<div class="testimonial-excerpt">
+															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
+														</div>
+													</div>
+													<div class="testimonial-image image-position-top">
+														<div class="thumbnail">
+															<img width="62" height="62" src="media/testimonial/2.jpg" alt="">
+														</div>
+														<div class="testimonial-info">
+															<h2 class="testimonial-customer-name">Saitama One</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="testimonial-content">
+												<div class="item">
+													<div class="testimonial-item">
+														<div class="rating">
+															<div class="star star-5"></div>
+														</div>
+														<div class="testimonial-excerpt">
+															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
+														</div>
+													</div>
+													<div class="testimonial-image image-position-top">
+														<div class="thumbnail">
+															<img width="62" height="62" src="media/testimonial/3.jpg" alt="">
+														</div>
+														<div class="testimonial-info">
+															<h2 class="testimonial-customer-name">Sara Colinton</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="section section-padding top-border p-t-20 m-b-20">
+						<div class="section-container">
+							<!-- Block Image -->
+							<div class="block block-image slider">
+								<div class="block-widget-wrap">
+									<div class="slick-wrap">
+										<div class="slick-sliders" data-nav="0" data-columns4="2" data-columns3="3" data-columns2="4" data-columns1="4" data-columns1440="5" data-columns="5">
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/1.jpg" alt="Brand 1">
+													</a>
+												</div>
+											</div>
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/2.jpg" alt="Brand 2">
+													</a>
+												</div>
+											</div>
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/3.jpg" alt="Brand 3">
+													</a>
+												</div>
+											</div>
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/4.jpg" alt="Brand 4">
+													</a>
+												</div>
+											</div>
+											<div class="item slick-slide">
+												<div class="item-image">
+													<a href="#">
+														<img width="450" height="450" src="media/brand/5.jpg" alt="Brand 5">
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- #content -->
+		</div><!-- #primary -->
+	</div><!-- #main-content -->
+</div>

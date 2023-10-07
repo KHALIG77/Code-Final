@@ -78,9 +78,9 @@ namespace Furniture.Controllers
 			ViewBag.MaterialId = materialid;
 			ViewBag.BrandId = brandid;	
 			ViewBag.MinLimit  =_context.Products.Any() ?(int)_context.Products.Min(x=>x.SalePrice) :0;
-			ViewBag.MaxLimit = _context.Products.Any() ?(int) _context.Products.Max(x => x.SalePrice) : 0;
-			ViewBag.MinPrice = minprice??(int) _context.Products.Min(x => x.SalePrice);
-			ViewBag.MaxPrice = maxprice??(int) _context.Products.Max(x => x.SalePrice);
+			ViewBag.MaxLimit = _context.Products.Any() ?(decimal) _context.Products.Max(x => x.SalePrice) : 0;
+			ViewBag.MinPrice = minprice??(decimal) _context.Products.Min(x => x.SalePrice);
+			ViewBag.MaxPrice = maxprice??(decimal) _context.Products.Max(x => x.SalePrice);
 			ViewBag.Tags=tags;
 
 			query.ToList();

@@ -32,6 +32,10 @@
                     <input class="form-check-input" asp-for="MainSlider" id="flexSwitchCheckDefault">
                     <label class="form-check-label" asp-for="MainSlider">Main Slider</label>
                 </div>
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" asp-for="ForAbout" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" asp-for="ForAbout">For About</label>
+                </div>
                 <div class="mb-3 " style="width:30%;">
                     <label asp-for="ImageSlide" class="form-label">Choose Main Image</label>
                     <input class="form-control" type="file" asp-for="ImageSlide" id="formFile">
@@ -43,6 +47,7 @@
                 <div asp-validation-summary="ModelOnly"></div>
 
                 <button type="submit" class="btn btn-primary">Send</button>
+                <a style="margin-left:15px; color:black;" class="btn btn-gray" asp-action="index">Cancel</a>
             </form>
         </div>
     </div>

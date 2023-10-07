@@ -22,7 +22,7 @@ namespace Furniture.Controllers
 
             HomeViewModel model = new HomeViewModel();
          
-            model.Sliders = _context.Sliders.ToList();
+            model.Sliders = _context.Sliders.OrderByDescending(x=>x.Order).Where(x=>x.ForAbout==false).ToList();
             model.Features = _context.Features.OrderByDescending(x=>x.Id).Take(3).ToList();
             model.Brands = _context.Brands.Take(5).ToList();
             model.InstagramPhotos = _context.InstagramPhotos.OrderByDescending(x=>x.Id).Take(7).ToList();

@@ -75,6 +75,7 @@ namespace Furniture.Areas.Manage.Controllers
                 Description = sliderDTO.Description,
                 Image = FileManager.Save(_env.WebRootPath,"uploads/sliders",sliderDTO.ImageSlide),
                 Order=sliderDTO.Order,
+                ForAbout = sliderDTO.ForAbout,
             };
             _context.Sliders.Add(slider);
             _context.SaveChanges();
@@ -122,6 +123,7 @@ namespace Furniture.Areas.Manage.Controllers
             existSlider.Order=sliderEditDTO.Order;
             existSlider.BtnUrl=sliderEditDTO.BtnUrl;
             existSlider.MainSlider=sliderEditDTO.MainSlider;
+            existSlider.ForAbout=sliderEditDTO.ForAbout;
 
             _context.SaveChanges();
             

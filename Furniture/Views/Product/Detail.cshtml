@@ -89,7 +89,7 @@
 															<ul class="text">
 																@foreach (var size in Model.Product.Sizes)
 																{
-																	<li><span>@size.Size.Name</span></li>
+																	<li><span style="padding: 6px 12px !important;">@size.Size.Name</span></li>
 																}
 																
 																
@@ -102,7 +102,7 @@
 															<ul class="text">
 																@foreach (var color in Model.Product.Colors)
 																{
-																	<li><span>@color.Color.Name</span></li>
+																	<li><span style="padding: 6px 12px !important;">@color.Color.Name</span></li>
 																}
 
 
@@ -123,7 +123,7 @@
 														<input type="hidden" value="true" name="detail">
 														<input type="hidden" value="@Model.Product.Id" name="id">
 													</div>
-													<div class="btn-add-to-cart " style="background-color:black">
+													<div class="btn-add-to-cart " style="background-color:black;margin-top:0px!important">
 														<button type="submit" style="background-color:black; color:white;cursor:pointer;width:160px"   tabindex="0">Add to cart</button>
 													</div>
 										
@@ -132,7 +132,9 @@
 									
 											
 											<div class="btn-wishlist" data-title="Wishlist">
-												<button class="product-btn">Add to wishlist</button>
+												
+											<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@Model.Product.Id" tabindex="0">Add to wishlist</button>
+
 											</div>
 											
 										</div>
@@ -193,8 +195,8 @@
 															<li class="review">
 																<div class="content-comment-container">
 																	<div class="comment-container">
-																		@*																	<img src="media/user.jpg" class="avatar" height="60" width="60" alt="">
-																	*@																	<div class="comment-text">
+																																		
+																	<div class="comment-text">
 																			<div class=rating small">
 																				<div class="star star-@comment.Rate"></div>
 																			</div>
@@ -205,6 +207,28 @@
 																	<div style="margin-left:15px" class="description">
 																		<p>@comment.CommentText</p>
 																	</div>
+																	
+																	   
+																	@if (comment.ReplyComment!=null)
+																	{
+																		<div class="d-flex align-items-center justify-content-center">
+																			<button style="color:white;margin-bottom:10px;" class="btn btn-warning show-reply">Show Reply</button>
+																		</div>
+																		<div class="content-comment-container d-none">
+																			<div class="comment-container">
+
+																				<div class="comment-text">
+
+																					<div class="review-author">Admin</div>
+																					<div class="review-time">@comment.ReplyTime</div>
+																				</div>
+																			</div>
+																			<div style="margin-left:15px" class="description">
+																				<p>@comment.ReplyComment</p>
+																			</div>
+																		</div>
+																	}
+																	
 																</div>
 															</li>
 														}
@@ -301,8 +325,7 @@
 </div>
 
 @section Detail{
-	
-	
+	<script src="~/assets/js/Detail.js"></script>
 	<script src="~/libs/countdown/js/jquery.countdown.min.js"></script>
 	<script src="~/libs/slider/js/tmpl.js"></script>
 	<script src="~/libs/slider/js/jquery.dependClass-0.1.js"></script>

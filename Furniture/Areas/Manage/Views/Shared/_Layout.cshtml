@@ -1,47 +1,7 @@
 ﻿<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html lang="en" class="light-style layout-menu-fixed " dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template-free/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 27 Aug 2023 19:06:08 GMT -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
@@ -50,13 +10,10 @@
 
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
-    <!-- Canonical SEO -->
     <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/favicon/favicon.ico" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
@@ -66,26 +23,24 @@
 
 
 
-    <!-- Core CSS -->
+ 
     <link rel="stylesheet" href="~/manage/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="~/manage/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="~/manage/assets/css/demo.css" />
 
-    <!-- Vendors CSS -->
+
     <link rel="stylesheet" href="~/manage/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <link rel="stylesheet" href="~/manage/assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="~/manage/assets/css/custom.css"/>
 
-    <!-- Page CSS -->
-    <!-- Helpers -->
+  
     <script src="~/manage/assets/vendor/js/helpers.js"></script>
 
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    
     <script src="~/manage/assets/js/config.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -96,8 +51,7 @@
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
-    <!-- Custom notification for demo -->
-    <!-- beautify ignore:end -->
+ 
 
 </head>
 
@@ -184,271 +138,198 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Pages</span>
                     </li>
-                    <li class="menu-item">
-                        <a asp-action="" class="menu-link menu-toggle">
+                    <li class="menu-item"> 
+                        <a  class="menu-link menu-toggle">
                             
-                            <div data-i18n="Account Settings">Account Settings</div>
+                            <div data-i18n="Account Settings">Product</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="pages-account-settings-account.html" class="menu-link">
-                                    <div data-i18n="Account">Account</div>
+                                <a asp-action ="index" asp-controller="product" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="pages-account-settings-notifications.html" class="menu-link">
-                                    <div data-i18n="Notifications">Notifications</div>
+                                <a asp-action="create" asp-controller="product" class="menu-link">
+                                    <div data-i18n="Notifications">Create Product</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="pages-account-settings-connections.html" class="menu-link">
-                                    <div data-i18n="Connections">Connections</div>
-                                </a>
-                            </li>
+                           
                         </ul>
                     </li>
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                            <div data-i18n="Authentications">Authentications</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Login</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Register</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Forgot Password</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                            <div data-i18n="Misc">Misc</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="pages-misc-error.html" class="menu-link">
-                                    <div data-i18n="Error">Error</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="pages-misc-under-maintenance.html" class="menu-link">
-                                    <div data-i18n="Under Maintenance">Under Maintenance</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Components -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-                    <!-- Cards -->
-                    <li class="menu-item">
-                        <a href="cards-basic.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-collection"></i>
-                            <div data-i18n="Basic">Cards</div>
-                        </a>
-                    </li>
-                    <!-- User interface -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-box"></i>
-                            <div data-i18n="User interface">User interface</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="ui-accordion.html" class="menu-link">
-                                    <div data-i18n="Accordion">Accordion</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-alerts.html" class="menu-link">
-                                    <div data-i18n="Alerts">Alerts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-badges.html" class="menu-link">
-                                    <div data-i18n="Badges">Badges</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-buttons.html" class="menu-link">
-                                    <div data-i18n="Buttons">Buttons</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-carousel.html" class="menu-link">
-                                    <div data-i18n="Carousel">Carousel</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-collapse.html" class="menu-link">
-                                    <div data-i18n="Collapse">Collapse</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-dropdowns.html" class="menu-link">
-                                    <div data-i18n="Dropdowns">Dropdowns</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-footer.html" class="menu-link">
-                                    <div data-i18n="Footer">Footer</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-list-groups.html" class="menu-link">
-                                    <div data-i18n="List Groups">List groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-modals.html" class="menu-link">
-                                    <div data-i18n="Modals">Modals</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-navbar.html" class="menu-link">
-                                    <div data-i18n="Navbar">Navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-offcanvas.html" class="menu-link">
-                                    <div data-i18n="Offcanvas">Offcanvas</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-progress.html" class="menu-link">
-                                    <div data-i18n="Progress">Progress</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-spinners.html" class="menu-link">
-                                    <div data-i18n="Spinners">Spinners</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tabs-pills.html" class="menu-link">
-                                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-toasts.html" class="menu-link">
-                                    <div data-i18n="Toasts">Toasts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tooltips-popovers.html" class="menu-link">
-                                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-typography.html" class="menu-link">
-                                    <div data-i18n="Typography">Typography</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <a class="menu-link menu-toggle">
 
-                    <!-- Extended components -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-copy"></i>
-                            <div data-i18n="Extended UI">Extended UI</div>
+                            <div data-i18n="Account Settings">Brand</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
+                                <a asp-action="index" asp-controller="brand" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="extended-ui-text-divider.html" class="menu-link">
-                                    <div data-i18n="Text Divider">Text Divider</div>
+                                <a asp-action="create" asp-controller="brand" class="menu-link">
+                                    <div data-i18n="Notifications">Create Brand</div>
                                 </a>
                             </li>
-                        </ul>
-                    </li>
 
-                    <li class="menu-item">
-                        <a href="icons-boxicons.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div data-i18n="Boxicons">Boxicons</div>
-                        </a>
+                        </ul>
                     </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
 
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-                    <!-- Forms -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Elements">Form Elements</div>
+                            <div data-i18n="Account Settings">Category</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="forms-basic-inputs.html" class="menu-link">
-                                    <div data-i18n="Basic Inputs">Basic Inputs</div>
+                                <a asp-action="index" asp-controller="category" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="forms-input-groups.html" class="menu-link">
-                                    <div data-i18n="Input groups">Input groups</div>
+                                <a asp-action="create" asp-controller="category" class="menu-link">
+                                    <div data-i18n="Notifications">Create Category</div>
                                 </a>
                             </li>
+
                         </ul>
                     </li>
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Layouts">Form Layouts</div>
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Tag</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="form-layouts-vertical.html" class="menu-link">
-                                    <div data-i18n="Vertical Form">Vertical Form</div>
+                                <a asp-action="index" asp-controller="tag" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="form-layouts-horizontal.html" class="menu-link">
-                                    <div data-i18n="Horizontal Form">Horizontal Form</div>
+                                <a asp-action="create" asp-controller="tag" class="menu-link">
+                                    <div data-i18n="Notifications">Create Tag</div>
                                 </a>
                             </li>
+
                         </ul>
                     </li>
-                    <!-- Tables -->
                     <li class="menu-item">
-                        <a href="tables-basic.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div data-i18n="Tables">Tables</div>
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Order</div>
                         </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="order" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                           
+
+                        </ul>
                     </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Setting</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="setting" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                           
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Slider</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="slider" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a asp-action="create" asp-controller="slider" class="menu-link">
+                                    <div data-i18n="Notifications">Create Slider</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Instagram</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="instagram" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a asp-action="create" asp-controller="instagram" class="menu-link">
+                                    <div data-i18n="Notifications">Create Instagram Photo</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Material</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="material" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a asp-action="create" asp-controller="material" class="menu-link">
+                                    <div data-i18n="Notifications">Create Material</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link menu-toggle">
+
+                            <div data-i18n="Account Settings">Feature</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-action="index" asp-controller="feature" class="menu-link">
+                                    <div data-i18n="Account">Index</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a asp-action="create" asp-controller="feature" class="menu-link">
+                                    <div data-i18n="Notifications">Create Feature</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                
                     <!-- Misc -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Log out</span></li>
                     <li class="menu-item">
-                        <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div data-i18n="Support">Support</div>
+                        <a asp-action="logout" asp-controller="account"  class="menu-link">
+                           
+                            <div data-i18n="Support">Log Out</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-file"></i>
-                            <div data-i18n="Documentation">Documentation</div>
-                        </a>
-                    </li>
+                  
                 </ul>
 
             </aside>
@@ -456,24 +337,10 @@
             <!-- Layout container -->
             <div class="layout-page">
 
-
-
-
-
-                <!-- Navbar -->
-
-
-
-
-
-
-
-                <!-- / Navbar -->
-                <!-- Content wrapper -->
                 @RenderBody()
-                <!-- Content wrapper -->
+            
             </div>
-            <!-- / Layout page -->
+         
         </div>
 
 

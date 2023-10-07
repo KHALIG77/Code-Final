@@ -34,10 +34,12 @@ namespace Furniture.DAL
         public DbSet<OrderItem> OrderItems { get; set; }    
         public DbSet<WishlistItem> WishlistItems { get; set; }  
         public DbSet<Subscribe> Subscribes {get; set; }
+        public DbSet<Setting> Settings { get;set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Category>().HasMany(p => p.Products).WithOne(c => c.Category).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.Restrict);
+			builder.Entity<Setting>().HasKey(x => x.Key);
+			builder.Entity<Category>().HasMany(p => p.Products).WithOne(c => c.Category).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Tag>().HasMany(p=>p.Products).WithOne( t=> t.Tag).HasForeignKey(f => f.TagId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<Material>().HasMany(p => p.Products).WithOne(c => c.Material).HasForeignKey(f => f.MaterialId).OnDelete(DeleteBehavior.Restrict);
 

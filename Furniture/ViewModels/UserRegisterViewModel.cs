@@ -14,5 +14,9 @@ namespace Furniture.ViewModels
         [Required]
         [MaxLength(100)]
         public string UserName { get; set;}
+		[Required]
+		[MinLength(3)]
+		[MaxLength(100)]
+		public string FullName {get; set;}
     }
 }

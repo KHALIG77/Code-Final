@@ -1,0 +1,27 @@
+﻿@model CommentReply
+
+<div class="col-xl ">
+    <div class="card mb-4 m-auto" style="margin-top:60px !important;width:60%;">
+
+        <div class="card-body ">
+            <form method="post" asp-action="detail">
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Comment">Comment</label>
+                    <input type="text" disabled asp-for="Comment" class="form-control" id="basic-default-fullname" placeholder="Comment" />
+                    <span asp-validation-for="Comment"></span>
+                </div>
+                <input type="hidden" asp-for="CommentId" value="@ViewBag.CommentId" />
+                <div class="mb-3" style="">
+                    <label class="form-label" asp-for="Reply">Comment Reply</label>
+                    <textarea type="text" asp-for="Reply" class="form-control" id="basic-default-fullname" placeholder="Reply Comment" ></textarea>
+                    <span asp-validation-for="Reply"></span>
+                </div>
+             
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_ValidationScript")

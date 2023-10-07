@@ -45,16 +45,7 @@ namespace Furniture.Controllers
 					return View("Checkout", vm);
 				}
 			}
-			//if (!ModelState.IsValid)
-			//{
-			//	OrderViewModel vm = new OrderViewModel();
-			//	vm.Items = GetCheckoutItems();
-			//	vm.Form = orderVM;
-			//	vm.TotalPrice = vm.Items.Any() ? vm.Items.Sum(x => x.Price * x.Count) : 0;
-
-			//	return View("Checkout", vm);
-			//}
-
+		
 
 			Order order = new Order()
 			{
@@ -114,7 +105,6 @@ namespace Furniture.Controllers
 				orderVM.Form = new OrderFormViewModel
 				{
 					Address = user.Address,
-					Email = user.Email,
 					FullName = user.FullName,
 
 				};

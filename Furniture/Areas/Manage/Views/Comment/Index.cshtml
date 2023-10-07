@@ -1,0 +1,81 @@
+﻿
+@model PaginatedList<Comment>
+
+<form asp-action="index" method="get">
+    <div class="d-flex justify-content-center">
+        <div style="margin:30px;" class="col-md-10">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Name</label>
+                            <input name="search" value="@ViewBag.Search" type="text" class="form-control" id="defaultFormControlInput" placeholder="Username" aria-describedby="defaultFormControlHelp">
+                        </div>
+
+                      
+                        <div>
+                            <button style="margin-top:25px;" type="submit" class="btn btn-primary">Search</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card" style="margin:30px">
+    <div class="d-flex justify-content-center" style="margin:20px 0px;color:white;">
+    </div>
+    <div class="table-responsive text-nowrap" style="min-height:300px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product Id</th>
+                    <th>Date</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var comment in Model.Items)
+                {
+                    <tr>
+                        <td><strong>@comment.Id</strong></td>
+                        <td>@comment.ProductId</td>
+                        <td>@comment.CreatedAt</td>
+                        <td>@comment.AppUser.UserName</td>
+                       
+
+
+                        <td>
+                            <a asp-action="detail" asp-controller="comment" asp-route-id="@comment.Id" style="color:white;" class="btn rounded-pill btn-primary">Detail</a>
+
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<nav aria-label="Page navigation" class="d-flex justify-content-center">
+    <ul class="pagination">
+        <li class="page-item @(Model.HasPrevious?"":"disabled")  prev">
+            <a asp-action="index" asp-route-search="@ViewBag.Search"  asp-route-page="@(Model.PageIndex-1)" class="page-link"><i class="tf-icon bx bx-chevrons-left"></i></a>
+        </li>
+        @for (int i = 1; i <= Model.TotalPage; i++)
+        {
+            <li class="page-item  @(i==Model.PageIndex?"active":"")">
+                <a asp-action="index" asp-route-page="@i" asp-route-search="@ViewBag.Search"  class="page-link">@i</a>
+            </li>
+        }
+
+
+        <li class="page-item @(Model.HasNext?"":"disabled") next">
+            <a asp-action="index" asp-route-search="@ViewBag.Search"  asp-route-page="@(Model.PageIndex+1)" class="page-link "><i class="tf-icon bx bx-chevrons-right"></i></a>
+        </li>
+    </ul>
+</nav>

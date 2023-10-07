@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\remove-dark.svg"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\Detail.js",
+      "PackagePath": "staticwebassets\\assets\\js\\Detail.js"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\assets\\js\\Shop.js",
       "PackagePath": "staticwebassets\\assets\\js\\Shop.js"
     },
@@ -1489,6 +1493,10 @@
       "PackagePath": "staticwebassets\\uploads\\sliders\\10c3afee-5e1f-4b5e-ac44-745f44340639bkg-blu.jpg"
     },
     {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\sliders\\220db6c6-cc04-41b3-a15b-32638b9c28c94.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\220db6c6-cc04-41b3-a15b-32638b9c28c94.jpg"
+    },
+    {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\sliders\\2561f7ab-14b1-4034-b8ea-a49de24a69cciis.png",
       "PackagePath": "staticwebassets\\uploads\\sliders\\2561f7ab-14b1-4034-b8ea-a49de24a69cciis.png"
     },
@@ -1507,6 +1515,10 @@
     {
       "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\sliders\\98985063-52dd-40d4-8ae9-c3bffad6edb9iis.png",
       "PackagePath": "staticwebassets\\uploads\\sliders\\98985063-52dd-40d4-8ae9-c3bffad6edb9iis.png"
+    },
+    {
+      "Id": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\uploads\\sliders\\a5c88dea-7514-4e41-b68f-f8fdde3ec2b21.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\a5c88dea-7514-4e41-b68f-f8fdde3ec2b21.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Furniture.Microsoft.AspNetCore.StaticWebAssets.props",
