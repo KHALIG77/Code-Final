@@ -24,13 +24,13 @@ namespace Furniture.Areas.Manage.Controllers
         //{
         //    AppUser admin = new AppUser
         //    {
-        //        UserName = "xaliq",
-        //        IsAdmin = true,
+        //        UserName = "Stock",
+        //        IsStaff = true,
         //    };
 
         //    var result = await _userManager.CreateAsync(admin, "xaliq123");
 
-        //    await _userManager.AddToRoleAsync(admin, "Admin");
+        //    await _userManager.AddToRoleAsync(admin, "Stock");
         //    return Json(result);
 
         //}
@@ -43,9 +43,9 @@ namespace Furniture.Areas.Manage.Controllers
 
         //public async Task<ActionResult> CreateRole()
         //{
-        //    await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
-        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Stock"));
+        //    //await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    //await _roleManager.CreateAsync(new IdentityRole("Member"));
 
         //    return Content("Correct");
         //}
@@ -62,7 +62,7 @@ namespace Furniture.Areas.Manage.Controllers
                 return View();
             }
             AppUser admin = await _userManager.FindByNameAsync(adminVM.UserName);
-            if (admin==null || !admin.IsAdmin)
+            if (admin==null || !admin.IsStaff)
             {
                 ModelState.AddModelError("", "UserName or Password incorrect");
                 return View();

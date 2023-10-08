@@ -16,6 +16,12 @@
                     <textarea type="text" asp-for="Reply" class="form-control" id="basic-default-fullname" placeholder="Reply Comment" ></textarea>
                     <span asp-validation-for="Reply"></span>
                 </div>
+                <div class="mb-3">
+                    <div class="form-check form-switch mb-2">
+                        <input class="form-check-input" asp-for="IsShow" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" asp-for="IsShow">Is Show</label>
+                    </div>
+                </div>
              
 
                 <button type="submit" class="btn btn-primary">Send</button>

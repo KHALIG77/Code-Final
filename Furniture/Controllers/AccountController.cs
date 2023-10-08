@@ -179,7 +179,7 @@ namespace Furniture.Controllers
             }
             AppUser user = new AppUser
             {
-                IsAdmin=false,
+                IsStaff=false,
                 Email=userVM.Email,
                 UserName=userVM.UserName,
                 FullName=userVM.FullName
@@ -229,7 +229,7 @@ namespace Furniture.Controllers
                 return View(userLogin);
             }
             AppUser user = await _userManager.FindByEmailAsync(userLogin.Email);
-            if (user == null || user.IsAdmin)
+            if (user == null || user.IsStaff)
             {
                 ModelState.AddModelError("", "Email or Password incorrect");
                 return View();
@@ -264,7 +264,7 @@ namespace Furniture.Controllers
                 return View();
             };
             AppUser user = _context.AppUsers.FirstOrDefault(x => x.Email == forgetVM.Email);
-            if (user == null || user.IsAdmin)
+            if (user == null || user.IsStaff)
             {
                 ModelState.AddModelError("Email", "Email not found");
                 return View(); 
@@ -278,7 +278,7 @@ namespace Furniture.Controllers
         public async Task<IActionResult> ResetPassword(string email, string token)
         {
             AppUser user = await _userManager.FindByEmailAsync(email);
-            if (user == null || user.IsAdmin || !await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token))
+            if (user == null || user.IsStaff || !await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token))
             {
                 return View("Error");
             }
@@ -295,7 +295,7 @@ namespace Furniture.Controllers
 
             AppUser user = await _userManager.FindByEmailAsync(resetVM.Email);
 
-            if (user == null || user.IsAdmin)
+            if (user == null || user.IsStaff)
             { 
                 ModelState.AddModelError("Email", "Email not found");
                 return View();

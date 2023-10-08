@@ -11,7 +11,7 @@
 						</h1>
 					</div>
 					<div class="breadcrumbs">
-						<a href="index.html">Home</a><span class="delimiter"></span>About Us
+						<a asp-action="index" asp-controller="home">Home</a><span class="delimiter"></span>About Us
 					</div>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 											<div class="banner-wrapper banners">
 												<div class="banner-image">
 													<a >
-														<img src="media/banner/about-us-1.jpg" alt="Banner Image">
+														<img src="~/media/banner/about-us-1.jpg" alt="Banner Image">
 													</a>
 												</div>
 											</div>
@@ -186,66 +186,29 @@
 								<div class="block-widget-wrap">
 									<div class="testimonial-wrap slick-wrap">
 										<div class="slick-sliders" data-slidestoscroll="true" data-nav="1" data-dots="0" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1">
-											<div class="testimonial-content">
-												<div class="item">
-													<div class="testimonial-item">
-														<div class="rating">
-															<div class="star star-5"></div>
+											@foreach (var comment in Model.Comments)
+											{
+												<div class="testimonial-content">
+													<div class="item">
+														<div class="testimonial-item">
+															<div class="rating">
+																<div class="star star-@comment.Rate"></div>
+															</div>
+															<div class="testimonial-excerpt">
+																"@comment.CommentText"
+															</div>
 														</div>
-														<div class="testimonial-excerpt">
-															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
-														</div>
-													</div>
-													<div class="testimonial-image image-position-top">
-														<div class="thumbnail">
-															<img width="62" height="62" src="media/testimonial/1.jpg" alt="">
-														</div>
-														<div class="testimonial-info">
-															<h2 class="testimonial-customer-name">Robet Smith</h2>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="testimonial-content">
-												<div class="item">
-													<div class="testimonial-item">
-														<div class="rating">
-															<div class="star star-4"></div>
-														</div>
-														<div class="testimonial-excerpt">
-															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
-														</div>
-													</div>
-													<div class="testimonial-image image-position-top">
-														<div class="thumbnail">
-															<img width="62" height="62" src="media/testimonial/2.jpg" alt="">
-														</div>
-														<div class="testimonial-info">
-															<h2 class="testimonial-customer-name">Saitama One</h2>
+														<div class="testimonial-image image-position-top">
+															
+															<div class="testimonial-info">
+																<h2 class="testimonial-customer-name">@comment.AppUser.FullName</h2>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<div class="testimonial-content">
-												<div class="item">
-													<div class="testimonial-item">
-														<div class="rating">
-															<div class="star star-5"></div>
-														</div>
-														<div class="testimonial-excerpt">
-															” Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect. “
-														</div>
-													</div>
-													<div class="testimonial-image image-position-top">
-														<div class="thumbnail">
-															<img width="62" height="62" src="media/testimonial/3.jpg" alt="">
-														</div>
-														<div class="testimonial-info">
-															<h2 class="testimonial-customer-name">Sara Colinton</h2>
-														</div>
-													</div>
-												</div>
-											</div>
+
+											}
+											
 										</div>
 									</div>
 								</div>
@@ -260,41 +223,18 @@
 								<div class="block-widget-wrap">
 									<div class="slick-wrap">
 										<div class="slick-sliders" data-nav="0" data-columns4="2" data-columns3="3" data-columns2="4" data-columns1="4" data-columns1440="5" data-columns="5">
-											<div class="item slick-slide">
-												<div class="item-image">
-													<a href="#">
-														<img width="450" height="450" src="media/brand/1.jpg" alt="Brand 1">
-													</a>
+											@foreach (var brand in Model.Brand)
+											{
+												<div class="item slick-slide">
+													<div class="item-image">
+														<a asp-action="index" asp-controller="shop" asp-route-branadid="@brand.Id">
+															<img width="450" height="450" src="~/uploads/brands/@brand.Image" alt="Brand 1">
+														</a>
+													</div>
 												</div>
-											</div>
-											<div class="item slick-slide">
-												<div class="item-image">
-													<a href="#">
-														<img width="450" height="450" src="media/brand/2.jpg" alt="Brand 2">
-													</a>
-												</div>
-											</div>
-											<div class="item slick-slide">
-												<div class="item-image">
-													<a href="#">
-														<img width="450" height="450" src="media/brand/3.jpg" alt="Brand 3">
-													</a>
-												</div>
-											</div>
-											<div class="item slick-slide">
-												<div class="item-image">
-													<a href="#">
-														<img width="450" height="450" src="media/brand/4.jpg" alt="Brand 4">
-													</a>
-												</div>
-											</div>
-											<div class="item slick-slide">
-												<div class="item-image">
-													<a href="#">
-														<img width="450" height="450" src="media/brand/5.jpg" alt="Brand 5">
-													</a>
-												</div>
-											</div>
+
+											}
+										
 										</div>
 									</div>
 								</div>

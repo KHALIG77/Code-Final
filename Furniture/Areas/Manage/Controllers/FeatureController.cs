@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
+	[Authorize(Roles = "Admin")]
 	public class FeatureController : Controller
 	{
 		private readonly FurnutireContext _context;

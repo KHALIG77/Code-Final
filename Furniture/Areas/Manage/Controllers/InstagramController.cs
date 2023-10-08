@@ -4,12 +4,15 @@ using Furniture.DAL;
 using Furniture.Helper;
 using Furniture.Models;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class InstagramController : Controller
+	[Authorize(Roles = "Admin")]
+	public class InstagramController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;

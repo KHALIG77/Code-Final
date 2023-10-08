@@ -1,13 +1,16 @@
 ﻿using Furniture.DAL;
 using Furniture.Helper;
 using Furniture.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class SliderController : Controller
+	[Authorize(Roles = "Admin")]
+	public class SliderController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;

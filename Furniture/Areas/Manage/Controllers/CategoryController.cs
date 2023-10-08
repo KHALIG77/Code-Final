@@ -1,12 +1,15 @@
 ﻿using Furniture.Areas.Manage.ViewModels.Category;
 using Furniture.DAL;
 using Furniture.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
+	[Authorize(Roles = "Admin")]
 	public class CategoryController:Controller
 	{
 		private readonly FurnutireContext _context;

@@ -2,12 +2,15 @@
 using Furniture.DAL;
 using Furniture.Models;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
+	[Authorize(Roles = "Admin")]
 	public class CommentController : Controller
 	{
 		private readonly FurnutireContext _context;
@@ -39,7 +42,8 @@ namespace Furniture.Areas.Manage.Controllers
 			{
 				CommentId = id,
 				Comment = comment.CommentText,
-				Reply = comment.ReplyComment
+				Reply = comment.ReplyComment,
+				IsShow=comment.IsShow
 			};
            
 			return View(commentReply);
@@ -64,7 +68,8 @@ namespace Furniture.Areas.Manage.Controllers
 				return View("Error");
 			}
 			comment.ReplyComment = commentReply.Reply;
-			comment.ReplyTime=DateTime.Now.AddHours(4);
+			comment.ReplyTime=DateTime.UtcNow.AddHours(4);
+			comment.IsShow=commentReply.IsShow;	
 
 			_context.SaveChanges();
 

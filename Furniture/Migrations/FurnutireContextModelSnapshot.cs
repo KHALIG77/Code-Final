@@ -810,7 +810,10 @@ namespace Furniture.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<bool>("IsAdmin")
+                    b.Property<bool>("IsStaff")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSuperAdmin")
                         .HasColumnType("bit");
 
                     b.HasDiscriminator().HasValue("AppUser");

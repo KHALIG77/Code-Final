@@ -1,13 +1,16 @@
 ﻿using Furniture.Areas.Manage.ViewModels.Tag;
 using Furniture.DAL;
 using Furniture.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class TagController : Controller
+	[Authorize(Roles = "Admin")]
+	public class TagController : Controller
     {
         private readonly FurnutireContext _context;
 

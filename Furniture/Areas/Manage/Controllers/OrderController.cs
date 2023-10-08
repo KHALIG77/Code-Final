@@ -3,13 +3,16 @@ using Furniture.Enums;
 using Furniture.Models;
 using Furniture.Services;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Xaml.Permissions;
 
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
+	[Authorize(Roles = "Admin")]
 	public class OrderController : Controller
 	{
 		private readonly FurnutireContext _context;

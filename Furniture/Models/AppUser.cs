@@ -9,7 +9,8 @@ namespace Furniture.Models
         [MinLength(3)]
         [MaxLength(100)]
         public string FullName { get; set; }
-        public bool IsAdmin { get; set; }
+        public bool IsStaff { get; set; }
+        public bool IsSuperAdmin { get; set; }
         public string Address { get; set; }
     }
 }

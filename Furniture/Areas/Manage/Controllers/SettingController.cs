@@ -1,11 +1,14 @@
 ﻿using Furniture.Areas.Manage.ViewModels;
 using Furniture.Areas.Manage.ViewModels.Setting;
 using Furniture.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
+	[Authorize(Roles = "Admin")]
 	public class SettingController : Controller
 	{
 		private readonly FurnutireContext _context;

@@ -3,14 +3,17 @@ using Furniture.Helper;
 using Furniture.Models;
 using Furniture.Services;
 using Furniture.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Drawing.Printing;
 
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class ProductController : Controller
+	[Authorize(Roles = "Admin")]
+	public class ProductController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;

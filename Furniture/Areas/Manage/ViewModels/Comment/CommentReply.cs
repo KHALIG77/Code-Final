@@ -9,5 +9,6 @@ namespace Furniture.Areas.Manage.ViewModels.Comment
         
         [MaxLength(400)]
         public string Reply {get; set;}
+        public bool IsShow {get; set;}
     }
 }
