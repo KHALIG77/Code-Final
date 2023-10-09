@@ -1,0 +1,69 @@
+﻿@model StaffCreateViewModel
+
+<div class="col-xl">
+    <div class="card mb-4" style="margin:30px;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Staff Create</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="create" method="post">
+                <div class="mb-3">
+                    <label class="form-label" asp-for="FullName">FullName</label>
+                    <input type="text" class="form-control" id="basic-default-fullname" asp-for="FullName" placeholder="FullName">
+                    <span asp-validation-for="FullName"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Email">Email</label>
+                    <input type="text" class="form-control" id="basic-default-fullname" asp-for="Email" placeholder="Email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Phone">Phone</label>
+                    <input type="number" min="0" class="form-control" id="basic-default-company" asp-for="Phone" placeholder="Phone">
+                    <span asp-validation-for="Phone"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="UserName">UserName</label>
+                    <input type="text" min="0" class="form-control" id="basic-default-company" asp-for="UserName" placeholder="UserName">
+                    <span asp-validation-for="UserName"></span>
+                </div>
+              
+                <div class="d-flex justify-content-between">
+
+
+                    <div class="mb-3" style="width:30%;">
+                        <label asp-for="Role" class="form-label">Role Select</label>
+                        <select class="form-select" asp-for="Role" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected="">Open this select menu</option>
+                            @foreach (var role in Model.Roles)
+                            {
+                                <option value="@role.Name">@role.Name</option>
+                            }
+
+                        </select>
+                        <span asp-validation-for="Role"></span>
+                    </div>
+                   
+
+                    
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Password">Password</label>
+                    <input type="text" min="0" class="form-control" id="basic-default-company" asp-for="Password" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
+               
+               
+                
+
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+                <a style="margin-left:15px; color:black;" class="btn btn-gray" asp-action="index">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+@section Validation{
+    @Html.Partial("_ValidationScript")
+}
