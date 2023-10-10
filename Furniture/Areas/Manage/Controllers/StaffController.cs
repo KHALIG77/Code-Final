@@ -11,6 +11,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles ="SuperAdmin")]
   
     public class StaffController : Controller
     {
@@ -61,7 +62,7 @@ namespace Furniture.Areas.Manage.Controllers
                 Email = admin.Email,
                 PhoneNumber = admin.Phone,
                 EmailConfirmed = true,
-
+                Role=admin.Role,
             };
 
             var result = await _userManager.CreateAsync(newStaff, admin.Password);
@@ -74,7 +75,7 @@ namespace Furniture.Areas.Manage.Controllers
                 }
                 return View(admin);
             }
-            await _userManager.AddToRoleAsync(newStaff, (admin.Role == "Admin" ? "Admin" : "Staff"));
+            await _userManager.AddToRoleAsync(newStaff, (admin.Role == "Admin" ? "Admin" : "Stock"));
 
             return RedirectToAction("index");
         }
@@ -124,7 +125,9 @@ namespace Furniture.Areas.Manage.Controllers
         public  IActionResult Edit(StaffCreateViewModel adminVM)
         {
             ViewBag.Id=adminVM.Id;
+            adminVM.Roles = _context.Roles.Where(x => x.Name != "SuperAdmin" && x.Name != "Member").ToList();
             AppUser admin = _context.AppUsers.FirstOrDefault(x => x.Id == adminVM.Id);
+            
             if (admin == null)
             {
                 return View("Error");
@@ -136,11 +139,12 @@ namespace Furniture.Areas.Manage.Controllers
             if (admin.UserName!=adminVM.UserName && _context.AppUsers.Any(x=>x.UserName==adminVM.UserName))
             {
                 ModelState.AddModelError("UserName", "Username already used");
+               
                 return View(adminVM);
             }
             if (adminVM.NewPassword!=null && adminVM.Password !=null)
             {
-                var result = _userManager.ChangePasswordAsync(admin, adminVM.Password, adminVM.NewPassword).Result;
+                var result = _userManager.ChangePasswordAsync(admin,adminVM.Password,adminVM.NewPassword).Result;
                 if(!result.Succeeded) 
                 {
                     foreach (var error in result.Errors)
@@ -164,17 +168,29 @@ namespace Furniture.Areas.Manage.Controllers
             admin.PhoneNumber = adminVM.Phone;
             admin.FullName = adminVM.FullName;
 
-            var updateResult = _userManager.UpdateAsync(admin).Result;
+            string stockId = "dc0de338-e144-456c-8bbb-6a55d6da1f90";
+            string adminId = "f2e31902-d9a8-4254-a418-b2596e82c197";
 
-            if (adminVM.Role!=GetRole(adminVM.Id)) 
-            { 
-                var role = _context.UserRoles.FirstOrDefault(x=>x.UserId==adminVM.Id);
-                role.RoleId = RoleId(adminVM.Id);
-                _context.SaveChanges();
+         
+            if (adminVM.Role != GetRole(adminVM.Id))
+            {
+                var roleToRemove = GetRole(adminVM.Id);
+                var roleToAdd = (adminVM.Role == "Admin") ? adminId : stockId;
 
+                if (roleToRemove != null)
+                {
+                    _userManager.RemoveFromRoleAsync(admin, roleToRemove).Wait();
+                   
+                }
 
+                if (roleToAdd != null)
+                {
+                    _userManager.AddToRoleAsync(admin, roleToAdd==adminId?"Admin":"Stock").Wait();
+                    admin.Role = roleToAdd == adminId ? "Admin" : "Stock";
+                }
             }
 
+            var updateResult = _userManager.UpdateAsync(admin).Result;
 
             if (!updateResult.Succeeded)
             {

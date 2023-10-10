@@ -1,6 +1,7 @@
 ﻿//using AspNetCore;
 using Furniture.DAL;
 using Furniture.Models;
+using Furniture.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,14 +22,14 @@ namespace Furniture.Controllers
 		
 		public IActionResult Index()
 		{
-			List<WishlistItem> items =_context.WishlistItems.Include(x=>x.Product).ThenInclude(x=>x.Images).ToList();
+			List<WishlistItem> items = _context.WishlistItems.Include(x=>x.Product).ThenInclude(x=>x.Images).Where(x => x.AppUserId == User.FindFirstValue(ClaimTypes.NameIdentifier)).ToList();
 			return View(items);
 		}
 		
 		public IActionResult RemoveWishlist(int id)
 		{
-			List<WishlistItem> items = _context.WishlistItems.Include(x => x.Product).ThenInclude(x => x.Images).ToList();
-			if (!_context.WishlistItems.Any(x=>x.ProductId==id))
+			List<WishlistItem> items = _context.WishlistItems.Include(x => x.Product).ThenInclude(x => x.Images).Where(x => x.AppUserId == User.FindFirstValue(ClaimTypes.NameIdentifier)).ToList();
+			if (items.Count==0)
 			{
 				return BadRequest();
 			}

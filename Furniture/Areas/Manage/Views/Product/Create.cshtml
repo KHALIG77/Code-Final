@@ -145,6 +145,11 @@
                         <span asp-validation-for="AllImages"></span>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Detail">Detail</label>
+                    <textarea id="basic-default-message" class="form-control" asp-for="Detail" placeholder="Please write about product(All info)"></textarea>
+                    <span asp-validation-for="Detail"></span>
+                </div>
              
                 <div asp-validation-summary="ModelOnly"></div>
                 

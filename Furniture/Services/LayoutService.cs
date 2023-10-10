@@ -54,14 +54,18 @@ namespace Furniture.Services
 					var basketItems = JsonConvert.DeserializeObject<List<BasketCkItemViewModel>>(basketJson);
                     foreach (var item in basketItems)
                     {
+					if (_context.Products.Any(x => x.Id == item.ProductId))
+					{
 						BasketItemViewModel basketItem = new BasketItemViewModel
 						{
-							Product = _context.Products.Include(x=>x.Images).FirstOrDefault(x => x.Id == item.ProductId),
-							Count =(int)item.Count,
+							Product = _context.Products.Include(x => x.Images).FirstOrDefault(x => x.Id == item.ProductId),
+							Count = (int)item.Count,
 						};
-					   
+
 						basketVM.Items.Add(basketItem);
-						basketVM.TotalPrice+= (basketItem.Product.DiscountPercent > 0 ? (basketItem.Product.SalePrice * (100 - basketItem.Product.DiscountPercent) / 100) : basketItem.Product.SalePrice) * basketItem.Count;
+						basketVM.TotalPrice += (basketItem.Product.DiscountPercent > 0 ? (basketItem.Product.SalePrice * (100 - basketItem.Product.DiscountPercent) / 100) : basketItem.Product.SalePrice) * basketItem.Count;
+					}
+	
 					}
 				      basketVM.TotalCount =(byte)basketItems.Count;
 			}

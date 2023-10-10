@@ -12,5 +12,6 @@ namespace Furniture.Models
         public bool IsStaff { get; set; }
         public bool IsSuperAdmin { get; set; }
         public string Address { get; set; }
+        public string Role {get; set; }
     }
 }

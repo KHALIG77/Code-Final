@@ -80,8 +80,10 @@
 									<p>@Model.Description</p>
 								</div>
 
-
-								<a asp-action="addtobasket" asp-controller="product" asp-route-id="@Model.Id" class="add-basket single-add-to-cart-button button alt">Add to cart</a>
+								<div class="btn-add-to-cart" data-title="Add to cart">
+									<button class="product-btn add-basket " data-fetch="/product/addtobasket/@Model.Id" tabindex="0"></button>
+								</div>
+								<a data-fetch="/product/addtobasket/@Model.Id"  class="add-basket single-add-to-cart-button button alt">Add to cart</a>
 								
 							</div>
 						</div>

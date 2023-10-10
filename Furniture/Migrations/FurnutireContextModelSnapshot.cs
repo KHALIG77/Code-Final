@@ -330,6 +330,11 @@ namespace Furniture.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<string>("Detail")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("money");
 
@@ -505,8 +510,8 @@ namespace Furniture.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<bool>("ForAbout")
                         .HasColumnType("bit");
@@ -815,6 +820,9 @@ namespace Furniture.Migrations
 
                     b.Property<bool>("IsSuperAdmin")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });

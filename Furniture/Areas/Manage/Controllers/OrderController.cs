@@ -12,8 +12,9 @@ using System.Xaml.Permissions;
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class OrderController : Controller
+    [Authorize(Roles = "SuperAdmin,Stock")]
+
+    public class OrderController : Controller
 	{
 		private readonly FurnutireContext _context;
         private readonly IEmailSender _email;
@@ -39,7 +40,7 @@ namespace Furniture.Areas.Manage.Controllers
             ViewBag.OrderStatus = orderstatus;
 
 
-            return View(PaginatedList<Order>.Create(query,page,2));
+            return View(PaginatedList<Order>.Create(query,page,5));
 		}
 		public IActionResult Detail(int id)
 		{

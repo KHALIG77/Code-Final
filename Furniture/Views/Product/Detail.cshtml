@@ -140,8 +140,8 @@
 										</div>
 										</form>
 										<div class="product-meta">
-										<span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">@Model.Product.Category.Name</a></span>
-											<span class="posted-in">Material: <a href="shop-grid-left.html" rel="tag">@Model.Product.Material.Name</a></span>
+										<span class="posted-in">Category: <a asp-action="index" asp-controller="shop" asp-route-categoryid="@Model.Product.Category.Id" rel="tag">@Model.Product.Category.Name</a></span>
+											<span class="posted-in">Material: <a asp-action="index" asp-controller="shop" asp-route-material="@Model.Product.Material.Id">@Model.Product.Material.Name</a></span>
 											<span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">
 													@for (int i = 0; i < Model.Product.Tags.Count(); i++)
 													{
@@ -160,6 +160,9 @@
 												</a> <a href="shop-grid-left.html" rel="tag">
 												
 											</a></span>
+											<span class="posted-in">Brand: <a asp-action="index" asp-controller="shop" asp-route-brandid="@Model.Product.Brand.Id" rel="tag">@Model.Product.Brand.Name</a></span>
+
+
 										</div>
 										
 									</div>
@@ -182,8 +185,7 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-pane fade show active" id="description" role="tabpanel">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-											<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+											<p>@Model.Product.Detail</p>
 										</div>
 										<div class="tab-pane fade" id="reviews" role="tabpanel">
 											<div id="reviews" class="product-reviews">
@@ -275,15 +277,14 @@
 																		</a>
 																	</div>
 																	<div class="product-button">
-																		<div class="btn-add-to-cart" data-title="Add to cart">
-																		<a class="product-btn add-basket" asp-action="addtobasket" asp-controller="product" asp-route-id="@item.Id"> </a>
-																		</div>
 																		<div class="btn-wishlist" data-title="Wishlist">
-																			<button class="product-btn">Add to wishlist</button>
+																			<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@item.Id" tabindex="0">Add to wishlist</button>
 																		</div>
-
+																		<div class="btn-add-to-cart" data-title="Add to cart">
+																			<button class="product-btn add-basket" data-fetch="/product/addtobasket/@item.Id" tabindex="0"></button>
+																		</div>
 																		<span class="product-quickview" data-title="Quick View">
-																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@item.Id" class="@*modal-btn-quick*@ @*quickview*@ quickview-button">Quick View <i class="icon-search"></i></a>
+																			<a asp-controller="product" asp-action="modaldetail" asp-route-id="@item.Id" class=" quickview-button" tabindex="0">Quick View <i class="icon-search"></i></a>
 																		</span>
 																	</div>
 																</div>

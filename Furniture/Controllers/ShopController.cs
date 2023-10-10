@@ -79,12 +79,13 @@ namespace Furniture.Controllers
 			ViewBag.BrandId = brandid;	
 			ViewBag.MinLimit  =_context.Products.Any() ?(int)_context.Products.Min(x=>x.SalePrice) :0;
 			ViewBag.MaxLimit = _context.Products.Any() ?(decimal) _context.Products.Max(x => x.SalePrice) : 0;
-			ViewBag.MinPrice = minprice??(decimal) _context.Products.Min(x => x.SalePrice);
-			ViewBag.MaxPrice = maxprice??(decimal) _context.Products.Max(x => x.SalePrice);
+			ViewBag.MinPrice = minprice??(decimal?) _context.Products.Min(x => (decimal?)x.SalePrice);
+			ViewBag.MaxPrice = maxprice??(decimal?) _context.Products.Max(x => (decimal?)x.SalePrice);
 			ViewBag.Tags=tags;
+			ViewBag.Sort=sort;
 
 			query.ToList();
-			vm.PaginatedList = PaginatedList<Product>.Create(query, page, 3);
+			vm.PaginatedList = PaginatedList<Product>.Create(query, page, 6);
 
 			return View(vm);
 		}

@@ -11,8 +11,9 @@ using System.Data;
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class InstagramController : Controller
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
+    public class InstagramController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;
@@ -27,7 +28,7 @@ namespace Furniture.Areas.Manage.Controllers
         {
             var query = _context.InstagramPhotos.AsQueryable();
 
-            return View(PaginatedList<InstagramPhoto>.Create(query,page,2));
+            return View(PaginatedList<InstagramPhoto>.Create(query,page,4));
             
         }
         public IActionResult Create()

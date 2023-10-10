@@ -10,7 +10,8 @@ using System.Data;
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
-	[Authorize(Roles = "Admin")]
+	[Authorize(Roles ="SuperAdmin,Admin")]
+	
 	public class CommentController : Controller
 	{
 		private readonly FurnutireContext _context;
@@ -29,7 +30,7 @@ namespace Furniture.Areas.Manage.Controllers
 			}
 			ViewBag.Search = search;
 
-			return View(PaginatedList<Comment>.Create(query, page, 2));
+			return View(PaginatedList<Comment>.Create(query, page, 4));
 		}
 		public IActionResult Detail(int id)
 		{

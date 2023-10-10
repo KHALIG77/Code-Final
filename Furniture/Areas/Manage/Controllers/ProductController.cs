@@ -12,8 +12,8 @@ using System.Drawing.Printing;
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class ProductController : Controller
+    [Authorize(Roles = "SuperAdmin,Admin,Stock")]
+    public class ProductController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;
@@ -34,7 +34,7 @@ namespace Furniture.Areas.Manage.Controllers
             }
             ViewBag.Search = search;
             ViewBag.Page = page;
-            return View(PaginatedList<Product>.Create(query,page,2));
+            return View(PaginatedList<Product>.Create(query,page,6));
         }
         public async Task<IActionResult> Create()
         {
@@ -272,6 +272,7 @@ namespace Furniture.Areas.Manage.Controllers
             existProduct.IsBest= product.IsBest;
             existProduct.IsFeatured= product.IsFeatured;
             existProduct.IsStock= product.IsStock;
+            existProduct.Detail = product.Detail;
 
             _context.SaveChanges();
             if(oldMainPhoto!=null)

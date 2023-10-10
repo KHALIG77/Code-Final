@@ -8,12 +8,10 @@
 				<div class="section-container">
 					<div class="content-title-heading">
 						<h1 class="text-title-heading">
-							Bed &amp; Bath
+							SHOP
 						</h1>
 					</div>
-					<div class="breadcrumbs">
-						<a href="index.html">Home</a><span class="delimiter"></span><a href="shop-grid-left.html">Shop</a><span class="delimiter"></span>Bed &amp; Bath
-					</div>
+					
 				</div>
 			</div>
 
@@ -71,7 +69,7 @@
 											</div>
 										</div>
 									</div>
-									@*Tag Filter*@
+									
 									<div class="block block-product-cats">
 										<div class="block-title"><h2>Tags</h2></div>
 										<div class="block-content">
@@ -120,30 +118,7 @@
 								</form>
 						
 
-								<!-- Block Product Filter -->
-								@*<div class="block block-product-filter clearfix" style="margin-top:30px;">
-									<div class="block-title"><h2>Size</h2></div>
-									<div class="block-content">
-										<ul class="filter-items text">
-											<li><span>XS</span></li>
-											<li><span>S</span></li>
-											<li><span>M</span></li>
-											<li>
-												<span>L</span>
-											</li>
-											<li style="margin-top:10px;width:30px;">
-												<input  name="sizes" type="checkbox" style="visibility:hidden" id="size-xl">
-												<label for="size-xl" style="cursor:pointer" class="label-size">
-													<span class="d-block">XL</span>
-												</label>
-												
-											</li>
-											
-											
-										</ul>
-									</div>
-								</div>*@
-
+							
 								<!-- Block Product Filter -->
 								<div class="block block-product-filter clearfix">
 									<div class="block-title"><h2>Brands</h2></div>
@@ -188,15 +163,7 @@
 										<div class="products-sort dropdown">
 											<select style="padding:0;padding-left:7px;" onchange="this.form.submit()" asp-items="@ViewBag.SortList" form="shop-form" name="sort" class=" nice-select">
 											</select>
-											@*<span class="sort-toggle dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Default sorting</span>
-											<ul class="sort-list dropdown-menu" x-placement="bottom-start">
-												<li class="active"><a href="#">Default sorting</a></li>
-												<li><a href="#">Sort by popularity</a></li>
-												<li><a href="#">Sort by average rating</a></li>
-												<li><a href="#">Sort by latest</a></li>
-												<li><a href="#">Sort by price: low to high</a></li>
-												<li><a href="#">Sort by price: high to low</a></li>
-											</ul>*@
+										
 										</div>
 										<ul class="layout-toggle nav nav-tabs">
 											<li class="nav-item">
@@ -229,7 +196,7 @@
 																		<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@product.Id" tabindex="0">Add to wishlist</button>
 																	</div>
 																	<div class="btn-add-to-cart" data-title="Add to cart">
-																		<button class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0"></button>
+																		<button style="cursor:pointer" class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0"></button>
 																	</div>
 																	<span class="product-quickview" data-title="Quick View">
 																		<a asp-controller="product" asp-action="modaldetail" asp-route-id="@product.Id" class=" quickview-button" tabindex="0">Quick View <i class="icon-search"></i></a>
@@ -311,14 +278,14 @@
 																			<button class="product-btn  wish-btn" data-fetch="/product/addtowishlist/@product.Id" tabindex="0">Add to wishlist</button>
 																		</div>
 																		<div class="btn-add-to-cart" data-title="Add to cart">
-																			<button class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0">Add to basket</button>
+																			<button style="cursor:pointer" class="product-btn add-basket" data-fetch="/product/addtobasket/@product.Id" tabindex="0">Add to basket</button>
 																		</div>
 																		
 																	
 
 																	
 																</div>
-																<div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis…</div>
+																<div class="product-description">@product.Description</div>
 															</div>
 														</div>
 													</div>
@@ -329,18 +296,21 @@
 									
 									
 								</div>
+								@if (Model.PaginatedList.TotalPage>1)
+								{
+									<nav class="pagination">
+										<ul class="page-numbers">
+											<li class="@(Model.PaginatedList.HasPrevious == false ? "d-none" : "")"><a class="prev page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex-1)" asp-route-sort="@ViewBag.Sort" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Previous</a></li>
+											@for (int i = 1; i <= Model.PaginatedList.TotalPage; i++)
+											{
+												<li style="@(Model.PaginatedList.PageIndex==i?"background-color:black":"")"><a class=" page-numbers" asp-action="index" asp-route-page="@i" asp-route-sort="@ViewBag.Sort" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">@i</a></li>
+											}
+											<li class="@(Model.PaginatedList.HasNext==true?"":"d-none")"><a class="next  page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex+1)" asp-route-sort="@ViewBag.Sort" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Next</a></li>
 
-								<nav class="pagination">
-									<ul class="page-numbers">
-										<li class="@(Model.PaginatedList.HasPrevious == false ? "d-none" : "")"><a class="prev page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex-1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Previous</a></li>
-										@for (int i = 1; i <= Model.PaginatedList.TotalPage; i++)
-										{
-											<li style="@(Model.PaginatedList.PageIndex==i?"background-color:black":"")" ><a class=" page-numbers" asp-action="index" asp-route-page="@i" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">@i</a></li>
-										}
-										<li class="@(Model.PaginatedList.HasNext==true?"":"d-none")"><a class="next  page-numbers" asp-action="index" asp-route-page="@(Model.PaginatedList.PageIndex+1)" asp-route-categoryid="@ViewBag.CategoryId" asp-route-materialid="@ViewBag.MaterialId" asp-route-tags="@ViewBag.Tags" asp-route-minprice="@ViewBag.MinPrice" asp-route-maxprice="@ViewBag.MaxPrice" asp-route-brand="@ViewBag.BrandId">Next</a></li>
-
-									</ul>
-								</nav>
+										</ul>
+									</nav>
+								}
+							
 							</div>
 						</div>
 					</div>

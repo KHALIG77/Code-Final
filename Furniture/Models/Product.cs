@@ -44,15 +44,15 @@ namespace Furniture.Models
 		public List<int> TagIds {get; set; } = new List<int>();
     
         [NotMapped]
-        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg","image/avif")]
         [FileSize(1000000)]
         public IFormFile? MainImage {get; set;}
         [NotMapped]
-        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg", "image/avif")]
         [FileSize(1000000)]
         public IFormFile? HoverImage {get; set;}
         [NotMapped]
-        [AllowFileType("image/png", "image/jpeg", "image/jpg")]
+        [AllowFileType("image/png", "image/jpeg", "image/jpg", "image/avif")]
         [FileSize(1000000)]
         public List<IFormFile>? AllImages { get; set;} = new List<IFormFile>();
 		[NotMapped]
@@ -61,6 +61,9 @@ namespace Furniture.Models
 		public List<int> SizeIds { get; set; } = new List<int>();
         [NotMapped]
         public List<int> ImageIds { get; set; } = new List<int>();
+		[Required]
+		[MaxLength(1000)]
+		public string Detail {get; set;}
 
 
 	}

@@ -7,9 +7,9 @@
 			@foreach (var item in Model.Items)
 			{
 				<li class="mini-cart-item">
-					<a href="shop-details.html" class="product-image"><img width="600" height="600" src="~/uploads/products/@item.Product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt=""></a>
+					<a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id" class="product-image"><img width="600" height="600" src="~/uploads/products/@item.Product.Images.FirstOrDefault(x=>x.Status==Furniture.Enums.ImageStatus.Main).ImageUrl" alt=""></a>
 					<div class="d-flex justify-content-between">
-						<a href="shop-details.html" class="product-name">@item.Product.Name</a>
+						<a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id" class="product-name">@item.Product.Name</a>
 
 						<a asp-action="removebasket" asp-controller="product" asp-route-id="@item.Product.Id" class="remove-basket"><i class="icon_close"></i></a>
 
@@ -29,12 +29,9 @@
 			<div class="title-total">Total: </div>
 			<div class="total-price"><span>$@Model.TotalPrice.ToString("0.00")</span></div>
 		</div>
-		@*<div class="free-ship">
-			<div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
-			<div class="total-percent"><div class="percent" style="width:20%"></div></div>
-		</div>*@
+		
 		<div class="buttons">
-			<a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
+			<a asp-action="index" asp-controller="shop" class="button btn view-cart btn-primary">View Shop</a>
 			<a asp-action="checkout" asp-controller="order" class="button btn checkout btn-default">Check out</a>
 		</div>
 	</div>
@@ -45,7 +42,7 @@ else
 		<ul class="cart-list">
 			<li class="empty">
 				<span>No products in the cart.</span>
-				<a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
+				<a class="go-shop" asp-action="index" asp-controller="shop">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
 				<input class="total-count" type="hidden" value="0">
 
 			</li>

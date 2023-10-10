@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+   
     public class BrandController : Controller
     {
         private readonly FurnutireContext _context;

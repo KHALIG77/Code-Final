@@ -18,7 +18,7 @@ namespace Furniture.Models
         [MaxLength(50)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(400)]
         public string Description { get; set; }
         [Required]
         public string BtnUrl { get; set; }

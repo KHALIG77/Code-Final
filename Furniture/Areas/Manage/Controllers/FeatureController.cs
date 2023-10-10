@@ -2,12 +2,14 @@
 using Furniture.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class FeatureController : Controller
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
+    public class FeatureController : Controller
 	{
 		private readonly FurnutireContext _context;
 

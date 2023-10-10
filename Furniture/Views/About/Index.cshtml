@@ -68,7 +68,7 @@
 																	<div class="info">
 																		<div class="content">
 																			
-																			<a class="link-title" href="blog-grid-right.html">
+																			<a class="link-title" asp-action="index" asp-controller="shop">
 																				<h3 class="title-banner">@Model.Sliders[i].Title</h3>
 																			</a>
 																			<div class="banner-image-description">
@@ -151,14 +151,14 @@
 																			<div class="banner-image-description">
 																				@Model.Sliders[i].Description
 																			</div>
-																			<a class="button button-outline" @Model.Sliders[i].BtnUrl>SHOP</a>
+																			<a class="button button-outline" href="@Model.Sliders[i].BtnUrl">SHOP</a>
 																		</div>
 																	</div>
 															     </div>
 															</div>
 															<div class="col-md-6">
 																<div class="banner-image">
-																	<a href="shop-grid-left.html">
+																	<a asp-action="index" asp-controller="shop">
 																		<img src="~/uploads/sliders/@Model.Sliders[i].Image" alt="Banner Image">
 																	</a>
 																</div>

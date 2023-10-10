@@ -5,9 +5,10 @@
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 				<section class="section m-b-80">
-					<!-- Block Sliders -->
-					<div class="block block-sliders layout-7 auto-height nav-center">
-						<div class="slick-sliders" data-autoplay="false" data-dots="true" data-nav="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns1440="1" data-columns="1">
+				
+
+					<div class="block block-sliders">
+						<div class="slick-sliders" data-autoplay="true" data-dots="true" data-nav="false" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns1440="1" data-columns="1">
 							@foreach (var slider in Model.Sliders.Where(x=>x.MainSlider==true))
 							{
 								<div class="item slick-slide">
@@ -15,13 +16,16 @@
 										<div class="content-image">
 											<img width="1920" height="1080" src="~/uploads/sliders/@slider.Image" alt="Image Slider">
 										</div>
-										<div class="item-info horizontal-end vertical-middle">
-											<div class="content">
-												<h2 class="title-slider">
-													@slider.Title
-												</h2>
-												<div class="description-slider">@slider.Description</div>
-												<a class="button-slider button-white" href="@slider.BtnUrl">SHOP NOW</a>
+										<div class="section-padding">
+											<div class="section-container">
+												<div class="item-info horizontal-start vertical-middle">
+													<div class="content">
+														
+														<h2 class="title-slider">@slider.Title</h2>
+														<div class="description-slider">@slider.Description </div>
+														<a class="button-slider button-white" href="@slider.BtnUrl">SHOP NOW</a>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -167,8 +171,8 @@
 																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">
-																				<del aria-hidden="true"><span>@product.SalePrice.ToString("#.##") $</span></del>
-																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))</span></ins>
+																				<del aria-hidden="true"><span>@product.SalePrice.ToString("0.00") $</span></del>
+																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("0.00"))$</span></ins>
 																			</span>
 																		}
 																		else
@@ -222,8 +226,8 @@
 																		@if (product.DiscountPercent > 0)
 																		{
 																			<span class="price">
-																				<del aria-hidden="true"><span>@product.SalePrice.ToString("#.##") $</span></del>
-																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("#.##"))</span></ins>
+																				<del aria-hidden="true"><span>@product.SalePrice.ToString("0.00") $</span></del>
+																				<ins><span>@((@product.SalePrice - ((@product.SalePrice * @product.DiscountPercent) / 100)).ToString("0.00"))$</span></ins>
 																			</span>
 																		}
 																		else
@@ -262,7 +266,7 @@
 													<div class="bg-banner">
 														<div class="banner-wrapper banners">
 															<div class="banner-image">
-																<a href="shop-grid-left.html">
+																<a asp-action="index" asp-controller="shop">
 																	<img width="1080" height="584" src="~/uploads/sliders/@slide.Image" alt="Image Slider">
 																</a>
 															</div>
@@ -325,12 +329,12 @@
 					<!-- Block Instagram -->
 					<div class="block block-instagram slider no-space">
 						<div class="slick-wrap">
-							<div class="slick-sliders fullwidth" data-dots="false" data-item_row="1" data-nav="false" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="4" data-columns="5">
+							<div style="max-height:261px!important" class="slick-sliders fullwidth" data-dots="false" data-item_row="1" data-nav="false" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="4" data-columns="5">
 								@foreach (var instagram in Model.InstagramPhotos)
 								{
 									<div class="item slick-slide">
 										<a class="instagram" href="@instagram.Url">
-											<img width="690" height="690" src="~/uploads/instagram/@instagram.Image" alt="Image Slider">
+											<img width="400"  height="300" src="~/uploads/instagram/@instagram.Image" alt="Image Slider">
 										</a>
 									</div>
 								}

@@ -9,8 +9,9 @@ using System.Data;
 namespace Furniture.Areas.Manage.Controllers
 {
     [Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class SliderController : Controller
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
+    public class SliderController : Controller
     {
         private readonly FurnutireContext _context;
         private readonly IWebHostEnvironment _env;

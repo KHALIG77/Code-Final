@@ -20,24 +20,25 @@ namespace Furniture.Areas.Manage.Controllers
            _roleManager = roleManager;
         }
 
-        //public async Task<IActionResult> CreateAdmin()
-        //{
-        //    AppUser admin = new AppUser
-        //    {
-        //        UserName = "Stock",
-        //        IsStaff = true,
-        //    };
+        public async Task<IActionResult> CreateAdmin()
+        {
+            AppUser admin = new AppUser
+            {
+                UserName = "SuperAdmin",
+                IsStaff = true,
+                IsSuperAdmin=true,
+            };
 
-        //    var result = await _userManager.CreateAsync(admin, "xaliq123");
+            var result = await _userManager.CreateAsync(admin,"SuperAdmin123");
 
-        //    await _userManager.AddToRoleAsync(admin, "Stock");
-        //    return Json(result);
+            await _userManager.AddToRoleAsync(admin, "SuperAdmin");
+            return Json(result);
 
-        //}
+        }
         //public async Task<IActionResult> AddRole()
         //{
         //    AppUser admin = _userManager.Users.FirstOrDefault();
-        //   var result =   await  _userManager.AddToRoleAsync(admin, "Admin");
+        //    var result = await _userManager.AddToRoleAsync(admin, "Admin");
         //    return Content(result.ToString());
         //}
 
@@ -78,7 +79,7 @@ namespace Furniture.Areas.Manage.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("index", "dashboard");
+            return RedirectToAction("index", "product");
             
         }
         public async Task<IActionResult> LogOut()

@@ -9,8 +9,8 @@ using System.Data;
 namespace Furniture.Areas.Manage.Controllers
 {
 	[Area("manage")]
-	[Authorize(Roles = "Admin")]
-	public class CategoryController:Controller
+    [Authorize(Roles = "SuperAdmin,Admin")]
+    public class CategoryController:Controller
 	{
 		private readonly FurnutireContext _context;
 

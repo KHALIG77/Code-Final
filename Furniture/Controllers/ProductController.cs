@@ -27,7 +27,7 @@ namespace Furniture.Controllers
 		}
 		public IActionResult Detail(int id)
 		{
-			Product product = _context.Products.Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).ThenInclude(x=>x.AppUser).Include(x => x.Images).Include(x => x.Material).Include(x => x.Sizes).ThenInclude(s => s.Size).Include(x => x.Colors).ThenInclude(x => x.Color).FirstOrDefault(x => x.Id == id);
+			Product product = _context.Products.Include(x=>x.Brand).Include(x => x.Category).Include(x => x.Tags).Include(x => x.Comments).ThenInclude(x=>x.AppUser).Include(x => x.Images).Include(x => x.Material).Include(x => x.Sizes).ThenInclude(s => s.Size).Include(x => x.Colors).ThenInclude(x => x.Color).FirstOrDefault(x => x.Id == id);
 
 			if (product == null)
 			{
@@ -300,7 +300,7 @@ namespace Furniture.Controllers
 					};
 					_context.WishlistItems.Add(wish);
 					_context.SaveChanges();
-					return Json(new {status=1,total=_context.WishlistItems.Count()});
+					return Json(new {status=1,total=_context.WishlistItems.Where(x => x.AppUserId == User.FindFirstValue(ClaimTypes.NameIdentifier)).Count()});
 
 				}
 			
