@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "slQXdSsuT7eM7JpyrTl15dp04K1JMDLA8mKwrEdYR5Q=",
+  "Hash": "bQDc2oHjPZuMcMxuwm5k2+GIo7q/pF4/3S7r/2pSuxo=",
   "Source": "Furniture",
   "BasePath": "_content/Furniture",
   "Mode": "Default",
@@ -833,23 +833,6 @@
       "OriginalItemSpec": "wwwroot\\libs\\slick\\ajax-loader.gif"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\slick\\css\\slick.css",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "libs/slick/css/slick.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\libs\\slick\\css\\slick.css"
-    },
-    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\slick\\css\\slick-theme.css",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -865,6 +848,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\libs\\slick\\css\\slick-theme.css"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\slick\\css\\slick.css",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "libs/slick/css/slick.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\libs\\slick\\css\\slick.css"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\libs\\slick\\fonts\\slick.eot",
@@ -1700,23 +1700,6 @@
       "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\cc-warning.png"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\chart.png",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "manage/assets/img/icons/unicons/chart.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\chart.png"
-    },
-    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\chart-success.png",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -1732,6 +1715,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\chart-success.png"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\chart.png",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/img/icons/unicons/chart.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\chart.png"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\paypal.png",
@@ -1751,23 +1751,6 @@
       "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\paypal.png"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet.png",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "manage/assets/img/icons/unicons/wallet.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet.png"
-    },
-    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet-info.png",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -1783,6 +1766,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet-info.png"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet.png",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/img/icons/unicons/wallet.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\img\\icons\\unicons\\wallet.png"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\img\\illustrations\\girl-doing-yoga-light.png",
@@ -2210,6 +2210,57 @@
       "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\css\\theme-default.css"
     },
     {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-2.html",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/vendor/fonts/boxicons-2.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-2.html"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-3.html",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/vendor/fonts/boxicons-3.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-3.html"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-4.html",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "manage/assets/vendor/fonts/boxicons-4.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-4.html"
+    },
+    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons.css",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -2327,57 +2378,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons\\boxiconsd41d.svg"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-2.html",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "manage/assets/vendor/fonts/boxicons-2.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-2.html"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-3.html",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "manage/assets/vendor/fonts/boxicons-3.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-3.html"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-4.html",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "manage/assets/vendor/fonts/boxicons-4.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\manage\\assets\\vendor\\fonts\\boxicons-4.html"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\manage\\assets\\vendor\\fonts\\boxiconsd41d.html",
@@ -3961,12 +3961,12 @@
       "OriginalItemSpec": "wwwroot\\media\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo.png",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo-intro-2.png",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/logo.png",
+      "RelativePath": "media/logo-intro-2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3975,7 +3975,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\logo.png"
+      "OriginalItemSpec": "wwwroot\\media\\logo-intro-2.png"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo-intro.png",
@@ -3995,23 +3995,6 @@
       "OriginalItemSpec": "wwwroot\\media\\logo-intro.png"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo-intro-2.png",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "media/logo-intro-2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\logo-intro-2.png"
-    },
-    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo-white.png",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -4027,6 +4010,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\logo-white.png"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\logo.png",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "media/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\logo.png"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\payments.png",
@@ -4046,6 +4046,23 @@
       "OriginalItemSpec": "wwwroot\\media\\payments.png"
     },
     {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\1-2.jpg",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "media/product/1-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\product\\1-2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\1.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
@@ -4061,23 +4078,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\product\\1.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\10.jpg",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/10.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\10.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\10-2.jpg",
@@ -4097,12 +4097,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\10-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\11.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\10.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/11.jpg",
+      "RelativePath": "media/product/10.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4111,7 +4111,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\11.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\10.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\11-2.jpg",
@@ -4131,12 +4131,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\11-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\12.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\11.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/12.jpg",
+      "RelativePath": "media/product/11.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4145,24 +4145,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\12.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\1-2.jpg",
-      "SourceId": "Furniture",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
-      "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/1-2.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\1-2.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\11.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\12-2.jpg",
@@ -4182,12 +4165,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\12-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\2.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\12.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/2.jpg",
+      "RelativePath": "media/product/12.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4196,7 +4179,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\2.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\12.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\2-2.jpg",
@@ -4216,12 +4199,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\2-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\3.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\2.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/3.jpg",
+      "RelativePath": "media/product/2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4230,7 +4213,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\3.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\2.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\3-2.jpg",
@@ -4250,12 +4233,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\3-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\4.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\3.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/4.jpg",
+      "RelativePath": "media/product/3.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4264,7 +4247,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\4.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\3.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\4-2.jpg",
@@ -4284,12 +4267,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\4-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\5.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\4.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/5.jpg",
+      "RelativePath": "media/product/4.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4298,7 +4281,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\5.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\4.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\5-2.jpg",
@@ -4318,12 +4301,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\5-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\6.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\5.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/6.jpg",
+      "RelativePath": "media/product/5.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4332,7 +4315,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\6.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\5.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\6-2.jpg",
@@ -4352,12 +4335,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\6-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\7.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\6.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/7.jpg",
+      "RelativePath": "media/product/6.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4366,7 +4349,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\7.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\6.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\7-2.jpg",
@@ -4386,12 +4369,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\7-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\8.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\7.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/8.jpg",
+      "RelativePath": "media/product/7.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4400,7 +4383,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\8.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\7.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\8-2.jpg",
@@ -4420,12 +4403,12 @@
       "OriginalItemSpec": "wwwroot\\media\\product\\8-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\9.jpg",
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\8.jpg",
       "SourceId": "Furniture",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
       "BasePath": "_content/Furniture",
-      "RelativePath": "media/product/9.jpg",
+      "RelativePath": "media/product/8.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4434,7 +4417,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\product\\9.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\product\\8.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\9-2.jpg",
@@ -4469,6 +4452,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\product\\9-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\9.jpg",
+      "SourceId": "Furniture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\",
+      "BasePath": "_content/Furniture",
+      "RelativePath": "media/product/9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\product\\9.jpg"
     },
     {
       "Identity": "C:\\Users\\khlgr\\OneDrive\\Desktop\\Furniture\\Furniture\\wwwroot\\media\\product\\cat-1.jpg",

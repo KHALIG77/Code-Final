@@ -149,13 +149,7 @@
 
                             </ul>
                         </li>
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Log out</span></li>
-                        <li class="menu-item">
-                            <a asp-action="logout" asp-controller="account" class="menu-link">
-
-                                <div data-i18n="Support">Log Out</div>
-                            </a>
-                        </li>
+                  
                         
                     }
                     @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin"))
@@ -374,14 +368,15 @@
                         </li>
 
 
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Log out</span></li>
-                        <li class="menu-item">
-                            <a asp-action="logout" asp-controller="account" class="menu-link">
-
-                                <div data-i18n="Support">Log Out</div>
-                            </a>
-                        </li>
+                      
                     }
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Log out</span></li>
+                    <li class="menu-item">
+                        <a asp-action="logout" asp-controller="account" class="menu-link">
+
+                            <div data-i18n="Support">Log Out</div>
+                        </a>
+                    </li>
                    
                   
                 </ul>
